@@ -65,7 +65,6 @@ layer_0/tile_data = PackedInt32Array(2, 131072, 0, 65538, 65536, 0, 131072, 1310
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(48, 48)
 motion_mode = 1
-safe_margin = 17.068
 script = ExtResource("2_8t1ta")
 
 [node name="Sprite" type="Sprite2D" parent="player"]
