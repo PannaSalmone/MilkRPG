@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://mg82pqn4dlah"]
+
+[ext_resource type="PackedScene" uid="uid://bqoa1e3j7hra7" path="res://test_area.tscn" id="1_t1srv"]
+[ext_resource type="PackedScene" uid="uid://ddpi8ddi54rvh" path="res://player.tscn" id="2_kyb3k"]
+[ext_resource type="PackedScene" uid="uid://dkxxha1qm7mtb" path="res://test_house.tscn" id="2_thha4"]
+[ext_resource type="PackedScene" uid="uid://mwsfvljjmvsx" path="res://warp.tscn" id="3_62ydq"]
+
+[node name="Game" type="Node2D"]
+
+[node name="maps" type="Node2D" parent="."]
+
+[node name="TestArea" parent="maps" instance=ExtResource("1_t1srv")]
+
+[node name="TestHouse" parent="maps/TestArea" instance=ExtResource("2_thha4")]
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("2_kyb3k")]
+
+[node name="Warp" parent="." instance=ExtResource("3_62ydq")]
+collision_layer = 2
+
+[connection signal="body_entered" from="Warp" to="Player/Player" method="_on_body_entered"]
