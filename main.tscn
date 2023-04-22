@@ -19,5 +19,3 @@
 
 [node name="Warp" parent="." instance=ExtResource("3_62ydq")]
 collision_layer = 2
-
-[connection signal="body_entered" from="Warp" to="Player/Player" method="_on_body_entered"]
