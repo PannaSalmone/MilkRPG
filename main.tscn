@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://mg82pqn4dlah"]
+[gd_scene load_steps=7 format=3 uid="uid://mg82pqn4dlah"]
 
 [ext_resource type="PackedScene" uid="uid://bqoa1e3j7hra7" path="res://test_area.tscn" id="1_t1srv"]
 [ext_resource type="PackedScene" uid="uid://ddpi8ddi54rvh" path="res://player.tscn" id="2_kyb3k"]
 [ext_resource type="PackedScene" uid="uid://dkxxha1qm7mtb" path="res://test_house.tscn" id="2_thha4"]
 [ext_resource type="PackedScene" uid="uid://mwsfvljjmvsx" path="res://warp.tscn" id="3_62ydq"]
+[ext_resource type="PackedScene" uid="uid://bxmt7ni327upl" path="res://warp_map.tscn" id="5_f8q7c"]
+[ext_resource type="Script" path="res://scripts/Global.gd" id="6_kobyw"]
 
 [node name="Game" type="Node2D"]
 
@@ -19,3 +21,8 @@
 
 [node name="Warp" parent="." instance=ExtResource("3_62ydq")]
 collision_layer = 2
+
+[node name="WarpMap" parent="." instance=ExtResource("5_f8q7c")]
+
+[node name="Global" type="Node2D" parent="."]
+script = ExtResource("6_kobyw")
