@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c82mvsl6ulib2"
-path="res://.godot/imported/cubo.png-56d04e9a47e2a885ac6e1876ff4f949b.ctex"
+uid="uid://f2mswuem5ms2"
+path="res://.godot/imported/NPC.png-340694c0fcef18f3bc2ab61a6e7550d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/cubo.png"
-dest_files=["res://.godot/imported/cubo.png-56d04e9a47e2a885ac6e1876ff4f949b.ctex"]
+source_file="res://sprites/NPC.png"
+dest_files=["res://.godot/imported/NPC.png-340694c0fcef18f3bc2ab61a6e7550d4.ctex"]
 
 [params]
 

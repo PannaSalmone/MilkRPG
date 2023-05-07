@@ -16,7 +16,8 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_body_entered(body):	
-	get_tree().change_scene_to_file("res://"+ (mapname[mapindex]) +".tscn")
-	body.position = warp_to
+func _on_body_entered(body):
+	Global.player_spawn_point = warp_to
 	print("warp to ", mapname[mapindex], " at ", warp_to) 
+	get_tree().change_scene_to_file("res://"+ (mapname[mapindex]) +".tscn")
+	

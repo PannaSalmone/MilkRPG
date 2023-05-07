@@ -1,14 +1,14 @@
 # MilkRPG
 
-top-down RPG
+top-down JRPG
 
 [x] Tile system
 [x] support for movements
 [x] Teleports 
-[ ] teleports between maps
+[x] teleports between maps
 [ ] Inventory system
 [ ] support for in game text-boxes
-[ ] NPC
+[x] NPC
 [ ] Chests
 [ ] Battle scene
 [ ] Stats and HP/MP
