@@ -1,11 +1,12 @@
 extends StaticBody2D
 
-#@export_file("*.png") var sprite
+@export_file("*.png") var sprite
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#var loadsprite = load(sprite)
-	#$AnimatedSprite2D.sprite_frames = loadsprite
+	var loadsprite = load(sprite)
+	$AnimatedSprite2D.sprite_frames = loadsprite
 	pass
 	
 

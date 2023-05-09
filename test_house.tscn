@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cigb2yd17ufpt"]
 
 [ext_resource type="TileSet" uid="uid://cawqrmyb7pptp" path="res://tilesets/test_tiles.tres" id="1_tt6dp"]
-[ext_resource type="PackedScene" uid="uid://ddpi8ddi54rvh" path="res://player.tscn" id="2_gr8dr"]
-[ext_resource type="PackedScene" uid="uid://bxmt7ni327upl" path="res://warp_map.tscn" id="3_vn8vb"]
-[ext_resource type="PackedScene" uid="uid://dggovk7j8edb7" path="res://npc.tscn" id="4_28wkm"]
+[ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://player.tscn" id="2_gr8dr"]
+[ext_resource type="PackedScene" path="res://warp_map.tscn" id="3_vn8vb"]
+[ext_resource type="PackedScene" uid="uid://ewj5dm6mysed" path="res://npc.tscn" id="4_28wkm"]
 
 [node name="TestArea" type="TileMap"]
 tile_set = ExtResource("1_tt6dp")

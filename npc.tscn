@@ -1,7 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://dggovk7j8edb7"]
+[gd_scene load_steps=8 format=3 uid="uid://ewj5dm6mysed"]
 
-[ext_resource type="Script" path="res://scripts/npc.gd" id="1_gupkq"]
 [ext_resource type="Texture2D" uid="uid://f2mswuem5ms2" path="res://sprites/NPC.png" id="1_yudl7"]
+
+[sub_resource type="GDScript" id="GDScript_nrqyl"]
+script/source = "extends StaticBody2D
+
+@export_file(\"*.png\") var sprite
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var loadsprite = load(sprite)
+	$AnimatedSprite2D.sprite_frames = loadsprite
+	pass
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwu2w"]
 atlas = ExtResource("1_yudl7")
@@ -38,7 +56,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8aub4"]
 
 [node name="npc" type="StaticBody2D"]
-script = ExtResource("1_gupkq")
+script = SubResource("GDScript_nrqyl")
+sprite = "res://sprites/player.png"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p7dyi")
