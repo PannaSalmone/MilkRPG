@@ -25,6 +25,10 @@ window/size/viewport_width=960
 window/size/viewport_height=512
 window/stretch/scale=2.0
 
+[editor]
+
+movie_writer/movie_file="C:/Users/seanb/Desktop/1.avi"
+
 [layer_names]
 
 2d_physics/layer_1="Solid"

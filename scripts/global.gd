@@ -1,6 +1,7 @@
 extends Node2D
 
 var player_spawn_point = Vector2(32 , 32)
+var raycast_direction = Vector2(0 , 32)
 
 #MAP LIST
 var IDmap = [

@@ -1,69 +1,51 @@
 [gd_scene load_steps=8 format=3 uid="uid://ewj5dm6mysed"]
 
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_qt2lc"]
 [ext_resource type="Texture2D" uid="uid://f2mswuem5ms2" path="res://sprites/NPC.png" id="1_yudl7"]
 
-[sub_resource type="GDScript" id="GDScript_nrqyl"]
-script/source = "extends StaticBody2D
-
-@export_file(\"*.png\") var sprite
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	var loadsprite = load(sprite)
-	$AnimatedSprite2D.sprite_frames = loadsprite
-	pass
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwu2w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjpcr"]
 atlas = ExtResource("1_yudl7")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqcyl"]
-atlas = ExtResource("1_yudl7")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qt842"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj421"]
 atlas = ExtResource("1_yudl7")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p7dyi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lcag"]
+atlas = ExtResource("1_yudl7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1ubv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iwu2w")
+"texture": SubResource("AtlasTexture_fjpcr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bqcyl")
+"texture": SubResource("AtlasTexture_aj421")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iwu2w")
+"texture": SubResource("AtlasTexture_fjpcr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qt842")
+"texture": SubResource("AtlasTexture_5lcag")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8aub4"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hf6f"]
 
-[node name="npc" type="StaticBody2D"]
-script = SubResource("GDScript_nrqyl")
-sprite = "res://sprites/player.png"
+[node name="NPC" type="StaticBody2D"]
+script = ExtResource("1_qt2lc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_p7dyi")
+sprite_frames = SubResource("SpriteFrames_w1ubv")
 autoplay = "default"
+frame_progress = 0.380491
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16, 16)
-shape = SubResource("CircleShape2D_8aub4")
+shape = SubResource("CapsuleShape2D_6hf6f")
