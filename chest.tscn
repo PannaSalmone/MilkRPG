@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxsqjnrw1fgxy"]
+[gd_scene load_steps=4 format=3 uid="uid://b7apc6xp2b56o"]
 
-[ext_resource type="Script" path="res://scripts/Chest.gd" id="1_byl7s"]
-[ext_resource type="Texture2D" uid="uid://eirgiqtale" path="res://sprites/Chest.png" id="2_xg6nu"]
+[ext_resource type="Script" path="res://scripts/chest.gd" id="1_vid7e"]
+[ext_resource type="Texture2D" uid="uid://eirgiqtale" path="res://sprites/OW/Chest.png" id="2_xg6nu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucg1d"]
 size = Vector2(32, 32)
 
 [node name="Chest" type="StaticBody2D"]
-script = ExtResource("1_byl7s")
+script = ExtResource("1_vid7e")
 metadata/_edit_group_ = true
 
 [node name="ChestClosed" type="Sprite2D" parent="."]

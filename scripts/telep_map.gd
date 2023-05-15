@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var mapindex = 0
-@export var warp_to = Vector2.ZERO
+@export var mapindex: int = 0
+@export var warp_to := Vector2.ZERO
 
 var mapname = Global.IDmap
 

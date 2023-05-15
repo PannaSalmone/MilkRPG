@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt46inghlmq8i"]
+[gd_scene load_steps=9 format=3 uid="uid://ec7al4ta63pi"]
 
 [ext_resource type="PackedScene" uid="uid://d2283njsh08ae" path="res://test_area.tscn" id="1_t1srv"]
 [ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://player.tscn" id="2_kyb3k"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://warp_map.tscn" id="5_f8q7c"]
 [ext_resource type="Script" path="res://scripts/global.gd" id="6_2x6aa"]
 [ext_resource type="PackedScene" uid="uid://ewj5dm6mysed" path="res://npc.tscn" id="7_5sch7"]
-[ext_resource type="PackedScene" uid="uid://dxsqjnrw1fgxy" path="res://chest.tscn" id="8_sm18x"]
+[ext_resource type="PackedScene" uid="uid://b7apc6xp2b56o" path="res://chest.tscn" id="8_sm18x"]
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
@@ -21,11 +21,12 @@ script = ExtResource("6_2x6aa")
 [node name="TestArea" parent="Maps" instance=ExtResource("1_t1srv")]
 
 [node name="TestHouse" parent="Maps/TestArea" instance=ExtResource("2_thha4")]
+visible = false
 
 [node name="Player" type="Node2D" parent="."]
+visible = false
 
 [node name="Player" parent="Player" instance=ExtResource("2_kyb3k")]
-speed = 300
 
 [node name="Warp" parent="." instance=ExtResource("3_62ydq")]
 visible = false
@@ -36,5 +37,10 @@ visible = false
 collision_layer = 2
 
 [node name="NPC" parent="." instance=ExtResource("7_5sch7")]
+visible = false
+direction = ""
+Npc_text = ""
+Npc_name = ""
 
 [node name="Chest" parent="." instance=ExtResource("8_sm18x")]
+visible = false

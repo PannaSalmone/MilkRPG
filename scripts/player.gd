@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 300
+@export var speed: int = 300
 @onready var animation = get_node("AnimatedSprite2D")
 
 func _ready():
@@ -18,7 +18,7 @@ func get_input():
 		update_animation(input_direction)
 	else:
 		$AnimatedSprite2D.play("idle_" + ray_dir())
-# Chest checking
+# Event checking
 	if Input.is_action_just_pressed("ui_accept"):
 		if $RayCast2D.is_colliding():
 			var collider = $RayCast2D.get_collider()
@@ -43,7 +43,7 @@ func _physics_process(delta):
 	
 func update_animation(input_direction):
 	if input_direction.x > 0:
-		animation.flip_h = true
+		animation.flip_h = true #flip walk_right animation cuz there is no proper sprite for right idle and walk animation
 		animation.play("walk_right")
 	elif input_direction.x < 0:
 		animation.flip_h = false

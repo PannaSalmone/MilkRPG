@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eirgiqtale"
-path="res://.godot/imported/Chest.png-128c634a16da05d9975c394aa1cd4492.ctex"
+uid="uid://f2mswuem5ms2"
+path="res://.godot/imported/NPC.png-183ee955365a5bb96ca0cc8f72db99e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Chest.png"
-dest_files=["res://.godot/imported/Chest.png-128c634a16da05d9975c394aa1cd4492.ctex"]
+source_file="res://sprites/OW/NPC.png"
+dest_files=["res://.godot/imported/NPC.png-183ee955365a5bb96ca0cc8f72db99e5.ctex"]
 
 [params]
 

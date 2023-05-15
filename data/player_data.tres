@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Player_Stats" load_steps=3 format=3 uid="uid://ca7c4lg7lwbo1"]
+
+[ext_resource type="Texture2D" uid="uid://bos8oa7ei14bd" path="res://sprites/Menu/Portrait_Player.png" id="1_tw336"]
+[ext_resource type="Script" path="res://scripts/characters_data.gd" id="1_xqp5l"]
+
+[resource]
+script = ExtResource("1_xqp5l")
+Portrait = ExtResource("1_tw336")
+HP = 100
+MP = 50
+Strenght = 80
+Agility = 55
+Mind = 40
+Hand_type = 0
+weapon_type = 3
+armors_type = 3
