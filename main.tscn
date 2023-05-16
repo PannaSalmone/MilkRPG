@@ -38,9 +38,6 @@ collision_layer = 2
 
 [node name="NPC" parent="." instance=ExtResource("7_5sch7")]
 visible = false
-direction = ""
-Npc_text = ""
-Npc_name = ""
 
 [node name="Chest" parent="." instance=ExtResource("8_sm18x")]
 visible = false

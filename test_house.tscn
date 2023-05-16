@@ -27,7 +27,12 @@ position = Vector2(112, 176)
 warp_to = Vector2(96, 320)
 
 [node name="Chest" parent="." instance=ExtResource("4_tplvi")]
-position = Vector2(416, 32)
+position = Vector2(384, 32)
+chest_sprite = "Default"
+
+[node name="Chest2" parent="." instance=ExtResource("4_tplvi")]
+position = Vector2(448, 32)
+chest_sprite = "Blue"
 
 [node name="Player" parent="." instance=ExtResource("2_gr8dr")]
 
