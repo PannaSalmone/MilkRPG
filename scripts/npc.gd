@@ -11,19 +11,18 @@ class_name Npc
 func _ready():
 	update_animation(direction) #Change direction of static NPC (idle anim)
 	pass
-	
-	
+
 #called by Player.gd
 func main_func():
 	$AnimatedSprite2D.play("idle_" + ray_dir())
 	print(Npc_name,": ", Npc_text)
-	print(Global.raycast_direction)
+	#print(Global.raycast_direction)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func update_animation(dir):
+func update_animation(_dir):
 	animation.play("idle_" + direction)
 
 func ray_dir():
@@ -37,3 +36,6 @@ func ray_dir():
 	elif dir.y < 0:
 		return "down"
 	
+
+
+

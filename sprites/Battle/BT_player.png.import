@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eirgiqtale"
-path="res://.godot/imported/Chest.png-6fb1733048110cfcfc6ca10d96722a20.ctex"
+uid="uid://dx5kaa70n7xvy"
+path="res://.godot/imported/BT_player.png-30c74a165cf9050e9c09c8b458a7f8fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/OW/Chest.png"
-dest_files=["res://.godot/imported/Chest.png-6fb1733048110cfcfc6ca10d96722a20.ctex"]
+source_file="res://sprites/Battle/BT_player.png"
+dest_files=["res://.godot/imported/BT_player.png-30c74a165cf9050e9c09c8b458a7f8fa.ctex"]
 
 [params]
 

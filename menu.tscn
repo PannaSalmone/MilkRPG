@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgfomh84y6hy0"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_hvxa4"]
+
+[node name="Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hvxa4")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 464.0
+offset_bottom = 240.0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 176.0
+offset_right = 416.0
+offset_bottom = 208.0
+text = "Press spacebar to exit menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="esc" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 48.0
+text = "close"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+
+[node name="gold" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 192.0
+offset_right = 440.0
+offset_bottom = 218.0
+text = "5"
+
+[node name="Name1" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 16.0
+offset_right = 159.0
+offset_bottom = 42.0
+text = "Name"
+
+[node name="HP" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 48.0
+offset_right = 176.0
+offset_bottom = 74.0
+text = "HP"
+metadata/_edit_lock_ = true
+
+[node name="ATK" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 48.0
+offset_right = 240.0
+offset_bottom = 74.0
+text = "ATK"
+
+[node name="DEF" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 80.0
+offset_right = 176.0
+offset_bottom = 106.0
+text = "DEF"
+
+[node name="MDF" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 80.0
+offset_right = 216.0
+offset_bottom = 103.0
+text = "MDF"
+
+[node name="MAG" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 112.0
+offset_right = 152.0
+offset_bottom = 135.0
+text = "MAG"
+
+[node name="VEL" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 112.0
+offset_right = 216.0
+offset_bottom = 135.0
+text = "VEL"
+
+[node name="save" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 432.0
+offset_bottom = 48.0
+text = "save"
+
+[connection signal="pressed" from="Panel/esc" to="." method="_on_esc_pressed"]
+[connection signal="pressed" from="Panel/save" to="." method="_on_save_pressed"]

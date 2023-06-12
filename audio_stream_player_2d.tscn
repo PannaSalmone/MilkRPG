@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://owex6seylwcj"]
+
+[ext_resource type="AudioStream" uid="uid://ciiyv32hihtus" path="res://sounds/BGM/Final_Fantasy_4_OST_-_Baron_Castle.mp3" id="1_ljr30"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_ljr30")
+autoplay = true

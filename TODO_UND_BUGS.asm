@@ -13,6 +13,7 @@ TO DO:
 
 BUGS:
 -player spawning direction (player always spawns in down direction before updating in the right direction)
+-game crash on player.gd because class name check fails (completely non sense)
 
 
 
