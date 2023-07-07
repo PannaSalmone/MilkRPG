@@ -4,19 +4,19 @@ class_name Npc
 @onready var animation = get_node("AnimatedSprite2D")
 
 @export_enum("right", "left", "down", "up") var direction: String #select the direction of NPC
-@export var Npc_text = ""
-@export var Npc_name = ""
+@export var dialogue := ""
+@export var objname := ""
+var texto: String = ""
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	update_animation(direction) #Change direction of static NPC (idle anim)
+func _ready():	
+	update_animation(direction) #Change direction of static NPC (idle anim)	
 	pass
 
 #called by Player.gd
 func main_func():
-	$AnimatedSprite2D.play("idle_" + ray_dir())
-	print(Npc_name,": ", Npc_text)
-	#print(Global.raycast_direction)
+	texto = str(objname + ": " + dialogue)
+	$AnimatedSprite2D.play("idle_" + ray_dir())	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

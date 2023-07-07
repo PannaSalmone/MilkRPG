@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvuhwj03yu07f"]
+[gd_scene load_steps=15 format=3 uid="uid://cvuhwj03yu07f"]
 
 [ext_resource type="PackedScene" uid="uid://d2283njsh08ae" path="res://maps/test_area.tscn" id="1_t1srv"]
 [ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://player.tscn" id="2_kyb3k"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ewj5dm6mysed" path="res://npc.tscn" id="7_5sch7"]
 [ext_resource type="PackedScene" uid="uid://b7apc6xp2b56o" path="res://chest.tscn" id="8_sm18x"]
 [ext_resource type="PackedScene" uid="uid://nbdx8nbld3td" path="res://battle.tscn" id="9_cyut6"]
+[ext_resource type="PackedScene" uid="uid://dhiyftv2s7ee1" path="res://battler.tscn" id="10_10hha"]
 [ext_resource type="PackedScene" uid="uid://dgfomh84y6hy0" path="res://menu.tscn" id="10_ox1ws"]
 [ext_resource type="PackedScene" uid="uid://owex6seylwcj" path="res://audio_stream_player_2d.tscn" id="11_1gyte"]
 [ext_resource type="PackedScene" uid="uid://qd7jkifh7hgr" path="res://mainmenu.tscn" id="12_8d1f3"]
@@ -52,6 +53,8 @@ visible = false
 [node name="Battle" parent="." instance=ExtResource("9_cyut6")]
 visible = false
 
+[node name="Battler" parent="Battle" instance=ExtResource("10_10hha")]
+
 [node name="Menu" parent="." instance=ExtResource("10_ox1ws")]
 visible = false
 
@@ -63,3 +66,4 @@ autoplay = false
 visible = false
 
 [node name="Sign" parent="." instance=ExtResource("13_pckuw")]
+visible = false

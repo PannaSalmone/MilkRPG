@@ -18,12 +18,14 @@ layer_0/tile_data = PackedInt32Array(65538, 65536, 1, 131073, 65536, 1, 131074, 
 [node name="NPC" parent="." instance=ExtResource("4_28wkm")]
 position = Vector2(96, 64)
 direction = "down"
-Npc_text = "Hola amigo"
-Npc_name = "Pedro"
+dialogue = "Hola Amigo"
+objname = "Pedro"
 
 [node name="NPC2" parent="." instance=ExtResource("4_28wkm")]
 position = Vector2(96, 416)
 direction = "up"
+dialogue = "Hola Hombre"
+objname = "Sandro"
 
 [node name="Chest" parent="." instance=ExtResource("4_tplvi")]
 position = Vector2(384, 32)

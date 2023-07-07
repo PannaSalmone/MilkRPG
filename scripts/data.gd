@@ -1,7 +1,9 @@
 extends Resource
 class_name Save_Data
 
-@export var save_gold: int = 0
+var save_gold: int = 0
+var save_player_pos: Vector2 = Vector2.ZERO
+
 
 
 #var chars_stats = {

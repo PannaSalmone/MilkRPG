@@ -17,6 +17,7 @@ layer_0/tile_data = PackedInt32Array(2, 131072, 1, 65538, 65536, 0, 131073, 6553
 
 [node name="Sign" parent="." instance=ExtResource("3_4w417")]
 position = Vector2(352, 256)
+dialogue = "Pizza Pasta"
 
 [node name="Warp" parent="." instance=ExtResource("3_f1onu")]
 position = Vector2(720, 336)

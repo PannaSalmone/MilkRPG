@@ -18,13 +18,20 @@ func get_input():
 		update_animation(input_direction)
 	else:
 		$AnimatedSprite2D.play("idle_" + ray_dir())
-# Event checking
-	if Input.is_action_just_pressed("ui_accept"):		
+# Event checking + event scripts
+	if Input.is_action_just_pressed("ui_accept"):
 		if $RayCast2D.is_colliding():
 			var collider = $RayCast2D.get_collider()
 			if collider is StaticBody2D: #Chest or Npc: this doesn't work
-				collider.main_func()
+				$Menu.dialogue_box()
+				collider.main_func() #launch main func in collider 
+				var textbox: String = collider.texto #load text from collider
+				print(textbox)
+				get_node("Menu/DialogueBox/MarginContainer/text").text = textbox
 				print(collider)
+# Game Menu function
+	if Input.is_action_just_pressed("ui_select"):
+		$Menu.game_menu() # main func from menu.gd
 
 func ray_dir():
 	var dir = Global.raycast_direction
@@ -41,7 +48,6 @@ func ray_dir():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
-	show_menu()
 	
 func update_animation(input_direction):
 	if input_direction.x > 0:
@@ -54,9 +60,3 @@ func update_animation(input_direction):
 		animation.play("walk_down")
 	elif input_direction.y < 0:
 		animation.play("walk_up")
-	
-func show_menu():
-	if Input.is_action_just_pressed("ui_select"):
-		$Menu.pause()
-		
-		

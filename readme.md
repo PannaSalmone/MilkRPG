@@ -1,6 +1,7 @@
 # MilkRPG
 
-Top-down JRPG engine, built in godot
+Top-down JRPG engine, built in godot 4.1
+
 
 
 - [x] Tile system
@@ -8,10 +9,10 @@ Top-down JRPG engine, built in godot
 - [x] Teleports
 - [x] Teleports between maps
 - [ ] Inventory system
-- [ ] In game text-boxes
+- [X] In game text-boxes
 - [x] NPC
 - [X] Chests
 - [ ] Battle scene
 - [ ] Stats and HP/MP
-- [ ] Game Menu
+- [X] Game Menu
 - [ ] Save system

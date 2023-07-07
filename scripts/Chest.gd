@@ -8,6 +8,7 @@ class_name Chest
 @export var item = "sword" #totally proof of concept 
 @export var amount: int = 1 
 var is_closed = true
+var texto := ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,16 +18,17 @@ func _ready():
 #called by Player.gd
 func main_func():
 	if is_closed == true:
-		add_item()#print("u found ", item)
+		add_item()
 		$ChestSprite.region_rect = Rect2i(Vector2 (32, 0,), Vector2 (32, 32 )) #change area of the sprite atlas (opened chest)
 		is_closed = false
 	else:
-		print("IT IS EMPTY")
+		texto = "it's empty"
+
 
 func add_item():
 	if content == "Item":
-		print("u found ", item)
+		texto = str("You found: " + item)
+
 	else:
 		Global.gold += amount
-		print("U gain ", amount, " gold")
-		
+		texto = str("You found: " + str(amount) + " Gold")
