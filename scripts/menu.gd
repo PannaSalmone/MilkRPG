@@ -34,10 +34,8 @@ func dialogue_box():
 	get_tree().paused = true
 	$DialogueBox.visible = true
 
-#func _on_save_pressed():
-#	var gold2 = Save_Data.new()	
-#	var script = load("res://scripts/save_game.gd").new()
-#	script.write_save_game()
+func _on_save_pressed():
+	Utils.save_game()
 	
 func show_data():
 	get_node("GameMenu/gold").text = "gold: " + str(Global.gold) #Show the gold amount from Global Var

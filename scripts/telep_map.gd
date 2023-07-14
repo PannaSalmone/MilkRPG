@@ -15,8 +15,9 @@ func _process(_delta):
 	pass
 
 func _on_body_entered(_body):
-	Global.player_spawn_point = warp_to
 	print("warp to ", mapname, " at ", warp_to) 
 	Global.player_map_location = mapname
+	Global.player_xy = warp_to
 	get_tree().change_scene_to_file("res://maps/"+ (mapname) +".tscn")
 	print(Global.player_map_location)
+	

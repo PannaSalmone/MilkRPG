@@ -16,7 +16,7 @@ func _ready():
 #called by Player.gd
 func main_func():
 	texto = str(objname + ": " + dialogue)
-	$AnimatedSprite2D.play("idle_" + ray_dir())	
+	$AnimatedSprite2D.play("idle_" + ray_dir())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

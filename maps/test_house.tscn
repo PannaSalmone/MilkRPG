@@ -27,13 +27,14 @@ direction = "up"
 dialogue = "Hola Hombre"
 objname = "Sandro"
 
-[node name="Chest" parent="." instance=ExtResource("4_tplvi")]
+[node name="Chest0" parent="." instance=ExtResource("4_tplvi")]
 position = Vector2(384, 32)
 chest_sprite = "Default"
 content = "Item"
 
-[node name="Chest2" parent="." instance=ExtResource("4_tplvi")]
+[node name="Chest1" parent="." instance=ExtResource("4_tplvi")]
 position = Vector2(448, 32)
+ID = 1
 chest_sprite = "Blue"
 content = "Gold"
 item = ""
