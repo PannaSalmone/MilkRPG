@@ -3,34 +3,34 @@ extends CharacterBody2D
 @export var speed: int = 300
 @onready var animation = get_node("AnimatedSprite2D")
 
+
 func _ready():
 	$RayCast2D.target_position = Global.raycast_direction #Globalized Raycast2d target
 	position = Global.player_xy #Position set in global script and updated with warp script
 
 func get_input():
-	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	input_direction = input_direction.normalized()
-	velocity = input_direction * speed
+	if Global.playerispaused == false:
+		var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		input_direction = input_direction.normalized()
+		velocity = input_direction * speed
 	
-	if input_direction != Vector2.ZERO:
-		$RayCast2D.target_position = input_direction * 32 #32 raycast lenght
-		Global.raycast_direction = $RayCast2D.target_position #Raycast direction going global
-		update_animation(input_direction)
-	else:
-		$AnimatedSprite2D.play("idle_" + ray_dir())
+		if input_direction != Vector2.ZERO:
+			$RayCast2D.target_position = input_direction * 32 #32 raycast lenght
+			Global.raycast_direction = $RayCast2D.target_position #Raycast direction going global
+			update_animation(input_direction)
+		else:
+			$AnimatedSprite2D.play("idle_" + ray_dir())
 # Event checking + event scripts
-	if Input.is_action_just_pressed("ui_accept"):
-		print(Global.chest_flags[0])
-		print(Global.chest_flags[1])
-		if $RayCast2D.is_colliding():
-			var collider = $RayCast2D.get_collider()
-			if collider is StaticBody2D: #Chest or Npc: this doesn't work
-				$Menu.dialogue_box()
-				collider.main_func() #launch main func in collider 
-				var textbox: String = collider.texto #load text from collider
-				print(textbox)
-				get_node("Menu/DialogueBox/MarginContainer/text").text = textbox
-				print(collider)
+		if Input.is_action_just_pressed("ui_accept"):
+			print(Global.items)
+			if $RayCast2D.is_colliding():
+				var collider = $RayCast2D.get_collider()
+				if collider is StaticBody2D: #Chest or Npc: this doesn't work
+					collider.main_func() #launch main func in collider 
+					var text: String = collider.texto
+					$TextBox.dialogue_box(text)
+					print(text)
+					print(collider)
 
 # Game Menu function
 	if Input.is_action_just_pressed("ui_select"):

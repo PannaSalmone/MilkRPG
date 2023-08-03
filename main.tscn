@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cvuhwj03yu07f"]
+[gd_scene load_steps=19 format=3 uid="uid://cvuhwj03yu07f"]
 
 [ext_resource type="PackedScene" uid="uid://d2283njsh08ae" path="res://maps/test_area.tscn" id="1_t1srv"]
 [ext_resource type="Script" path="res://scripts/utils.gd" id="2_jinxm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhrpuleuua4t5" path="res://warp.tscn" id="3_62ydq"]
 [ext_resource type="PackedScene" uid="uid://dysn6p6j4papv" path="res://warp_map.tscn" id="5_f8q7c"]
 [ext_resource type="Script" path="res://scripts/global.gd" id="6_2x6aa"]
+[ext_resource type="PackedScene" uid="uid://dq6r11bqhqf3j" path="res://maps/test_dungeon.tscn" id="6_3hxtg"]
 [ext_resource type="PackedScene" uid="uid://ewj5dm6mysed" path="res://npc.tscn" id="7_5sch7"]
 [ext_resource type="PackedScene" uid="uid://b7apc6xp2b56o" path="res://chest.tscn" id="8_sm18x"]
 [ext_resource type="PackedScene" uid="uid://nbdx8nbld3td" path="res://battle.tscn" id="9_cyut6"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dgfomh84y6hy0" path="res://menu.tscn" id="10_ox1ws"]
 [ext_resource type="PackedScene" uid="uid://owex6seylwcj" path="res://audio_stream_player_2d.tscn" id="11_1gyte"]
 [ext_resource type="PackedScene" uid="uid://qd7jkifh7hgr" path="res://mainmenu.tscn" id="12_8d1f3"]
+[ext_resource type="PackedScene" uid="uid://dwbitcnu3wdcn" path="res://text_box.tscn" id="13_c8r74"]
 [ext_resource type="PackedScene" uid="uid://bqmckq05er48v" path="res://sign.tscn" id="13_pckuw"]
 [ext_resource type="PackedScene" uid="uid://d3uvvkirx4inj" path="res://map.tscn" id="16_vqtll"]
 
@@ -37,6 +39,8 @@ script = ExtResource("2_jinxm")
 [node name="TestHouse" parent="Maps/TestArea" instance=ExtResource("2_thha4")]
 visible = false
 
+[node name="TestDungeon" parent="Maps/TestArea" instance=ExtResource("6_3hxtg")]
+
 [node name="Warp" parent="." instance=ExtResource("3_62ydq")]
 visible = false
 collision_layer = 2
@@ -58,6 +62,8 @@ visible = false
 
 [node name="Menu" parent="." instance=ExtResource("10_ox1ws")]
 visible = false
+
+[node name="TextBox" parent="." instance=ExtResource("13_c8r74")]
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("11_1gyte")]
 visible = false

@@ -15,4 +15,4 @@ Top-down JRPG engine, built in godot 4.1
 - [ ] Battle scene
 - [ ] Stats and HP/MP
 - [X] Game Menu
-- [ ] Save system
+- [X] Save system

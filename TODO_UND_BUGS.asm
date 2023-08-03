@@ -2,9 +2,9 @@ NOT AN ASM FILE LOL
 
 TO DO:
 - Inventory sistem
-- Flag system for chests
+# DONE Flag system for chests
 - battle scene
-- Save files
+#DONE Save files
 
 
 

@@ -32,6 +32,7 @@ func main_func():
 
 func add_item():
 	if content == "Item":
+		Global.items[item] += 1
 		texto = str("You found: " + item)
 
 	else:

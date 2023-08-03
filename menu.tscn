@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgfomh84y6hy0"]
+[gd_scene load_steps=2 format=3 uid="uid://dgfomh84y6hy0"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_hvxa4"]
-[ext_resource type="Theme" uid="uid://cuxyei7ggi3it" path="res://battletheme.tres" id="2_qqtg1"]
 
 [node name="Menu" type="CanvasLayer"]
 process_mode = 3
@@ -40,64 +39,16 @@ offset_left = 368.0
 offset_top = 192.0
 offset_right = 440.0
 offset_bottom = 218.0
-text = "5"
+text = "orooooo"
 
 [node name="Name1" type="Label" parent="GameMenu"]
 layout_mode = 0
 offset_left = 112.0
 offset_top = 16.0
-offset_right = 159.0
+offset_right = 336.0
 offset_bottom = 42.0
 text = "Name"
-
-[node name="HP" type="Label" parent="GameMenu"]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 48.0
-offset_right = 176.0
-offset_bottom = 74.0
-text = "HP"
-metadata/_edit_lock_ = true
-
-[node name="ATK" type="Label" parent="GameMenu"]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 48.0
-offset_right = 240.0
-offset_bottom = 74.0
-text = "ATK"
-
-[node name="DEF" type="Label" parent="GameMenu"]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 80.0
-offset_right = 176.0
-offset_bottom = 106.0
-text = "DEF"
-
-[node name="MDF" type="Label" parent="GameMenu"]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 80.0
-offset_right = 216.0
-offset_bottom = 103.0
-text = "MDF"
-
-[node name="MAG" type="Label" parent="GameMenu"]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 112.0
-offset_right = 152.0
-offset_bottom = 135.0
-text = "MAG"
-
-[node name="VEL" type="Label" parent="GameMenu"]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 112.0
-offset_right = 216.0
-offset_bottom = 135.0
-text = "VEL"
+autowrap_mode = 2
 
 [node name="save" type="Button" parent="GameMenu"]
 layout_mode = 0
@@ -107,28 +58,13 @@ offset_right = 432.0
 offset_bottom = 48.0
 text = "save"
 
-[node name="DialogueBox" type="Panel" parent="."]
-offset_top = 192.0
-offset_right = 480.0
-offset_bottom = 256.0
-theme = ExtResource("2_qqtg1")
-
-[node name="MarginContainer" type="MarginContainer" parent="DialogueBox"]
-layout_mode = 0
-offset_right = 480.0
-offset_bottom = 64.0
-theme = ExtResource("2_qqtg1")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/MarginContainer"]
-layout_mode = 2
-
-[node name="name" type="Label" parent="DialogueBox/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="text" type="Label" parent="DialogueBox/MarginContainer"]
-layout_mode = 2
-theme = ExtResource("2_qqtg1")
-text = "TETTE"
+[node name="Items" type="Button" parent="GameMenu"]
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 432.0
+offset_bottom = 96.0
+text = "Items"
 
 [connection signal="pressed" from="GameMenu/esc" to="." method="_on_esc_pressed"]
 [connection signal="pressed" from="GameMenu/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="GameMenu/Items" to="." method="_on_items_pressed"]

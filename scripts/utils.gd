@@ -16,6 +16,9 @@ func save_game():
 		},
 		flags = {
 			chest = var_to_str(Global.chest_flags)
+		},
+		items = {
+			inventory = var_to_str(Global.items)
 		}
 	}
 
@@ -37,6 +40,8 @@ func load_game():
 	Global.player_xy.y = str_to_var(save_dict.player.spawny)
 	Global.player_map_location = str_to_var(save_dict.player.activemap)
 	Global.chest_flags = str_to_var(save_dict.flags.chest)
+	Global.items = str_to_var(save_dict.items.inventory)
 
 	# Ensure the node structure is the same when loading.
 	#var game := get_node(game_node)
+	

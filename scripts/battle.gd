@@ -1,7 +1,7 @@
 extends Node2D
 
-var playerHP := 100
-var enemieHP := 10
+var playerHP : int = 100
+var enemieHP : int = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var char_tex = load("res://sprites/Battle/"+ str(Global.active_member) +"_player.png") #load textures of the active member from the Battle folder
@@ -13,6 +13,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$StatWindow/StatPanel/HBoxContainer/hp1.text = "HP :" + str(playerHP)
+	if $Enemielife.value == 0:
+		get_tree().change_scene_to_file("res://maps/" +Global.player_map_location+  ".tscn")
+		print("u win")
+		
 
 
 func _on_flee_pressed():
@@ -20,7 +24,8 @@ func _on_flee_pressed():
 
 
 func _on_attack_pressed():
-	$Enemielife.value -= 5
+	$Enemielife.value -= 4
 	$Battler/AnimationPlayer.play("Attack")
+	
 	
 	
