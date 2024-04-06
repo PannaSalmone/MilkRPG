@@ -36,6 +36,3 @@ func ray_dir():
 	elif dir.y < 0:
 		return "down"
 	
-
-
-

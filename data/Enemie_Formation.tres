@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ber358535hrfa"]
+
+[ext_resource type="Script" path="res://scripts/formations.gd" id="1_kk20i"]
+
+[resource]
+script = ExtResource("1_kk20i")
+number_of_enemies = 1
+enemie1 = "Green Dragon"
+position1 = Vector2(0, 0)
+enemie2 = "Green Dragon"
+position2 = Vector2(0, 0)

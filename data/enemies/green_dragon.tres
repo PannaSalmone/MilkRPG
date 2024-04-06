@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bt7di2k84d6ma"]
+
+[ext_resource type="Texture2D" uid="uid://cs70a7pyd64ny" path="res://sprites/Enemies/gurindragon.png" id="1_fgi6q"]
+[ext_resource type="Script" path="res://scripts/enemie.gd" id="2_6n2ot"]
+
+[resource]
+script = ExtResource("2_6n2ot")
+name = "Green Dragon"
+portrait = ExtResource("1_fgi6q")
+HP = 100
+damage = 5

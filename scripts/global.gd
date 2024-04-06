@@ -2,11 +2,19 @@ extends Node2D
 
 #Global flags and var
 
-#Player var
+#Game var
 var playerispaused := false
-var active_member := 2
-var name1 := "Mario"
+var member1 := 1 #ID index of character in the first slot 
+var member2 := 2 #ID index of character in the second slot 
+var active_member := 1
 var gold := 500 #Initial amount of money 
+var Movcounter : float
+
+#Player 1 var
+var name1 := "Renzo"
+var level1 : int = 1
+var exp1 :int = 0
+var hp1 :int = 100
 
 #Position Var (for transition between areas and maps)
 var player_xy := Vector2(32 , 32) #coordinates on map
@@ -14,15 +22,9 @@ var raycast_direction := Vector2(0 , 32)
 var player_map_location := "test_area"
 
 #Chest flags
-var chest_flags = [0, 0] #[ID, ID] #{Chest0, Chest1, Chest3}
+var chest_flags = [0, 0, 0] #[ID, ID] #0= closed,  1 = opened
+#chest_flags ID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-#inventory
-var items = {
-		sword = 0 ,
-		hammer = 1,
-		Apple = 0,
-		Banana = 6
-}
 
 #@export_flags("Player", "Buddy", "Giulia", "Anna") var active_party = 1 # I:1 II:2 III:4 IV:8, Ex: party with I,III,IV = 1+4+8 = Value of 13
 

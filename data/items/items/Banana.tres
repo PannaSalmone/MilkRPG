@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bqheg6s3cj2fn"]
+
+[ext_resource type="Script" path="res://data/items/item_data.gd" id="1_1mfub"]
+[ext_resource type="Texture2D" uid="uid://b2x6gejqxsvts" path="res://data/items/icons.png" id="2_ia8t6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqvi5"]
+atlas = ExtResource("2_ia8t6")
+region = Rect2(32, 448, 32, 32)
+
+[resource]
+script = ExtResource("1_1mfub")
+name = "Banana"
+description = "fa schifo."
+texture = SubResource("AtlasTexture_dqvi5")

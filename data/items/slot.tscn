@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3i22258wy6wb"]
+
+[ext_resource type="Script" path="res://scripts/slot.gd" id="1_3vu8a"]
+
+[node name="Slot" type="PanelContainer"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3vu8a")
+
+[node name="ItemPanel" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ItemPanel"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 2
+
+[node name="description" type="Label" parent="ItemPanel"]
+custom_minimum_size = Vector2(116, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="qnt" type="Label" parent="ItemPanel"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1

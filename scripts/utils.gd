@@ -2,9 +2,12 @@ extends Node2D
 
 const SAVE_PATH = "res://save_json.json"
 
+func level_sys():
+	pass
+
 func save_game():
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	
+	var inv_data := load("res://data/items/testinv.tres")
 	# JSON doesn't support many of Godot's types such as Vector2.
 	# var_to_str can be used to convert any Variant to a String.
 	var save_dict = {
@@ -18,7 +21,7 @@ func save_game():
 			chest = var_to_str(Global.chest_flags)
 		},
 		items = {
-			inventory = var_to_str(Global.items)
+			inventory = var_to_str(inv_data.slot_datas)
 		}
 	}
 
@@ -27,6 +30,7 @@ func save_game():
 
 
 func load_game():
+	var inv_data := load("res://data/items/testinv.tres")
 	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
 	var json := JSON.new()
 	json.parse(file.get_line())
@@ -40,8 +44,20 @@ func load_game():
 	Global.player_xy.y = str_to_var(save_dict.player.spawny)
 	Global.player_map_location = str_to_var(save_dict.player.activemap)
 	Global.chest_flags = str_to_var(save_dict.flags.chest)
-	Global.items = str_to_var(save_dict.items.inventory)
+	inv_data.slot_datas = str_to_var(save_dict.items.inventory)
 
 	# Ensure the node structure is the same when loading.
 	#var game := get_node(game_node)
+
+func load_battle():
+	get_tree().change_scene_to_file("res://battle.tscn")
 	
+func add_item(item_data) -> void:
+	var inv_data = preload("res://data/items/testinv.tres")
+	for key in item_data.keys():
+		if key in inv_data.slot_datas.keys():
+			inv_data.slot_datas[key] += item_data[key]
+		else:
+			print("oggetti nuovi")
+			inv_data.slot_datas[key] = item_data[key]
+			print("nuovo inventario: ", inv_data.slot_datas)

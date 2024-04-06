@@ -1,1 +1,1 @@
-{"flags":{"chest":"[1, 1]"},"items":{"inventory":"{\n\"Apple\": 0,\n\"Banana\": 6,\n\"hammer\": 1,\n\"sword\": 1\n}"},"player":{"activemap":"\"test_area\"","gold":"1000","spawnx":"485.246","spawny":"160.678"}}
+{"flags":{"chest":"[1, 0, 0]"},"items":{"inventory":"{\nResource(\"res://data/items/items/Apple.tres\"): 2,\nResource(\"res://data/items/items/Banana.tres\"): 1,\nResource(\"res://data/items/items/Sword.tres\"): 1\n}"},"player":{"activemap":"\"test_house\"","gold":"500","spawnx":"386.035","spawny":"70.8684"}}

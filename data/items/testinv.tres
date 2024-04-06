@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=4 format=3 uid="uid://brcvjrasplk1b"]
+
+[ext_resource type="Script" path="res://data/items/inventory_data.gd" id="1_ktpeu"]
+[ext_resource type="Resource" uid="uid://c2g0sjelubrpv" path="res://data/items/items/Apple.tres" id="2_bobcs"]
+[ext_resource type="Resource" uid="uid://bqheg6s3cj2fn" path="res://data/items/items/Banana.tres" id="5_et2me"]
+
+[resource]
+script = ExtResource("1_ktpeu")
+slot_datas = {
+ExtResource("2_bobcs"): 2,
+ExtResource("5_et2me"): 1
+}

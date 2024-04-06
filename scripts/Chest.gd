@@ -2,14 +2,15 @@
 extends StaticBody2D
 class_name Chest
 
-@export var ID: int = 0 #ID must be unique
+@export var ID: int = 0 ##ID must be unique
 @export_enum("Default", "Blue") var chest_sprite: String #the name of the chest sprite (check the names in the sprite OW folder
 @export_enum("Item","Gold") var content: String
 @onready var sprite = $ChestSprite
-@export var item = "sword" #totally proof of concept 
+@export var item : ItemData
 @export var amount: int = 1 
 var is_open = false
 var texto := ""
+signal add_item_sig
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,12 +30,12 @@ func main_func():
 	else:
 		texto = "it's empty"
 
-
 func add_item():
 	if content == "Item":
-		Global.items[item] += 1
-		texto = str("You found: " + item)
-
+		var new_items : Dictionary
+		new_items[item] = amount
+		Utils.add_item(new_items)
+		texto = str("You found: " + str(amount) + " " + item.name)
 	else:
 		Global.gold += amount
 		texto = str("You found: " + str(amount) + " Gold")

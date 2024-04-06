@@ -133,8 +133,6 @@ sprite_frames = SubResource("SpriteFrames_e78oi")
 animation = &"idle_down"
 autoplay = "idle_down"
 frame_progress = 0.868376
-centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 21)
 shape = SubResource("CapsuleShape2D_6hf6f")

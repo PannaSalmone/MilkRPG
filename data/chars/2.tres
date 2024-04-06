@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="chardata" load_steps=3 format=3 uid="uid://bt61pp3cmj40y"]
+
+[ext_resource type="Texture2D" uid="uid://ck7gb87twm0j0" path="res://sprites/Menu/Portrait_Buddy.png" id="1_2gr1n"]
+[ext_resource type="Script" path="res://scripts/chardata.gd" id="1_7kn77"]
+
+[resource]
+script = ExtResource("1_7kn77")
+name = "Lucia"
+portrait = ExtResource("1_2gr1n")
+HP = 120
+MP = 60
+STR = 45
+DEX = 60
+INT = 65

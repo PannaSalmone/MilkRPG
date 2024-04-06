@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="chardata" load_steps=3 format=3 uid="uid://cq33anf4yc5tj"]
+
+[ext_resource type="Texture2D" uid="uid://bos8oa7ei14bd" path="res://sprites/Menu/Portrait_Player.png" id="1_07tx4"]
+[ext_resource type="Script" path="res://scripts/chardata.gd" id="1_ko5us"]
+
+[resource]
+script = ExtResource("1_ko5us")
+name = "Renzo"
+portrait = ExtResource("1_07tx4")
+HP = 200
+MP = 35
+STR = 50
+DEX = 45
+INT = 50

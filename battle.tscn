@@ -151,6 +151,33 @@ offset_top = 32.0
 offset_right = 192.0
 offset_bottom = 50.0
 theme = ExtResource("7_kitga")
+show_percentage = false
+
+[node name="HP" type="Label" parent="Enemielife"]
+layout_direction = 2
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 17.0
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBox" type="Panel" parent="."]
+visible = false
+offset_right = 480.0
+offset_bottom = 64.0
+theme = ExtResource("7_kitga")
+
+[node name="Label" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo00000000000000oo."
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 1
+justification_flags = 161
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="ActionWindow/VBoxContainer/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="ActionWindow/VBoxContainer/flee" to="." method="_on_flee_pressed"]
