@@ -8,7 +8,7 @@ Top-down JRPG engine, built in godot 4.1
 - [x] Movement
 - [x] Teleports
 - [x] Teleports between maps
-- [ ] Inventory system
+- [X] Inventory system
 - [X] In game text-boxes
 - [x] NPC
 - [X] Chests
@@ -16,3 +16,4 @@ Top-down JRPG engine, built in godot 4.1
 - [ ] Stats and HP/MP
 - [X] Game Menu
 - [X] Save system
+- [ ] Item properties
