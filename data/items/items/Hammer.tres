@@ -12,3 +12,4 @@ script = ExtResource("1_3olfk")
 name = "Hammer"
 description = "Picchia come un fabbro."
 texture = SubResource("AtlasTexture_0p8hq")
+type = "Weap"

@@ -12,3 +12,4 @@ script = ExtResource("1_rdmno")
 name = "Apple"
 description = "Ma lisciami le mele sudicio."
 texture = SubResource("AtlasTexture_intww")
+type = "Item"

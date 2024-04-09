@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://cymnx17ejnw4p"]
+
+[ext_resource type="Script" path="res://Menu_Stats.gd" id="1_ik1wy"]
+
+[node name="StatWindow" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_ik1wy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PlayerData" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="1" type="HBoxContainer" parent="HBoxContainer/PlayerData"]
+layout_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="HBoxContainer/PlayerData/1"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="HBoxContainer/PlayerData/1"]
+layout_mode = 2
+
+[node name="HP" type="Label" parent="HBoxContainer/PlayerData/1"]
+layout_mode = 2
+
+[node name="2" type="HBoxContainer" parent="HBoxContainer/PlayerData"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="HBoxContainer/PlayerData/2"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="Name" type="Label" parent="HBoxContainer/PlayerData/2"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="HP" type="Label" parent="HBoxContainer/PlayerData/2"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="ButtonPanel" type="VBoxContainer" parent="HBoxContainer"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="esc" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "close"
+
+[node name="Items" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Items"
+
+[node name="Status" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+disabled = true
+text = "Status"
+
+[node name="Option" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+disabled = true
+text = "Options"
+
+[node name="save" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "save"
+
+[node name="space" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Gold" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="gold" type="Label" parent="HBoxContainer/ButtonPanel/Gold"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "orooooo"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/Items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/save" to="." method="_on_save_pressed"]

@@ -11,3 +11,6 @@ class_name chardata
 @export var DEX: int
 @export var INT: int
 
+@export_group("equip_data")
+@export_flags("Swords", "Bows", "Hammers", "Rods") var weapons = 0
+@export_flags("Heavy", "Lights", "Robes", "Shields") var armors = 0

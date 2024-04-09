@@ -200,6 +200,7 @@ animation = &"Walk_down"
 animation = &"Walk_up"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hioxc"]
+auto_triangles = false
 blend_point_0/node = SubResource("AnimationNodeAnimation_b5ymc")
 blend_point_0/pos = Vector2(-1, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_fxb24")
@@ -208,6 +209,7 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_th46j")
 blend_point_2/pos = Vector2(0, 0.9)
 blend_point_3/node = SubResource("AnimationNodeAnimation_15ulb")
 blend_point_3/pos = Vector2(0, -0.9)
+triangles = PackedInt32Array(1, 2, 3, 0, 2, 3)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
@@ -227,7 +229,7 @@ states/Start/position = Vector2(98, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_hioxc")
 states/Walk/position = Vector2(441, 100)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_vc46k"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_mdinf"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_xq8ge")]
-graph_offset = Vector2(-325, -21)
+graph_offset = Vector2(-288, 2)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 3
@@ -254,7 +256,6 @@ target_position = Vector2(0, 32)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Menu" parent="." instance=ExtResource("3_ud0rq")]
-visible = false
 
 [node name="TextBox" parent="." instance=ExtResource("4_2rihc")]
 visible = false
@@ -263,4 +264,4 @@ visible = false
 tree_root = SubResource("AnimationNodeStateMachine_ux04o")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(0.00077343, 0.9837)
+parameters/Walk/blend_position = Vector2(0.000892043, -0.902116)

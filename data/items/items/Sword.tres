@@ -12,3 +12,4 @@ script = ExtResource("1_rwbd8")
 name = "Sword"
 description = "a SORD"
 texture = SubResource("AtlasTexture_opu2m")
+type = "Weap"

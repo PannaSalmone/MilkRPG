@@ -11,7 +11,6 @@ var texto: String = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	update_animation(direction) #Change direction of static NPC (idle anim)	
-	pass
 
 #called by Player.gd
 func main_func():

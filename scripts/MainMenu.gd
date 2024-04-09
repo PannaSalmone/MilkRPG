@@ -17,3 +17,7 @@ func _on_continue_pressed():
 
 func loadgame():
 	get_tree().change_scene_to_file("res://maps/" +Global.player_map_location+  ".tscn")
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()

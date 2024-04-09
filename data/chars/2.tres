@@ -12,3 +12,5 @@ MP = 60
 STR = 45
 DEX = 60
 INT = 65
+weapons = 0
+armors = 0

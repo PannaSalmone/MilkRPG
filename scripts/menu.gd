@@ -1,57 +1,48 @@
 extends CanvasLayer
-var is_paused := false
+
+var main_panel := 0 #0 stats #1 items
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$MarginContainer/GameMenu.visible = false
+	$GameMenu.visible = false
 	show()
-	
 
 func _physics_process(_delta):
-	if is_paused == true:
-		if Input.is_action_just_pressed("ui_cancel"):
-			exit_menu()
-
-	if Input.is_action_just_pressed("ui_accept"):
-		print(is_paused)
-	
-	
-func exit_menu():
-	is_paused = false
-	get_tree().paused = false
-	$MarginContainer/GameMenu.visible = false
+	if Input.is_action_just_pressed("ui_cancel"):
+		close_menu()
 
 func game_menu():
-		is_paused = true
-		get_tree().paused = true
-		$MarginContainer/GameMenu.visible = true
-		show_data()
-		
+	get_tree().paused = true
+	$GameMenu.visible = true
+	load_stat_wind()
 
-func show_data():
-	var char1data := load("res://data/chars/1.tres")
-	get_node("MarginContainer/GameMenu/gold").text = "gold: " + str(Global.gold) #Show the gold amount from Global Var
-	get_node("MarginContainer/GameMenu/Name1").text = Global.name1
-	get_node("MarginContainer/GameMenu/Port1").texture = char1data.portrait
-	get_node("MarginContainer/GameMenu/HP1").text = "HP" + str(Global.hp1) + "/" + str(char1data.HP)
-
-func _on_esc_pressed():
-	exit_menu()
+func item_panel():
+	main_panel = 1
+	clean_main_window()
+	var inv = load("res://data/items/inventory.tscn")
+	var inv_wind = inv.instantiate()
+	$GameMenu.add_child(inv_wind)
 	
 
-func _on_save_pressed():
-	Utils.save_game()
-	
-func _on_items_pressed():
-	$MarginContainer/GameMenu/Name1.hide()
-	$MarginContainer/GameMenu/HP1.hide()
-	$MarginContainer/GameMenu/Port1.hide()
-	$MarginContainer/GameMenu/press.hide()
-	$MarginContainer/GameMenu/gold.hide()
-	$MarginContainer/GameMenu/Inventory.show()
-	$MarginContainer/GameMenu/Inventory.populate_item_grid()
-	#get_node("GameMenu/Name1").text = str(Global.items.values())
-	
+func clean_main_window() -> void:
+	var main_wind = $GameMenu
+	for child in main_wind.get_children():
+		child.queue_free()
 
+func load_stat_wind() -> void:
+	main_panel = 0
+	var stat = load("res://stat_window.tscn")
+	var stat_wind = stat.instantiate()
+	$GameMenu.add_child(stat_wind)
 
+func close_menu() -> void:
+	if main_panel == 0:
+		clean_main_window()
+		get_tree().paused = false
+		$GameMenu.visible = false
+	else:
+		clean_main_window()
+		load_stat_wind()
+	
 

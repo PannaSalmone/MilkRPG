@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://qd7jkifh7hgr"]
+[gd_scene load_steps=3 format=3 uid="uid://qd7jkifh7hgr"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_xs0xu"]
+[ext_resource type="Script" path="res://scripts/Continue.gd" id="2_m5pde"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_xs0xu")
@@ -20,15 +21,27 @@ offset_bottom = 245.0
 
 [node name="NewGame" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
+button_mask = 0
 text = "New Game"
 
 [node name="Continue" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 text = "Continue"
+script = ExtResource("2_m5pde")
 
 [node name="Options" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
+disabled = true
 text = "Options"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+mouse_filter = 2
+text = "Exit"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -40,3 +53,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Panel/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

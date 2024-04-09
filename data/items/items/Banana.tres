@@ -12,3 +12,4 @@ script = ExtResource("1_1mfub")
 name = "Banana"
 description = "fa schifo."
 texture = SubResource("AtlasTexture_dqvi5")
+type = "Item"

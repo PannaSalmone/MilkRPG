@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://orbqvgq483sy"]
+
+[ext_resource type="Script" path="res://data/items/item_data.gd" id="1_utc5n"]
+[ext_resource type="Texture2D" uid="uid://opbes3tpi0ks" path="res://data/items/icons_atlas.tres" id="2_7budw"]
+
+[resource]
+script = ExtResource("1_utc5n")
+name = "Metal Armor"
+description = "A nice big plate armor."
+texture = ExtResource("2_7budw")
+type = "Armor"

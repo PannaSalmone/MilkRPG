@@ -14,12 +14,11 @@ func get_input():
 	if Global.playerispaused == false:
 		var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		if input_direction != Vector2.ZERO:
-			$RayCast2D.target_position = input_direction * 28 #32 raycast lenght
+			$RayCast2D.target_position = input_direction * 28#32 raycast lenght	
 			Global.raycast_direction = $RayCast2D.target_position #Raycast direction going global
 			anim_tree.set("parameters/Idle/blend_position" , input_direction)
 			anim_tree.set("parameters/Walk/blend_position" , input_direction)
 			anim_state.travel("Walk")
-			input_direction = input_direction.normalized()
 			velocity = input_direction * speed
 			is_moving = true
 		else:
@@ -39,7 +38,7 @@ func get_input():
 					print(collider)
 
 # Game Menu function
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("ui_select") and Global.playerispaused == false:
 		Global.player_xy = position
 		$Menu.game_menu() # main func from menu.gd
 
@@ -58,6 +57,7 @@ func ray_dir():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
+	
 	
 	
 	
