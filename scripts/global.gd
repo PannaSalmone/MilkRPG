@@ -3,9 +3,11 @@ extends Node2D
 #Global flags and var
 
 #Game var
-var playerispaused := false
-var member1 := 1 #ID index of character in the first slot 
-var member2 := 2 #ID index of character in the second slot 
+var active_party = [
+	"Renzo",
+	"Lucia", 
+	]
+
 var active_member := 1
 var gold := 500 #Initial amount of money 
 var Movcounter : float

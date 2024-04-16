@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="chardata" load_steps=3 format=3 uid="uid://bt61pp3cmj40y"]
+[gd_resource type="Resource" script_class="chardata" load_steps=4 format=3 uid="uid://bt61pp3cmj40y"]
 
 [ext_resource type="Texture2D" uid="uid://ck7gb87twm0j0" path="res://sprites/Menu/Portrait_Buddy.png" id="1_2gr1n"]
+[ext_resource type="Texture2D" uid="uid://blcgcgl7k14o7" path="res://sprites/Battle/2_player.png" id="1_3duop"]
 [ext_resource type="Script" path="res://scripts/chardata.gd" id="1_7kn77"]
 
 [resource]
@@ -14,3 +15,4 @@ DEX = 60
 INT = 65
 weapons = 0
 armors = 0
+battle_sprite = ExtResource("1_3duop")

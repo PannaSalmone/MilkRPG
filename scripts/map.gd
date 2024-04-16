@@ -5,7 +5,7 @@ extends TileMap
 #@export var number_of_chest: int = 2
 #@export_flags("Chest0", "Chest2") var chest_flags = 0 # I:1 II:2 III:4 IV:8, Ex: party with I,III,IV = 1+4+8 = Value of 13
 @export var random_encounters := true
-@export var encounter_rate := 10 ##Higher number = higher encounters rate 
+@export var encounter_rate := 1 #
 var battlecountdown : int = 255
 var counter : float
 #const FLAG_PATH = "res://mapflags_json.json"
@@ -13,7 +13,7 @@ var counter : float
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if random_encounters == true:
-		battlecountdown = randi_range ( 50, 120 )
+		battlecountdown = randi_range ( 120, 255 )
 		print(battlecountdown)
 	
 	#var file := FileAccess.open(FLAG_PATH, FileAccess.READ)
@@ -24,7 +24,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $Player.is_moving == true:
-		counter += encounter_rate * delta
+		counter += encounter_rate * delta * ($Player.speed / 10)
 		print(counter)
 		if battlecountdown < counter:
 			Utils.load_battle()

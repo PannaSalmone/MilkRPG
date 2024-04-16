@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhiyftv2s7ee1"]
+[gd_scene load_steps=8 format=3 uid="uid://dhiyftv2s7ee1"]
 
 [ext_resource type="Texture2D" uid="uid://c286w5l7nmofn" path="res://sprites/Battle/1_weap.png" id="1_5huly"]
+[ext_resource type="Script" path="res://scripts/battler.gd" id="1_l5cix"]
 [ext_resource type="Texture2D" uid="uid://dx5kaa70n7xvy" path="res://sprites/Battle/1_player.png" id="2_3xdkm"]
 
 [sub_resource type="Animation" id="Animation_ixsli"]
@@ -65,6 +66,22 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_fufoc"]
+resource_name = "Idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_vr8tn"]
@@ -133,10 +150,12 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vnafc"]
 _data = {
 "Attack": SubResource("Animation_ixsli"),
+"Idle": SubResource("Animation_fufoc"),
 "RESET": SubResource("Animation_vr8tn")
 }
 
 [node name="Battler" type="Node2D"]
+script = ExtResource("1_l5cix")
 
 [node name="CharSprite" type="Sprite2D" parent="."]
 z_index = 2
@@ -156,3 +175,5 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_vnafc")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

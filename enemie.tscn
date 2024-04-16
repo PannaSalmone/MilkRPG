@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://yxmykshy1e25"]
+
+[ext_resource type="Texture2D" uid="uid://cs70a7pyd64ny" path="res://sprites/Enemies/gurindragon.png" id="1_loqka"]
+
+[node name="Enemie" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_loqka")

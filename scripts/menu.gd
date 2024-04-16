@@ -9,7 +9,7 @@ func _ready():
 	show()
 
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("B"):
 		close_menu()
 
 func game_menu():
