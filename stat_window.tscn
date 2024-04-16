@@ -16,10 +16,24 @@ script = ExtResource("1_ik1wy")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="PlayerData" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="PlayerData" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "Party window."
 
 [node name="ButtonPanel" type="VBoxContainer" parent="HBoxContainer"]
 auto_translate_mode = 1

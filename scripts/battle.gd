@@ -4,6 +4,7 @@ var battler = load("res://battler.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	#spawn battler and enemies children
 	#add Battlers to battlefield
 	var initial_battler_pos = Vector2i(400,40)
@@ -11,7 +12,6 @@ func _ready():
 		var char_slot = battler.instantiate()
 		if chara:
 			$Container/VBoxContainer/BattleField.add_child(char_slot)
-			print(chara)
 			char_slot.take_data(load("res://data/chars/"+ chara+".tres"))
 			var distance = Vector2i (15, 50)
 			char_slot.position = initial_battler_pos

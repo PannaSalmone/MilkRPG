@@ -15,7 +15,8 @@ func save_game():
 			gold = var_to_str(Global.gold),
 			spawnx = var_to_str(Global.player_xy.x),
 			spawny = var_to_str(Global.player_xy.y),
-			activemap = var_to_str(Global.player_map_location)
+			activemap = var_to_str(Global.player_map_location),
+			party = var_to_str(Global.active_party)
 		},
 		flags = {
 			chest = var_to_str(Global.chest_flags)
@@ -44,6 +45,7 @@ func load_game():
 	Global.player_xy.y = str_to_var(save_dict.player.spawny)
 	Global.player_map_location = str_to_var(save_dict.player.activemap)
 	Global.chest_flags = str_to_var(save_dict.flags.chest)
+	Global.active_party = str_to_var(save_dict.player.party)
 	inv_data.slot_datas = str_to_var(save_dict.items.inventory)
 
 	# Ensure the node structure is the same when loading.

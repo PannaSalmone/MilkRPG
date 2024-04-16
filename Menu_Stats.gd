@@ -1,16 +1,10 @@
 extends MarginContainer
 
+var swapbank = "" #variable that stores the name of the character to swap
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var slot = load("res://menu_character_slot.tscn")
-	for chara in Global.active_party:
-		var char_slot = slot.instantiate()
-		if chara:
-			$HBoxContainer/PlayerData.add_child(char_slot)
-			char_slot.set_slot_data(load("res://data/chars/"+ chara+".tres"))
-	$HBoxContainer/ButtonPanel/esc.grab_focus()
-	$HBoxContainer/ButtonPanel/Gold/gold.text = str(Global.gold)
+	populate_chara_data()
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
@@ -25,3 +19,33 @@ func _on_items_pressed() -> void:
 
 func _on_esc_pressed() -> void:
 	get_parent().get_parent().close_menu()
+	
+#load character data and info in the main panel
+func populate_chara_data() -> void:
+	for child in $HBoxContainer/VBoxContainer/PlayerData.get_children():
+		child.queue_free()
+	var slot = load("res://menu_character_slot.tscn")
+	for chara in Global.active_party:
+		var char_slot = slot.instantiate()
+		if chara:
+			$HBoxContainer/VBoxContainer/PlayerData.add_child(char_slot)
+			char_slot.swap.connect(swap)
+			char_slot.set_slot_data(load("res://data/chars/"+ chara+".tres"))
+	$HBoxContainer/ButtonPanel/esc.grab_focus()
+	$HBoxContainer/ButtonPanel/Gold/gold.text = str(Global.gold)
+
+#Function that swap party member
+func swap(name) -> void:
+	print("Selected: " + name)
+	print("swapbank: " + swapbank)
+	if swapbank == "":
+		swapbank = name
+		$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Select another character to swap."
+	else:
+		Global.active_party[Global.active_party.find(name)] = "temp"
+		Global.active_party[Global.active_party.find(swapbank)] = name
+		Global.active_party[Global.active_party.find("temp")] = swapbank
+		swapbank = ""
+		populate_chara_data()
+		$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Party window."
+
