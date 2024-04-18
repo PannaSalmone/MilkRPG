@@ -4,7 +4,6 @@ var battler = load("res://battler.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	#spawn battler and enemies children
 	#add Battlers to battlefield
 	var initial_battler_pos = Vector2i(400,40)
@@ -16,7 +15,7 @@ func _ready():
 			var distance = Vector2i (15, 50)
 			char_slot.position = initial_battler_pos
 			initial_battler_pos += distance
-
+	#add enemies to battlefield
 	var enemie = load("res://enemie.tscn")
 	var en = enemie.instantiate()
 	$Container/VBoxContainer/BattleField.add_child(en)

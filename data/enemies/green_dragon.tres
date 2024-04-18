@@ -9,3 +9,4 @@ name = "Green Dragon"
 portrait = ExtResource("1_fgi6q")
 HP = 100
 damage = 5
+speed = 5

@@ -15,5 +15,6 @@ class_name chardata
 @export_flags("Swords", "Bows", "Hammers", "Rods") var weapons = 0
 @export_flags("Heavy", "Lights", "Robes", "Shields") var armors = 0
 
-@export_group("Battle")
+@export_group("Sprites")
 @export var battle_sprite :Texture
+@export var ow_sprite :Texture

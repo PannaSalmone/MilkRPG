@@ -43,6 +43,10 @@ layout_mode = 2
 layout_mode = 2
 text = "use"
 
+[node name="sort" type="Button" parent="HBoxContainer/ButtonPanel"]
+layout_mode = 2
+text = "sort"
+
 [node name="esc" type="Button" parent="HBoxContainer/ButtonPanel"]
 auto_translate_mode = 1
 layout_mode = 2
@@ -63,4 +67,5 @@ layout_mode = 2
 text = "orooooo"
 horizontal_alignment = 2
 
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/sort" to="." method="_on_sort_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

@@ -42,10 +42,14 @@ func swap(name) -> void:
 		swapbank = name
 		$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Select another character to swap."
 	else:
-		Global.active_party[Global.active_party.find(name)] = "temp"
-		Global.active_party[Global.active_party.find(swapbank)] = name
-		Global.active_party[Global.active_party.find("temp")] = swapbank
-		swapbank = ""
-		populate_chara_data()
-		$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Party window."
+		if name == swapbank:
+			swapbank = ""
+			$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Party window."
+		else:
+			Global.active_party[Global.active_party.find(name)] = "temp"
+			Global.active_party[Global.active_party.find(swapbank)] = name
+			Global.active_party[Global.active_party.find("temp")] = swapbank
+			swapbank = ""
+			populate_chara_data()
+			$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Party window."
 

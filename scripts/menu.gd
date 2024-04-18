@@ -9,8 +9,9 @@ func _ready():
 	show()
 
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("B"):
-		close_menu()
+	if $GameMenu.visible == true:
+		if Input.is_action_just_pressed("B"):
+			close_menu()
 
 func game_menu():
 	get_tree().paused = true
@@ -41,6 +42,7 @@ func close_menu() -> void:
 		clean_main_window()
 		get_tree().paused = false
 		$GameMenu.visible = false
+		get_parent().reload_sprite()
 	else:
 		clean_main_window()
 		load_stat_wind()

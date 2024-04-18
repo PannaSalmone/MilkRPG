@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://nbdx8nbld3td"]
+[gd_scene load_steps=4 format=3 uid="uid://nbdx8nbld3td"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_4vm6h"]
 [ext_resource type="Texture2D" uid="uid://bdvumesih706" path="res://sprites/BG/BG_test.png" id="1_6h75b"]
-[ext_resource type="AudioStream" uid="uid://w7q3vkakboxa" path="res://sounds/BGM/44. SNES - Final Fantasy 6 Battle theme.mp3" id="3_vplgp"]
 [ext_resource type="Theme" uid="uid://cuxyei7ggi3it" path="res://battletheme.tres" id="7_kitga"]
 
 [node name="Battle" type="Control"]
@@ -141,9 +140,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("7_kitga")
 value = 100.0
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_vplgp")
 
 [node name="Enemielife" type="ProgressBar" parent="."]
 layout_mode = 0
