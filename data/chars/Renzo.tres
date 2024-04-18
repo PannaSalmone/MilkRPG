@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="chardata" load_steps=5 format=3 uid="uid://cq33anf4yc5tj"]
 
 [ext_resource type="Texture2D" uid="uid://bos8oa7ei14bd" path="res://sprites/Menu/Portrait_Player.png" id="1_07tx4"]
-[ext_resource type="Script" path="res://scripts/chardata.gd" id="1_ko5us"]
+[ext_resource type="Script" path="res://scripts/res/chardata.gd" id="1_ko5us"]
 [ext_resource type="Texture2D" uid="uid://dx5kaa70n7xvy" path="res://sprites/Battle/1_player.png" id="1_ob0iw"]
 [ext_resource type="Texture2D" uid="uid://dvawyqdxy35vk" path="res://sprites/OW/OW_Renzo.png" id="2_isvsd"]
 

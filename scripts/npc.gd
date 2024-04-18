@@ -9,7 +9,7 @@ class_name Npc
 var texto: String = ""
 
 # Called when the node enters the scene tree for the first time.
-func _ready():	
+func _ready():
 	update_animation(direction) #Change direction of static NPC (idle anim)	
 
 #called by Player.gd

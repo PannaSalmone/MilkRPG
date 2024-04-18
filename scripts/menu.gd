@@ -33,7 +33,7 @@ func clean_main_window() -> void:
 
 func load_stat_wind() -> void:
 	main_panel = 0
-	var stat = load("res://stat_window.tscn")
+	var stat = load("res://scenes/menu/stat_window.tscn")
 	var stat_wind = stat.instantiate()
 	$GameMenu.add_child(stat_wind)
 

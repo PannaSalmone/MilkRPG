@@ -67,6 +67,6 @@ func reload_sprite() -> void:
 	$Sprite2D.texture = res.ow_sprite
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()

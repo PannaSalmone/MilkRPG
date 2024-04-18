@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://qd7jkifh7hgr"]
+[gd_scene load_steps=2 format=3 uid="uid://qd7jkifh7hgr"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_xs0xu"]
-[ext_resource type="Script" path="res://scripts/Continue.gd" id="2_m5pde"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_xs0xu")
@@ -29,7 +28,6 @@ text = "New Game"
 layout_mode = 2
 mouse_filter = 2
 text = "Continue"
-script = ExtResource("2_m5pde")
 
 [node name="Options" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2

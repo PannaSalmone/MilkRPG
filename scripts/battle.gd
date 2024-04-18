@@ -1,6 +1,6 @@
 extends Control
 
-var battler = load("res://battler.tscn")
+var battler = load("res://scenes/battler.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,9 +16,11 @@ func _ready():
 			char_slot.position = initial_battler_pos
 			initial_battler_pos += distance
 	#add enemies to battlefield
-	var enemie = load("res://enemie.tscn")
+	#TODO add enemies from formations resource
+	var enemie = load("res://scenes/enemie.tscn")
 	var en = enemie.instantiate()
 	$Container/VBoxContainer/BattleField.add_child(en)
+	en.take_data(load("res://data/enemies/green_dragon.tres"))
 	en.position = Vector2i(100, 100)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

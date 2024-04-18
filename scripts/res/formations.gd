@@ -1,4 +1,5 @@
 extends Resource
+class_name FormationData
 
 @export var number_of_enemies := 1
 

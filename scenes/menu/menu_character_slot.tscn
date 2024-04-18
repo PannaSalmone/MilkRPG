@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://x0ck2pmn22je"]
 
-[ext_resource type="Script" path="res://menu_character_slot.gd" id="1_qf7oy"]
+[ext_resource type="Script" path="res://scripts/menu_character_slot.gd" id="1_qf7oy"]
 
 [node name="MenuCharacterSlot" type="HBoxContainer"]
 auto_translate_mode = 1

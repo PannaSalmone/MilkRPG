@@ -24,7 +24,7 @@ func _on_esc_pressed() -> void:
 func populate_chara_data() -> void:
 	for child in $HBoxContainer/VBoxContainer/PlayerData.get_children():
 		child.queue_free()
-	var slot = load("res://menu_character_slot.tscn")
+	var slot = load("res://scenes/menu/menu_character_slot.tscn")
 	for chara in Global.active_party:
 		var char_slot = slot.instantiate()
 		if chara:

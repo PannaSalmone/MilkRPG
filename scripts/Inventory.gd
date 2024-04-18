@@ -24,7 +24,6 @@ func populate_item_grid() -> void:
 func _on_esc_pressed() -> void:
 	get_parent().get_parent().close_menu()
 
-
 func _on_sort_pressed() -> void: #It just works
 	var array := [] #for sort items name, Dictionary cannot be sorted
 	var new_dict := {} #temp dictionary for host res as key and name as value

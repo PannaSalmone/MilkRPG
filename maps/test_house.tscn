@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cigb2yd17ufpt"]
 
 [ext_resource type="TileSet" uid="uid://cawqrmyb7pptp" path="res://tilesets/test_tiles.tres" id="1_tt6dp"]
-[ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://player.tscn" id="2_gr8dr"]
-[ext_resource type="PackedScene" uid="uid://dysn6p6j4papv" path="res://warp_map.tscn" id="3_vn8vb"]
-[ext_resource type="PackedScene" uid="uid://ewj5dm6mysed" path="res://npc.tscn" id="4_28wkm"]
-[ext_resource type="PackedScene" uid="uid://b7apc6xp2b56o" path="res://chest.tscn" id="4_tplvi"]
+[ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://scenes/map_objects/player.tscn" id="2_gr8dr"]
+[ext_resource type="PackedScene" uid="uid://dysn6p6j4papv" path="res://scenes/map_objects/warp_map.tscn" id="3_vn8vb"]
+[ext_resource type="PackedScene" uid="uid://ewj5dm6mysed" path="res://scenes/map_objects/npc.tscn" id="4_28wkm"]
+[ext_resource type="PackedScene" uid="uid://b7apc6xp2b56o" path="res://scenes/map_objects/chest.tscn" id="4_tplvi"]
 [ext_resource type="Resource" uid="uid://whyub3unbbk0" path="res://data/items/items/Sword.tres" id="5_k76le"]
-[ext_resource type="PackedScene" uid="uid://dhrpuleuua4t5" path="res://teleport.tscn" id="6_x5b3t"]
+[ext_resource type="PackedScene" uid="uid://dhrpuleuua4t5" path="res://scenes/map_objects/teleport.tscn" id="6_x5b3t"]
 
 [node name="TestArea" type="TileMap"]
 y_sort_enabled = true

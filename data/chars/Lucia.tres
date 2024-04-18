@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ck7gb87twm0j0" path="res://sprites/Menu/Portrait_Buddy.png" id="1_2gr1n"]
 [ext_resource type="Texture2D" uid="uid://blcgcgl7k14o7" path="res://sprites/Battle/2_player.png" id="1_3duop"]
-[ext_resource type="Script" path="res://scripts/chardata.gd" id="1_7kn77"]
+[ext_resource type="Script" path="res://scripts/res/chardata.gd" id="1_7kn77"]
 [ext_resource type="Texture2D" uid="uid://d0h1pdkvfrfa8" path="res://sprites/OW/OW_Lucia.png" id="2_80bss"]
 
 [resource]

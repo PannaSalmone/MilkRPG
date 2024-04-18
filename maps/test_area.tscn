@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2283njsh08ae"]
 
 [ext_resource type="TileSet" uid="uid://cawqrmyb7pptp" path="res://tilesets/test_tiles.tres" id="1_u3fu0"]
-[ext_resource type="PackedScene" uid="uid://bqmckq05er48v" path="res://sign.tscn" id="3_4w417"]
-[ext_resource type="PackedScene" uid="uid://dhrpuleuua4t5" path="res://teleport.tscn" id="3_f1onu"]
-[ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://player.tscn" id="3_yhubv"]
-[ext_resource type="PackedScene" uid="uid://dysn6p6j4papv" path="res://warp_map.tscn" id="4_qoeq1"]
+[ext_resource type="PackedScene" uid="uid://bqmckq05er48v" path="res://scenes/map_objects/sign.tscn" id="3_4w417"]
+[ext_resource type="PackedScene" uid="uid://dhrpuleuua4t5" path="res://scenes/map_objects/teleport.tscn" id="3_f1onu"]
+[ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://scenes/map_objects/player.tscn" id="3_yhubv"]
+[ext_resource type="PackedScene" uid="uid://dysn6p6j4papv" path="res://scenes/map_objects/warp_map.tscn" id="4_qoeq1"]
 
 [node name="TestArea" type="TileMap"]
 y_sort_enabled = true

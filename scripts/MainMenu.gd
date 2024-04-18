@@ -1,9 +1,10 @@
 extends Node2D
-@export var skip_menu := true
+@export var skip_menu := false
 
 func _ready():
 	if skip_menu == true:
 		loadgame()
+	$Panel/VBoxContainer/Continue.grab_focus()
 
 
 
