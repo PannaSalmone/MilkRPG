@@ -1,6 +1,6 @@
 # MilkRPG
 
-Top-down JRPG engine, built in godot 4.1
+Top-down JRPG engine, built in godot 4.3
 
 
 

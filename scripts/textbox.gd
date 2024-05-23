@@ -22,19 +22,19 @@ func exit_menu() -> void:
 	Global.is_paused = false
 	queue_free()
 
-func write_dialog() -> void:
-	var json = FileAccess.open(DIAL_PATH, FileAccess.READ)
-	var json_as_text = FileAccess.get_file_as_string(DIAL_PATH)
-	var json_as_dict = JSON.parse_string(json_as_text)
+func write_dialog() -> void:	
 	match type:
 		0: #NPC
 			print("We are number one!")
 		1: #Sign
 			DIAL_PATH = "res://data/signs.json" 
+	var json = FileAccess.open(DIAL_PATH, FileAccess.READ)
+	var json_as_text = FileAccess.get_file_as_string(DIAL_PATH)
+	var json_as_dict = JSON.parse_string(json_as_text)
 	dialogue = json_as_dict[index]['testo']
-	var name = json_as_dict[index]['nome']
+	var npc_name = json_as_dict[index]['nome']
 	is_writing = true
-	$DialogueBox/MarginContainer/VBoxContainer/name.text = name + ":"
+	$DialogueBox/MarginContainer/VBoxContainer/name.text = npc_name + ":"
 	for lettere in dialogue:
 		$DialogueBox/MarginContainer/VBoxContainer/text.text += lettere #str(objname + ": " + dialogue)
 		if writing_skip == false:
