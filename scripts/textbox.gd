@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var writing_time := 0.1
+var writing_skip := false
 var is_writing := false
 var DIAL_PATH = "res://data/dialogues.json" 
 var dialogue = {}
@@ -14,7 +14,7 @@ func _ready():
 func _physics_process(_delta)-> void:
 	if Input.is_action_just_pressed("B") or Input.is_action_just_pressed("A") :
 		if is_writing == true:
-			writing_time = 0.0
+			writing_skip = true
 		else:
 			exit_menu()
 
@@ -37,12 +37,14 @@ func write_dialog() -> void:
 	$DialogueBox/MarginContainer/VBoxContainer/name.text = name + ":"
 	for lettere in dialogue:
 		$DialogueBox/MarginContainer/VBoxContainer/text.text += lettere #str(objname + ": " + dialogue)
-		await get_tree().create_timer(writing_time).timeout
+		if writing_skip == false:
+			await get_tree().create_timer(0.05).timeout
 	is_writing = false
 	
 func chest(dialogue) -> void:
 	is_writing = true
 	for lettere in dialogue:
 		$DialogueBox/MarginContainer/VBoxContainer/text.text += lettere #str(objname + ": " + dialogue)
-		await get_tree().create_timer(writing_time).timeout
+		if writing_skip == false:
+			await get_tree().create_timer(0.05).timeout
 	is_writing = false
