@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_4xa6e")
-name = "Blue Dragon"
+name = "Blue Lizard"
 sprite = ExtResource("1_b6g1h")
 HP = 110
 damage = 6
-speed = 6
+speed = 10

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cymnx17ejnw4p"]
 
-[ext_resource type="Script" path="res://scripts/Menu_Stats.gd" id="1_ik1wy"]
+[ext_resource type="Script" path="res://scripts/menu_stats.gd" id="1_ik1wy"]
 
 [node name="StatWindow" type="MarginContainer"]
 anchors_preset = 15

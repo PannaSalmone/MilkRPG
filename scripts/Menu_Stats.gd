@@ -35,19 +35,19 @@ func populate_chara_data() -> void:
 	$HBoxContainer/ButtonPanel/Gold/gold.text = str(Global.gold)
 
 #Function that swap party member
-func swap(name) -> void:
-	print("Selected: " + name)
+func swap(selected) -> void:
+	print("Selected: " + selected)
 	print("swapbank: " + swapbank)
 	if swapbank == "":
-		swapbank = name
+		swapbank = selected
 		$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Select another character to swap."
 	else:
-		if name == swapbank:
+		if selected == swapbank:
 			swapbank = ""
 			$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Party window."
 		else:
-			Global.active_party[Global.active_party.find(name)] = "temp"
-			Global.active_party[Global.active_party.find(swapbank)] = name
+			Global.active_party[Global.active_party.find(selected)] = "temp"
+			Global.active_party[Global.active_party.find(swapbank)] = selected
 			Global.active_party[Global.active_party.find("temp")] = swapbank
 			swapbank = ""
 			populate_chara_data()

@@ -34,8 +34,8 @@ func _on_sort_pressed() -> void: #It just works
 		array.append(key.name) 
 		array.sort()
 #create new dictionary with same structure as the inventory one but with elements sorted by names
-	for name in array: 
-		new_inv[new_dict.find_key(name)] = inv_data.slot_datas.get(new_dict.find_key(name))
+	for itemname in array: 
+		new_inv[new_dict.find_key(itemname)] = inv_data.slot_datas.get(new_dict.find_key(itemname))
 		pass
 	inv_data.slot_datas = new_inv
 	populate_item_grid()

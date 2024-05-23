@@ -1,0 +1,17 @@
+[
+    {
+      "id" : 0,
+      "nome" : "Pedro",
+      "testo": "Hola amigo, Yo soy Pedro un hombre sombra"      
+    },
+    {
+        "id" : 1,
+        "nome" : "Sandro",
+        "testo": "..."        
+    },
+    {
+        "id" : 2,
+        "nome" : "",
+        "testo": ""    
+    }
+] 

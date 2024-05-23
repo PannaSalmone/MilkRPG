@@ -8,7 +8,7 @@ class_name chardata
 @export var HP: int
 @export var MP: int
 @export var STR: int
-@export var DEX: int
+@export var SPE: int
 @export var INT: int
 
 @export_group("equip_data")

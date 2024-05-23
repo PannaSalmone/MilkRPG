@@ -52,7 +52,7 @@ func load_game():
 	#var game := get_node(game_node)
 
 func load_battle():
-	get_tree().change_scene_to_file("res://battle.tscn")
+	get_tree().change_scene_to_file("res://scenes/battle.tscn")
 	
 func add_item(item_data) -> void:
 	var inv_data = preload("res://data/items/testinv.tres")
@@ -63,3 +63,6 @@ func add_item(item_data) -> void:
 			print("oggetti nuovi")
 			inv_data.slot_datas[key] = item_data[key]
 			print("nuovo inventario: ", inv_data.slot_datas)
+
+func open_textbox() -> void:	
+	pass

@@ -2,19 +2,27 @@ extends StaticBody2D
 class_name Npc
 
 @onready var animation = get_node("AnimatedSprite2D")
-
+var text_box = load("res://scenes/menu/text_box.tscn")
+@export var index: int
 @export_enum("right", "left", "down", "up") var direction: String #select the direction of NPC
-@export var dialogue := ""
 @export var objname := ""
-var texto: String = ""
+
+
+
 
 # Called when the node enters the scene tree for the first time.
+#future optimization: load npc from map and load JSON only once time
 func _ready():
-	update_animation(direction) #Change direction of static NPC (idle anim)	
+	update_animation(direction) #Change direction of static NPC (idle anim)
+	
 
 #called by Player.gd
 func main_func():
-	texto = str(objname + ": " + dialogue)
+	var box = text_box.instantiate()
+	add_child(box)
+	box.type = 0 #npc type
+	box.index = index
+	box.write_dialog()
 	$AnimatedSprite2D.play("idle_" + ray_dir())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,4 +42,6 @@ func ray_dir():
 		return "up"
 	elif dir.y < 0:
 		return "down"
+
+
 	

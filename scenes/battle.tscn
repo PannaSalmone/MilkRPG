@@ -22,6 +22,12 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="BattleBG" type="TextureRect" parent="Container"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_6h75b")
+expand_mode = 3
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Container"]
 layout_mode = 2
 
@@ -29,17 +35,44 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BattleBG" type="TextureRect" parent="Container/VBoxContainer/BattleField"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("1_6h75b")
-expand_mode = 3
-
-[node name="CommandPanel" type="MarginContainer" parent="Container/VBoxContainer"]
+[node name="CommandPanel" type="PanelContainer" parent="Container/VBoxContainer"]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer/CommandPanel"]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/CommandPanel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="title" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Turns:
+"
+
+[node name="1" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "1"
+
+[node name="2" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.804743, 0.804743, 0.804742, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "2"
+
+[node name="3" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/VBoxContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "3"
 
 [node name="CommandButtons" type="MarginContainer" parent="Container/VBoxContainer/CommandPanel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -72,64 +105,41 @@ layout_mode = 2
 size_flags_vertical = 0
 alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel"]
+[node name="Player1" type="HBoxContainer" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel"]
 layout_mode = 2
 
-[node name="name1" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer"]
+[node name="Name" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/Player1"]
 layout_mode = 2
 text = "name 1"
 
-[node name="hp1" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer"]
+[node name="HP" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/Player1"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "hp"
+text = "HP: "
 horizontal_alignment = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/Player1"]
 custom_minimum_size = Vector2(100, 10)
 layout_mode = 2
 size_flags_horizontal = 4
 value = 100.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel"]
-visible = false
+[node name="Player2" type="HBoxContainer" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel"]
 layout_mode = 2
 
-[node name="name1" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer2"]
+[node name="Name" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/Player2"]
 layout_mode = 2
-text = "name 1"
+text = "name 2"
 
-[node name="hp1" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer2"]
+[node name="HP" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/Player2"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "hp"
+text = "HP: "
 horizontal_alignment = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer2"]
-custom_minimum_size = Vector2(100, 10)
+[node name="ProgressBar" type="ProgressBar" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/Player2"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-value = 100.0
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel"]
-visible = false
-layout_mode = 2
-
-[node name="name1" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer3"]
-layout_mode = 2
-text = "name 1"
-
-[node name="hp1" type="Label" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "hp"
-horizontal_alignment = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="Container/VBoxContainer/CommandPanel/HBoxContainer/StatPanel/StatPanel/HBoxContainer3"]
-custom_minimum_size = Vector2(100, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-value = 100.0
 
 [node name="Enemielife" type="ProgressBar" parent="."]
 layout_mode = 0
@@ -165,4 +175,5 @@ autowrap_mode = 1
 justification_flags = 161
 metadata/_edit_lock_ = true
 
+[connection signal="pressed" from="Container/VBoxContainer/CommandPanel/HBoxContainer/CommandButtons/VBoxContainer/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="Container/VBoxContainer/CommandPanel/HBoxContainer/CommandButtons/VBoxContainer/flee" to="." method="_on_flee_pressed"]

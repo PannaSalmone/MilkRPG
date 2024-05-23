@@ -8,11 +8,11 @@ var desc := ""
 func _ready() -> void:
 	pass
 
-func set_slot_data(Resource, numero) -> void:
-	texture_rect.texture = Resource.texture
-	obj_name.text = Resource.name
+func set_slot_data(res, numero) -> void:
+	texture_rect.texture = res.texture
+	obj_name.text = res.name
 	qnt.text = str(numero)
-	desc = Resource.description
+	desc = res.description
 
 func _on_focus_entered() -> void:
 	get_parent().desc_update(desc)

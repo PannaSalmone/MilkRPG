@@ -1,0 +1,17 @@
+[
+    {
+      "id" : 0,
+      "nome" : "Attenzione",
+      "testo": "Enemies there"      
+    },
+    {
+        "id" : 1,
+        "nome" : "Sandro",
+        "testo": "..."        
+    },
+    {
+        "id" : 2,
+        "nome" : "",
+        "testo": ""    
+    }
+] 
