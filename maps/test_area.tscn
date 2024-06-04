@@ -24,11 +24,11 @@ position = Vector2(608, 160)
 [node name="Teleport" parent="." instance=ExtResource("3_f1onu")]
 position = Vector2(720, 336)
 collision_layer = 3
-warp_to = Vector2(736, 96)
+warp_to = Vector2(784, 80)
 
 [node name="Teleport2" parent="." instance=ExtResource("3_f1onu")]
 position = Vector2(752, 80)
-warp_to = Vector2(672, 320)
+warp_to = Vector2(688, 336)
 
 [node name="WarpMap" parent="." instance=ExtResource("4_qoeq1")]
 position = Vector2(112, 304)
@@ -38,7 +38,7 @@ warp_to = Vector2(112, 144)
 [node name="WarpMap2" parent="." instance=ExtResource("4_qoeq1")]
 position = Vector2(592, 144)
 mapname = "test_dungeon"
-warp_to = Vector2(192, 224)
+warp_to = Vector2(208, 240)
 
 [node name="Chest" parent="." instance=ExtResource("6_606t0")]
 position = Vector2(864, 32)
@@ -51,7 +51,11 @@ item = ExtResource("7_lqdep")
 offset_left = -160.0
 offset_right = -1.0
 offset_bottom = 128.0
-text = "A = accept
+text = "THIS IS NOT A GAME
+A = accept
 B = Back/run
 Start = menu
-D-PAD = movements"
+D-PAD = movements
+ADD keyboard inputs
+in the project settings
+"

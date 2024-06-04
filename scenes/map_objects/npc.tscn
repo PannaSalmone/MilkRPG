@@ -125,7 +125,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hf6f"]
 height = 22.0
 
-[node name="NPC" type="StaticBody2D"]
+[node name="NPC" type="StaticBody2D" groups=["MapObject"]]
 script = ExtResource("1_qt2lc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

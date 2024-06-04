@@ -47,4 +47,3 @@ func close_menu() -> void:
 		clean_main_window()
 		load_stat_wind()
 	
-

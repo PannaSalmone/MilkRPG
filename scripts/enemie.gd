@@ -29,4 +29,3 @@ func is_selected() -> void:
 		
 func attack() -> void:
 	pass
-

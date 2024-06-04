@@ -1,17 +1,19 @@
 [
     {
-      "id" : 0,
-      "nome" : "Pedro",
-      "testo": "Hola amigo, Yo soy Pedro un hombre sombra"      
+        "id" : 0,
+        "nome" : "Pedro",
+        "line1": "Hola amigo, Yo soy Pedro un hombre sombra",
+        "line2": "Esta es una segunda lìnea de texto",
+        "line3": "I support infinite lines of text"   
     },
     {
         "id" : 1,
         "nome" : "Sandro",
-        "testo": "..."        
+        "line1": "Dialogues are stored in the JSON"        
     },
     {
         "id" : 2,
         "nome" : "",
-        "testo": ""    
+        "line1": ""    
     }
 ] 

@@ -32,7 +32,7 @@ func populate_chara_data() -> void:
 			char_slot.swap.connect(swap)
 			char_slot.set_slot_data(load("res://data/chars/"+ chara+".tres"))
 	$HBoxContainer/ButtonPanel/esc.grab_focus()
-	$HBoxContainer/ButtonPanel/Gold/gold.text = str(Global.gold)
+	$HBoxContainer/ButtonPanel/Gold/HBoxContainer/gold.text = str(Global.gold)
 
 #Function that swap party member
 func swap(selected) -> void:
@@ -52,4 +52,3 @@ func swap(selected) -> void:
 			swapbank = ""
 			populate_chara_data()
 			$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Party window."
-

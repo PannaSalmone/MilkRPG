@@ -5,10 +5,6 @@ class_name Npc
 var text_box = load("res://scenes/menu/text_box.tscn")
 @export var index: int
 @export_enum("right", "left", "down", "up") var direction: String #select the direction of NPC
-@export var objname := ""
-
-
-
 
 # Called when the node enters the scene tree for the first time.
 #future optimization: load npc from map and load JSON only once time
@@ -17,7 +13,7 @@ func _ready():
 	
 
 #called by Player.gd
-func main_func():
+func main_func() -> void:
 	var box = text_box.instantiate()
 	add_child(box)
 	box.type = 0 #npc type
@@ -25,11 +21,7 @@ func main_func():
 	box.write_dialog()
 	$AnimatedSprite2D.play("idle_" + ray_dir())
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-func update_animation(_dir):
+func update_animation(_dir) -> void:
 	animation.play("idle_" + direction)
 
 func ray_dir():
@@ -42,6 +34,3 @@ func ray_dir():
 		return "up"
 	elif dir.y < 0:
 		return "down"
-
-
-	

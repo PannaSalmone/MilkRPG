@@ -29,4 +29,3 @@ func _on_focus_entered() -> void:
 func _on_focus_exited() -> void:
 	$">".hide()
 	is_active = false
-

@@ -36,6 +36,10 @@ project/assembly_name="JRPG"
 
 movie_writer/movie_file="C:/Users/seanb/Desktop/1.avi"
 
+[global_group]
+
+MapObject=""
+
 [input]
 
 ui_accept={

@@ -10,6 +10,7 @@ Top-down JRPG engine, built in godot 4.3
 - [x] Teleports between maps
 - [X] Inventory system
 - [X] In game text-boxes
+	- [ ] Multiple choice dialogues  
 - [x] NPC
 - [X] Chests
 - [ ] Battle scene

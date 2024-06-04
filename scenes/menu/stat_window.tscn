@@ -76,9 +76,17 @@ size_flags_vertical = 3
 auto_translate_mode = 1
 layout_mode = 2
 
-[node name="gold" type="Label" parent="HBoxContainer/ButtonPanel/Gold"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Gold"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Gold/HBoxContainer"]
+layout_mode = 2
+text = "G:"
+
+[node name="gold" type="Label" parent="HBoxContainer/ButtonPanel/Gold/HBoxContainer"]
 auto_translate_mode = 1
 layout_mode = 2
+size_flags_horizontal = 3
 text = "orooooo"
 horizontal_alignment = 2
 

@@ -21,13 +21,11 @@ layer_0/tile_data = PackedInt32Array(65538, 65536, 1, 131073, 65536, 1, 131074, 
 [node name="NPC" parent="." instance=ExtResource("4_28wkm")]
 position = Vector2(112, 80)
 direction = "down"
-objname = "Pedro"
 
 [node name="NPC2" parent="." instance=ExtResource("4_28wkm")]
 position = Vector2(112, 432)
 index = 1
 direction = "up"
-objname = "Sandro"
 
 [node name="Chest0" parent="." instance=ExtResource("4_tplvi")]
 position = Vector2(384, 32)
@@ -44,11 +42,11 @@ amount = 500
 
 [node name="Warp" parent="." instance=ExtResource("6_x5b3t")]
 position = Vector2(432, 176)
-warp_to = Vector2(96, 352)
+warp_to = Vector2(112, 352)
 
 [node name="Warp2" parent="." instance=ExtResource("6_x5b3t")]
 position = Vector2(112, 336)
-warp_to = Vector2(416, 128)
+warp_to = Vector2(432, 144)
 
 [node name="WarpMap" parent="." instance=ExtResource("3_vn8vb")]
 position = Vector2(112, 176)

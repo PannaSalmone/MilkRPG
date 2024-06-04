@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://ua5802sim248"]
+[gd_scene load_steps=30 format=3 uid="uid://ua5802sim248"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_6onm3"]
 [ext_resource type="Texture2D" uid="uid://bu123q6nnxdl7" path="res://sprites/OW/player.png" id="2_mgfw7"]
 [ext_resource type="PackedScene" uid="uid://dgfomh84y6hy0" path="res://scenes/menu/menu.tscn" id="3_ud0rq"]
+[ext_resource type="Texture2D" uid="uid://bao5wbpf818lk" path="res://sprites/OW/AttentionMark.png" id="4_x3ygj"]
 
 [sub_resource type="Animation" id="Animation_t5a8t"]
 resource_name = "Idle_down"
@@ -300,3 +301,8 @@ parameters/Walk/2/current_delta = null
 parameters/Walk/3/current_length = null
 parameters/Walk/3/current_position = null
 parameters/Walk/3/current_delta = null
+
+[node name="AttentionMark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -32)
+texture = ExtResource("4_x3ygj")

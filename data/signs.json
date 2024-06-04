@@ -2,16 +2,16 @@
     {
       "id" : 0,
       "nome" : "Attenzione",
-      "testo": "Enemies there"      
+      "line1": "Enemies there"      
     },
     {
         "id" : 1,
         "nome" : "Sandro",
-        "testo": "..."        
+        "line1": "..."        
     },
     {
         "id" : 2,
         "nome" : "",
-        "testo": ""    
+        "line1": ""    
     }
 ] 

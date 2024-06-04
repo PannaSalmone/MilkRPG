@@ -22,7 +22,7 @@ script = ExtResource("2_gbg54")
 
 [node name="WarpMap" parent="TestDungeon" instance=ExtResource("3_tkc04")]
 position = Vector2(208, 272)
-warp_to = Vector2(576, 160)
+warp_to = Vector2(592, 160)
 
 [node name="Chest" parent="TestDungeon" instance=ExtResource("5_a7jnq")]
 position = Vector2(96, 64)

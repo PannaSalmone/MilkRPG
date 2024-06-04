@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed: int = 200
 @onready var anim_tree = $AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
+var collider
 var is_moving = false #used for battle encounter counter
 
 func _ready():
@@ -33,16 +34,12 @@ func get_input():
 			speed = 200
 		if Input.is_action_just_pressed("A"):
 			if $RayCast2D.is_colliding():
-				var collider = $RayCast2D.get_collider()
 				if collider is StaticBody2D: #Chest or Npc: this doesn't work
 					collider.main_func() #launch main func in collider
 					print(collider)
-	
 	else:
 		anim_state.travel("Idle")
-		# Event checking + event scripts
-	
-
+		velocity = Vector2.ZERO
 # Game Menu function
 	if Input.is_action_just_pressed("Start") and Global.is_paused == false:
 		Global.player_xy = position
@@ -68,3 +65,12 @@ func reload_sprite() -> void:
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+	#showing the questionmark sprite when player is in front of an interactable object
+	collider = $RayCast2D.get_collider()
+	if $RayCast2D.is_colliding():
+		if collider.is_in_group("MapObject"):
+			$AttentionMark.show()
+		else:
+			$AttentionMark.hide()
+	else:
+		$AttentionMark.hide()
