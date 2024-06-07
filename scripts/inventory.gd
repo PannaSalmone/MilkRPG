@@ -8,7 +8,8 @@ var inv_data = load("res://data/items/testinv.tres")
 func _ready():
 	populate_item_grid()
 	$HBoxContainer/MarginContainer/ItemGrid.get_child(0).grab_focus()
-	$HBoxContainer/ButtonPanel/Gold/gold.text = str(Global.gold)
+	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold/Gold.text = str(Global.gold)
+	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)
 	
 func populate_item_grid() -> void:
 	for child in item_grid.get_children():
@@ -40,4 +41,5 @@ func _on_sort_pressed() -> void: #It just works
 	inv_data.slot_datas = new_inv
 	populate_item_grid()
 	
-	
+func _process(delta: float) -> void:
+	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)

@@ -67,7 +67,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	#showing the questionmark sprite when player is in front of an interactable object
 	collider = $RayCast2D.get_collider()
-	if $RayCast2D.is_colliding():
+	if $RayCast2D.is_colliding() and Global.is_paused == false:
 		if collider.is_in_group("MapObject"):
 			$AttentionMark.show()
 		else:

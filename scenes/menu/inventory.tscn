@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://data/items/itemGrid.gd" id="2_jca7j"]
 
 [node name="Inventory" type="MarginContainer"]
+clip_contents = true
 offset_left = 70.0
 offset_top = 16.0
 offset_right = 568.0
@@ -21,13 +22,40 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="PanelContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Items" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "Items"
+
+[node name="Weap" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "Weapons"
+
+[node name="Armor" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "Armors"
+
+[node name="Key" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "Key"
+
+[node name="All" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "All"
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="ItemGrid" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 275)
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_jca7j")
 
 [node name="DescriptionPanel" type="PanelContainer" parent="HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Description" type="Label" parent="HBoxContainer/MarginContainer/DescriptionPanel"]
@@ -57,14 +85,36 @@ auto_translate_mode = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Gold" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
+[node name="Info" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
 auto_translate_mode = 1
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="gold" type="Label" parent="HBoxContainer/ButtonPanel/Gold"]
-auto_translate_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ButtonPanel/Info"]
 layout_mode = 2
-text = "orooooo"
+
+[node name="Gold" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold"]
+layout_mode = 2
+text = "G:"
+
+[node name="Gold" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+
+[node name="Time" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Time"]
+layout_mode = 2
+text = "T:"
+
+[node name="Time" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Time"]
+layout_mode = 2
+size_flags_horizontal = 3
 horizontal_alignment = 2
 
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/sort" to="." method="_on_sort_pressed"]

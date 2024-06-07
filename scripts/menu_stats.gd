@@ -32,7 +32,7 @@ func populate_chara_data() -> void:
 			char_slot.swap.connect(swap)
 			char_slot.set_slot_data(load("res://data/chars/"+ chara+".tres"))
 	$HBoxContainer/ButtonPanel/esc.grab_focus()
-	$HBoxContainer/ButtonPanel/Gold/HBoxContainer/gold.text = str(Global.gold)
+	$HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Gold/Gold.text = str(Global.gold)
 
 #Function that swap party member
 func swap(selected) -> void:
@@ -44,11 +44,12 @@ func swap(selected) -> void:
 	else:
 		if selected == swapbank:
 			swapbank = ""
-			$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Party window."
 		else:
 			Global.active_party[Global.active_party.find(selected)] = "temp"
 			Global.active_party[Global.active_party.find(swapbank)] = selected
 			Global.active_party[Global.active_party.find("temp")] = swapbank
 			swapbank = ""
 			populate_chara_data()
-			$HBoxContainer/VBoxContainer/PanelContainer/Text.text = "Party window."
+
+func _process(delta: float) -> void:
+	$HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)

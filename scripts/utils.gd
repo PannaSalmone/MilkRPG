@@ -1,6 +1,7 @@
 extends Node2D
 
 const SAVE_PATH = "res://save_json.json"
+var seconds : float
 
 func level_sys():
 	pass
@@ -13,6 +14,7 @@ func save_game():
 	var save_dict = {
 		player = {
 			gold = var_to_str(Global.gold),
+			time = var_to_str(Global.game_time),
 			spawnx = var_to_str(Global.player_xy.x),
 			spawny = var_to_str(Global.player_xy.y),
 			activemap = var_to_str(Global.player_map_location),
@@ -41,6 +43,7 @@ func load_game():
 	# JSON doesn't support many of Godot's types such as Vector2.
 	# str_to_var can be used to convert a String to the corresponding Variant.
 	Global.gold = str_to_var(save_dict.player.gold)
+	Global.game_time = str_to_var(save_dict.player.time)
 	Global.player_xy.x = str_to_var(save_dict.player.spawnx)
 	Global.player_xy.y = str_to_var(save_dict.player.spawny)
 	Global.player_map_location = str_to_var(save_dict.player.activemap)
@@ -64,5 +67,11 @@ func add_item(item_data) -> void:
 			inv_data.slot_datas[key] = item_data[key]
 			print("nuovo inventario: ", inv_data.slot_datas)
 
-func open_textbox() -> void:	
+func open_textbox() -> void:
 	pass
+
+func _physics_process(delta):
+	seconds = seconds + delta
+	if seconds >= 60:
+		seconds = 0
+		Global.game_time += 1

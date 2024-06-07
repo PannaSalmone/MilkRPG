@@ -32,6 +32,7 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Party window."
 
@@ -76,18 +77,33 @@ size_flags_vertical = 3
 auto_translate_mode = 1
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Gold"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/ButtonPanel/Gold"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Gold/HBoxContainer"]
+[node name="Gold" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Gold/VBoxContainer2"]
 layout_mode = 2
-text = "G:"
 
-[node name="gold" type="Label" parent="HBoxContainer/ButtonPanel/Gold/HBoxContainer"]
-auto_translate_mode = 1
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Gold"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Gold:"
+
+[node name="Gold" type="Label" parent="HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Gold"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "orooooo"
+horizontal_alignment = 2
+
+[node name="Time" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Gold/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Time"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Time:"
+
+[node name="Time" type="Label" parent="HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Time"]
+layout_mode = 2
+size_flags_horizontal = 3
 horizontal_alignment = 2
 
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

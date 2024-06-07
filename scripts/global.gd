@@ -9,6 +9,7 @@ var active_party = [
 	"Lucia", 
 	]
 
+var game_time := 0 
 var gold := 500 #Initial amount of money 
 var movcounter : float
 
@@ -26,14 +27,3 @@ var player_map_location := "test_area"
 #Chest flags
 var chest_flags = [0, 0, 0, 0] #[ID, ID] #0= closed,  1 = opened
 #chest_flags ID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-

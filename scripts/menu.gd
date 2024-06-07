@@ -21,7 +21,7 @@ func game_menu():
 func item_panel():
 	main_panel = 1
 	clean_main_window()
-	var inv = load("res://data/items/inventory.tscn")
+	var inv = load("res://scenes/menu/inventory.tscn")
 	var inv_wind = inv.instantiate()
 	$GameMenu.add_child(inv_wind)
 	
