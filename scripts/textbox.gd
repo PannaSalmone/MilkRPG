@@ -2,29 +2,23 @@ extends CanvasLayer
 
 var writing_skip := false
 var is_writing := false
-var DIAL_PATH = "res://data/dialogues.json" 
-var dialogue = {}
-var index : int
+var is_finished := false
 var type := 0 #0 npc, 1 sign, 2 chest
-var cur_line := 1
-var json_as_dict = {}
+var cur_line := 0
+var dial_res : Resource
+var simple_text : String
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	Global.is_paused = true
-	
+func _ready() -> void:	
+	pass
 
 func _physics_process(_delta)-> void:
 	if Input.is_action_just_pressed("B") or Input.is_action_just_pressed("A") :
 		if is_writing == true:
 			writing_skip = true
 		else:
-			if type == 2: #if is a chest
-				exit_menu()
-			elif json_as_dict[index].has("line"+ str(cur_line)):#check if exist another line of text
-				writing_skip = false
-				$DialogueBox/MarginContainer/VBoxContainer/text.text = ""
-				write_dialog()
+			if type == 0:
+				parse_dialog()
 			else:
 				exit_menu()
 
@@ -32,35 +26,63 @@ func exit_menu() -> void:
 	Global.is_paused = false
 	queue_free()
 
-func write_dialog() -> void:
-	if json_as_dict.is_empty():
-		parsetext()
-	dialogue = json_as_dict[index]["line"+ str(cur_line)]
-	var npc_name = json_as_dict[index]['nome']
-	is_writing = true
-	$DialogueBox/MarginContainer/VBoxContainer/name.text = npc_name + ":"
-	for lettere in dialogue:
-		$DialogueBox/MarginContainer/VBoxContainer/text.text += lettere #str(objname + ": " + dialogue)
-		if writing_skip == false:
-			await get_tree().create_timer(0.05).timeout
-	cur_line += 1
-	is_writing = false
-	
-	
-func chest(text) -> void:
-	is_writing = true
-	type = 2
-	for lettere in text:
-		$DialogueBox/MarginContainer/VBoxContainer/text.text += lettere #str(objname + ": " + dialogue)
-		if writing_skip == false:
-			await get_tree().create_timer(0.05).timeout
-	is_writing = false
+func parse_dialog():
+	if cur_line  != dial_res.dialogue.size():
+		var line_type = dial_res.dialogue[cur_line].left(2)
+		match line_type:
+			">>" : #dialogue line
+				write_dialog(dial_res.dialogue[cur_line].lstrip(">>"))
+				#cur_line += 1
+			"n/": #change name in the name box
+				var new_name = dial_res.dialogue[cur_line].lstrip("n/")
+				$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/name.text = new_name
+				cur_line += 1
+				parse_dialog()
+			"p/": #change portrait picture in the textbox
+				if dial_res.dialogue[cur_line].lstrip("p/") == "no":
+					$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/port.texture = null
+				else:
+					var new_port = load("res://sprites/portraits/"+ (dial_res.dialogue[cur_line].lstrip("p/"))+ ".png")
+					print(new_port)
+					$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/port.texture = new_port
+				cur_line += 1
+				parse_dialog()
+	else:
+		exit_menu()
 
-func parsetext() -> void:
-	if type == 1:
-		DIAL_PATH = "res://data/signs.json" 
-	var json = FileAccess.open(DIAL_PATH, FileAccess.READ)
-	var json_as_text = FileAccess.get_file_as_string(DIAL_PATH)
-	json_as_dict = JSON.parse_string(json_as_text)
-	print("parsed")
+func write_dialog(line) -> void:
+	#print text from resources
+	is_writing = true
+	writing_skip = false
+	$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer/text.text = ""
+	for lettere in line:
+		$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer/text.text += lettere
+		if writing_skip == false:
+			await get_tree().create_timer(0.05).timeout
+	is_writing = false
+	cur_line += 1
+
+func npc() -> void:
+	type = 0 #npc
+	Global.is_paused = true
+	dial_res = get_parent().dialogue
+	#draw NPC portraits from dialogue resources + name
+	if dial_res.portrait != null:
+		$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/port.texture = dial_res.portrait
+	if dial_res.obj_name != "":
+		$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/name.text = dial_res.obj_name + ":"
+	parse_dialog()
+
+func sign() -> void:
+	type = 1 #sign
+	Global.is_paused = true
+	write_dialog(simple_text)
+
+func chest(text) -> void:
+	type = 2 #chest
+	Global.is_paused = true
+	write_dialog(text)
+
+
+
 	

@@ -35,7 +35,7 @@ func main_func() -> void:
 				box.chest(texto)
 			"Gold": #Sign
 				Global.gold += amount
-				texto = str("You found: " + str(amount) + " Gold")
+				texto = str("You found: " + str(amount) + " Gold")	
 				box.chest(texto)
 		$ChestSprite.region_rect = Rect2i(Vector2 (32, 0,), Vector2 (32, 32 )) #change area of the sprite atlas (opened chest)
 		Global.chest_flags[ID] = 1

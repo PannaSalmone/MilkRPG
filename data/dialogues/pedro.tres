@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://r5l4jgw15wnm"]
+
+[ext_resource type="Texture2D" uid="uid://kdtmsgxgeyca" path="res://sprites/portraits/blackmage.png" id="1_eh00y"]
+[ext_resource type="Script" path="res://scripts/res/dial.gd" id="2_kmubh"]
+
+[resource]
+script = ExtResource("2_kmubh")
+obj_name = "Pedro"
+portrait = ExtResource("1_eh00y")
+dialogue = [">>Hola, yo soy Pedro, testo a caso molto lungo", ">>Un hombre sombra", "n/Panna", "p/whitemage", ">>Ciao, io sono Panna", ">>Piacere di conoscerti!"]
