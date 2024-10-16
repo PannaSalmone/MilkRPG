@@ -1,13 +1,16 @@
 extends MarginContainer
 
 const Slot = preload("res://data/items/slot.tscn")
-var inv_data = load("res://data/items/testinv.tres")
+var inv_data = load("res://data/items/inv_items.tres") #Current inventory 
 
 @onready var item_grid: VBoxContainer = $HBoxContainer/MarginContainer/ItemGrid
 
 func _ready():
 	populate_item_grid()
-	$HBoxContainer/MarginContainer/ItemGrid.get_child(0).grab_focus()
+	if $HBoxContainer/MarginContainer/ItemGrid.get_child(0) != null:
+		$HBoxContainer/MarginContainer/ItemGrid.get_child(0).grab_focus()
+	else:
+		$HBoxContainer/ButtonPanel/esc.grab_focus()
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold/Gold.text = str(Global.gold)
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)
 	
@@ -43,3 +46,20 @@ func _on_sort_pressed() -> void: #It just works
 	
 func _process(delta: float) -> void:
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)
+
+
+func _on_weap_pressed() -> void: #Show weapons inventory
+	inv_data = load("res://data/items/inv_weap.tres")
+	populate_item_grid()
+
+func _on_items_pressed() -> void:
+	inv_data = load("res://data/items/inv_items.tres")
+	populate_item_grid()
+
+func _on_armor_pressed() -> void:
+	inv_data = load("res://data/items/inv_misc.tres")
+	populate_item_grid()
+
+func _on_key_pressed() -> void:
+	inv_data = load("res://data/items/inv_rare.tres")
+	populate_item_grid()

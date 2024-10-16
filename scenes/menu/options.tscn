@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi0ffoo2ldw1d"]
+
+[ext_resource type="Script" path="res://scenes/menu/options.gd" id="1_jxjlj"]
+[ext_resource type="Script" path="res://data/items/itemGrid.gd" id="2_lah24"]
+
+[node name="Options" type="MarginContainer"]
+clip_contents = true
+offset_left = 70.0
+offset_top = 16.0
+offset_right = 568.0
+offset_bottom = 336.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_jxjlj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MainPanel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemGrid" type="VBoxContainer" parent="HBoxContainer/MainPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_lah24")
+
+[node name="Exit game" type="Button" parent="HBoxContainer/MainPanel/ItemGrid"]
+layout_mode = 2
+text = "Return to main menu"
+alignment = 0
+
+[node name="DescriptionPanel" type="PanelContainer" parent="HBoxContainer/MainPanel"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Description" type="Label" parent="HBoxContainer/MainPanel/DescriptionPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DESCRIZIONE"
+
+[node name="ButtonPanel" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="esc" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Back"
+
+[node name="space" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Info" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ButtonPanel/Info"]
+layout_mode = 2
+
+[node name="Gold" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Gold:"
+
+[node name="Gold" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+
+[node name="Time" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Time"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Time:"
+
+[node name="Time" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Time"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+
+[connection signal="focus_entered" from="HBoxContainer/MainPanel/ItemGrid/Exit game" to="." method="_on_exit_game_focus_entered"]
+[connection signal="pressed" from="HBoxContainer/MainPanel/ItemGrid/Exit game" to="." method="_on_exit_game_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_focus_entered"]
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

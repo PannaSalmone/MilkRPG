@@ -8,4 +8,4 @@ script = ExtResource("1_1mcmu")
 name = "Wooden Shield"
 description = "A miserable pile of wood."
 texture = ExtResource("2_gfdhq")
-type = "Armor"
+type = "Weap"

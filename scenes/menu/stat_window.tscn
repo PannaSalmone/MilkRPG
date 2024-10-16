@@ -57,16 +57,15 @@ layout_mode = 2
 disabled = true
 text = "Status"
 
-[node name="Option" type="Button" parent="HBoxContainer/ButtonPanel"]
-auto_translate_mode = 1
-layout_mode = 2
-disabled = true
-text = "Options"
-
 [node name="save" type="Button" parent="HBoxContainer/ButtonPanel"]
 auto_translate_mode = 1
 layout_mode = 2
-text = "save"
+text = "Save"
+
+[node name="Option" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Options"
 
 [node name="space" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
 auto_translate_mode = 1
@@ -109,3 +108,4 @@ horizontal_alignment = 2
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/Items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/Option" to="." method="_on_option_pressed"]

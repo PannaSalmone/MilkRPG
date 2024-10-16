@@ -37,6 +37,23 @@ tracks/0/keys = {
 "values": [1, 0, 2, 0]
 }
 
+[sub_resource type="Animation" id="Animation_2cshy"]
+resource_name = "Walk_left"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 6, 8, 6]
+}
+
 [sub_resource type="Animation" id="Animation_l546k"]
 resource_name = "Idle_up"
 tracks/0/type = "value"
@@ -67,10 +84,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_2cshy"]
-resource_name = "Walk_left"
-length = 0.8
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_ct3hm"]
+resource_name = "Idle_left"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,10 +93,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [7, 6, 8, 6]
+"values": [6]
 }
 
 [sub_resource type="Animation" id="Animation_r2ojy"]
@@ -99,21 +114,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [4, 3, 5, 3]
-}
-
-[sub_resource type="Animation" id="Animation_ct3hm"]
-resource_name = "Idle_left"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
 }
 
 [sub_resource type="Animation" id="Animation_2wspj"]
@@ -151,13 +151,13 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pup1v"]
 _data = {
 &"Walk_down": SubResource("Animation_fmh6h"),
-&"Idle_up": SubResource("Animation_l546k"),
-&"Idle_down": SubResource("Animation_t5a8t"),
-&"Walk_up": SubResource("Animation_r2ojy"),
-&"Idle_left": SubResource("Animation_ct3hm"),
-&"Walk_right": SubResource("Animation_bb3e0"),
-&"Idle_right": SubResource("Animation_2wspj"),
 &"Walk_left": SubResource("Animation_2cshy"),
+&"Idle_down": SubResource("Animation_t5a8t"),
+&"Idle_up": SubResource("Animation_l546k"),
+&"Idle_left": SubResource("Animation_ct3hm"),
+&"Walk_up": SubResource("Animation_r2ojy"),
+&"Idle_right": SubResource("Animation_2wspj"),
+&"Walk_right": SubResource("Animation_bb3e0"),
 &"RESET": SubResource("Animation_3w5ch")
 }
 

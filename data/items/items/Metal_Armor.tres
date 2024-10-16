@@ -14,4 +14,4 @@ script = ExtResource("1_utc5n")
 name = "Metal Armor"
 description = "A nice big plate armor."
 texture = SubResource("AtlasTexture_augwh")
-type = "Armor"
+type = "Weap"

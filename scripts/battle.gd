@@ -29,8 +29,8 @@ func _ready():
 	#add enemies to battlefield from formation resources
 	var formation = load("res://data/formations/Enemie_Formation.tres")
 	for key in formation.formation_data:
-		var enemie = load("res://scenes/enemy.tscn")
-		var en = enemie.instantiate()
+		var enemy = load("res://scenes/enemy.tscn")
+		var en = enemy.instantiate()
 		$Container/VBoxContainer/BattleField.add_child(en)
 		en.take_data(key)
 		en.position = formation.formation_data.get(key)

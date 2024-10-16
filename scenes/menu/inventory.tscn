@@ -35,15 +35,11 @@ text = "Weapons"
 
 [node name="Armor" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
-text = "Armors"
+text = "Misc"
 
 [node name="Key" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
 text = "Key"
-
-[node name="All" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
-layout_mode = 2
-text = "All"
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -98,7 +94,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold"]
 layout_mode = 2
-text = "G:"
+theme_override_font_sizes/font_size = 11
+text = "Gold:"
 
 [node name="Gold" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold"]
 layout_mode = 2
@@ -110,12 +107,17 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Time"]
 layout_mode = 2
-text = "T:"
+theme_override_font_sizes/font_size = 11
+text = "Time:"
 
 [node name="Time" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Time"]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
+[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Weap" to="." method="_on_weap_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Armor" to="." method="_on_armor_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Key" to="." method="_on_key_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/sort" to="." method="_on_sort_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

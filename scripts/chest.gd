@@ -27,10 +27,7 @@ func main_func() -> void:
 	if is_open == false:
 		match content:
 			"Item":
-				var new_items : Dictionary = {}
-				new_items[item] = amount
-				print(new_items, "nwnwn")
-				Utils.add_item(new_items)
+				Utils.add_item(item,amount)
 				texto = str("You found: " + str(amount) + " " + item.name)
 				box.chest(texto)
 			"Gold": #Sign

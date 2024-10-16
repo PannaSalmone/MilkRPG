@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var main_panel := 0 #0 stats #1 items
+var main_panel := 0 #0 stats #1 items #2 options
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +24,13 @@ func item_panel():
 	var inv = load("res://scenes/menu/inventory.tscn")
 	var inv_wind = inv.instantiate()
 	$GameMenu.add_child(inv_wind)
-	
+
+func option_panel() -> void:
+	main_panel = 2
+	clean_main_window()
+	var opz = load("res://scenes/menu/options.tscn")
+	var opz_wind = opz.instantiate()
+	$GameMenu.add_child(opz_wind)
 
 func clean_main_window() -> void:
 	var main_wind = $GameMenu

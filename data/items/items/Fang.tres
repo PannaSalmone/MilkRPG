@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dqi7qwwp13mu1"]
+
+[ext_resource type="Script" path="res://data/items/item_data.gd" id="1_tsegk"]
+[ext_resource type="Texture2D" uid="uid://b2x6gejqxsvts" path="res://data/items/icons.png" id="2_4tpwf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed3ff"]
+atlas = ExtResource("2_4tpwf")
+region = Rect2(288, 544, 32, 32)
+
+[resource]
+script = ExtResource("1_tsegk")
+name = "Fang"
+description = "Zanna di bestia"
+texture = SubResource("AtlasTexture_ed3ff")
+type = "Misc"

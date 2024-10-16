@@ -20,6 +20,9 @@ func _on_items_pressed() -> void:
 func _on_esc_pressed() -> void:
 	get_parent().get_parent().close_menu()
 	
+func _on_option_pressed() -> void:
+	get_parent().get_parent().option_panel()
+	
 #load character data and info in the main panel
 func populate_chara_data() -> void:
 	for child in $HBoxContainer/VBoxContainer/PlayerData.get_children():
