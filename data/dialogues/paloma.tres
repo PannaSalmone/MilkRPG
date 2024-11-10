@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("2_k8qo7")
 obj_name = ""
-dialogue = [">>Il mondo è grigio il mondo è blu..."]
+dialogue = Array[String]([">>Il mondo è grigio il mondo è blu..."])

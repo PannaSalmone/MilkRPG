@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cymnx17ejnw4p"]
 
-[ext_resource type="Script" path="res://scripts/menu_stats.gd" id="1_ik1wy"]
+[ext_resource type="Script" path="res://scripts/menu_main.gd" id="1_jst5u"]
 
 [node name="StatWindow" type="MarginContainer"]
 anchors_preset = 15
@@ -12,7 +12,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
-script = ExtResource("1_ik1wy")
+script = ExtResource("1_jst5u")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -54,8 +54,12 @@ text = "Items"
 [node name="Status" type="Button" parent="HBoxContainer/ButtonPanel"]
 auto_translate_mode = 1
 layout_mode = 2
-disabled = true
 text = "Status"
+
+[node name="Equip" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Equip"
 
 [node name="save" type="Button" parent="HBoxContainer/ButtonPanel"]
 auto_translate_mode = 1
@@ -107,5 +111,7 @@ horizontal_alignment = 2
 
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/Items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/Status" to="." method="_on_status_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/Equip" to="." method="_on_equip_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/Option" to="." method="_on_option_pressed"]

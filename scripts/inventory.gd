@@ -1,9 +1,9 @@
 extends MarginContainer
 
-const Slot = preload("res://data/items/slot.tscn")
+const Slot = preload("res://scenes/menu/slot.tscn")
 var inv_data = load("res://data/items/inv_items.tres") #Current inventory 
 
-@onready var item_grid: VBoxContainer = $HBoxContainer/MarginContainer/ItemGrid
+@onready var item_grid: GridContainer = $HBoxContainer/MarginContainer/ItemGrid
 
 func _ready():
 	populate_item_grid()
@@ -63,3 +63,6 @@ func _on_armor_pressed() -> void:
 func _on_key_pressed() -> void:
 	inv_data = load("res://data/items/inv_rare.tres")
 	populate_item_grid()
+
+func _on_use_pressed() -> void:
+	pass

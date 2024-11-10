@@ -47,3 +47,9 @@ layout_mode = 2
 
 [node name="text" type="Label" parent="DialogueBox/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 536.0
+offset_top = 224.0
+offset_right = 640.0
+offset_bottom = 247.0

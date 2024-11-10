@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://whyub3unbbk0"]
+
+[ext_resource type="Script" path="res://scripts/res/weap_data.gd" id="1_agevh"]
+[ext_resource type="Texture2D" uid="uid://bumue0dr7vbra" path="res://sprites/Battle/weapons/2_weap.png" id="1_y6uac"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
+load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbsef"]
+atlas = SubResource("CompressedTexture2D_8dj47")
+region = Rect2(0, 160, 32, 32)
+
+[resource]
+script = ExtResource("1_agevh")
+weap_type = "sword"
+power = 10
+battle_sprite = ExtResource("1_y6uac")
+type = "weap"
+name = "Wooden Sword"
+description = "a sord "
+icon = SubResource("AtlasTexture_bbsef")
+value = 20

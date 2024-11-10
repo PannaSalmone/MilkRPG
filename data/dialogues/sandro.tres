@@ -7,4 +7,4 @@
 script = ExtResource("2_geiy0")
 obj_name = "Sandro"
 portrait = ExtResource("1_ionlx")
-dialogue = [">>il mio nome è sandro", ">>non ho molto da dire..."]
+dialogue = Array[String]([">>Io sono Sandro ma non ho molto da dire"])

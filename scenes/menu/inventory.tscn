@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bse76khxf6ied"]
 
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="1_8cfir"]
-[ext_resource type="Script" path="res://data/items/itemGrid.gd" id="2_jca7j"]
+[ext_resource type="Script" path="res://scripts/itemGrid.gd" id="2_jca7j"]
 
 [node name="Inventory" type="MarginContainer"]
 clip_contents = true
@@ -45,9 +45,10 @@ text = "Key"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ItemGrid" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+[node name="ItemGrid" type="GridContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+columns = 2
 script = ExtResource("2_jca7j")
 
 [node name="DescriptionPanel" type="PanelContainer" parent="HBoxContainer/MarginContainer"]
@@ -119,5 +120,6 @@ horizontal_alignment = 2
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Weap" to="." method="_on_weap_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Armor" to="." method="_on_armor_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Key" to="." method="_on_key_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/use" to="." method="_on_use_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/sort" to="." method="_on_sort_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

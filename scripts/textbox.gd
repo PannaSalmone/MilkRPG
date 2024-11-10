@@ -9,10 +9,12 @@ var dial_res : Resource
 var simple_text : String
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:	
+func _ready() -> void:
+	
 	pass
 
 func _physics_process(_delta)-> void:
+	$Label.text = str(is_writing)
 	if Input.is_action_just_pressed("B") or Input.is_action_just_pressed("A") :
 		if is_writing == true:
 			writing_skip = true
@@ -32,7 +34,6 @@ func parse_dialog():
 		match line_type:
 			">>" : #dialogue line
 				write_dialog(dial_res.dialogue[cur_line].lstrip(">>"))
-				#cur_line += 1
 			"n/": #change name in the name box
 				var new_name = dial_res.dialogue[cur_line].lstrip("n/")
 				$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/name.text = new_name
@@ -43,10 +44,12 @@ func parse_dialog():
 					$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/port.texture = null
 				else:
 					var new_port = load("res://sprites/portraits/"+ (dial_res.dialogue[cur_line].lstrip("p/"))+ ".png")
-					print(new_port)
 					$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/port.texture = new_port
 				cur_line += 1
 				parse_dialog()
+			_:
+				print("sintax error in the dialogue file")
+				exit_menu()
 	else:
 		exit_menu()
 
@@ -62,16 +65,20 @@ func write_dialog(line) -> void:
 	is_writing = false
 	cur_line += 1
 
-func npc() -> void:
+func npc(res) -> void:
 	type = 0 #npc
 	Global.is_paused = true
-	dial_res = get_parent().dialogue
+	dial_res = res
 	#draw NPC portraits from dialogue resources + name
-	if dial_res.portrait != null:
-		$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/port.texture = dial_res.portrait
-	if dial_res.obj_name != "":
-		$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/name.text = dial_res.obj_name + ":"
-	parse_dialog()
+	if res != null:
+		if dial_res.portrait != null:
+			$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/port.texture = dial_res.portrait
+		if dial_res.obj_name != "":
+			$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/name.text = dial_res.obj_name + ":"
+		parse_dialog()
+	else:
+		print("no dialogue res found on npc")
+		exit_menu()
 
 func sign() -> void:
 	type = 1 #sign
@@ -82,7 +89,3 @@ func chest(text) -> void:
 	type = 2 #chest
 	Global.is_paused = true
 	write_dialog(text)
-
-
-
-	

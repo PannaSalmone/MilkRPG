@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dukfkg2o43tft"]
+
+[ext_resource type="Script" path="res://scripts/res/armor_data.gd" id="1_lwij3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
+load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h87y"]
+atlas = SubResource("CompressedTexture2D_8dj47")
+region = Rect2(96, 224, 32, 32)
+
+[resource]
+script = ExtResource("1_lwij3")
+armor_type = "head"
+armor_weight = "heavy"
+defence = 10
+type = "armor"
+name = "Iron Helmet"
+description = "Testa dura dura"
+icon = SubResource("AtlasTexture_6h87y")
+value = 25

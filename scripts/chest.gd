@@ -1,12 +1,11 @@
 #@tool
 extends StaticBody2D
-class_name Chest
 
 @export var ID: int = 0 ##ID must be unique
 @export_enum("Default", "Blue") var chest_sprite: String #the name of the chest sprite (check the names in the sprite OW folder
 @export_enum("Item","Gold") var content: String
 @onready var sprite = $ChestSprite
-@export var item : ItemData
+@export var item : DataItem
 @export var amount: int = 1 
 var is_open = false
 var texto := ""
@@ -32,7 +31,7 @@ func main_func() -> void:
 				box.chest(texto)
 			"Gold": #Sign
 				Global.gold += amount
-				texto = str("You found: " + str(amount) + " Gold")	
+				texto = str("You found: " + str(amount) + " Gold")
 				box.chest(texto)
 		$ChestSprite.region_rect = Rect2i(Vector2 (32, 0,), Vector2 (32, 32 )) #change area of the sprite atlas (opened chest)
 		Global.chest_flags[ID] = 1

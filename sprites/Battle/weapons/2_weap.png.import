@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c286w5l7nmofn"
-path="res://.godot/imported/1_weap.png-e3552ec7ad072eebb6e6d3f46294975c.ctex"
+uid="uid://bumue0dr7vbra"
+path="res://.godot/imported/2_weap.png-66f683ff8f6a15dedb38b73fd6924474.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Battle/1_weap.png"
-dest_files=["res://.godot/imported/1_weap.png-e3552ec7ad072eebb6e6d3f46294975c.ctex"]
+source_file="res://sprites/Battle/weapons/2_weap.png"
+dest_files=["res://.godot/imported/2_weap.png-66f683ff8f6a15dedb38b73fd6924474.ctex"]
 
 [params]
 

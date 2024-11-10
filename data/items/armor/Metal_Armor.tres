@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://orbqvgq483sy"]
+
+[ext_resource type="Script" path="res://scripts/res/armor_data.gd" id="1_ge1ha"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
+load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge1ha"]
+atlas = SubResource("CompressedTexture2D_8dj47")
+region = Rect2(224, 224, 32, 32)
+
+[resource]
+script = ExtResource("1_ge1ha")
+armor_type = "body"
+armor_weight = "heavy"
+defence = 10
+type = "armor"
+name = "Metal Armor"
+description = "Corazza di ferro"
+icon = SubResource("AtlasTexture_ge1ha")
+value = 5

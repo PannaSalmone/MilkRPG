@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bo05ltrivvbit"]
+
+[ext_resource type="Script" path="res://scripts/res/keyitem_data.gd" id="1_lo0gg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
+load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jimdf"]
+atlas = SubResource("CompressedTexture2D_8dj47")
+region = Rect2(0, 576, 32, 32)
+
+[resource]
+script = ExtResource("1_lo0gg")
+type = "key"
+name = "Red Orb"
+description = "A magic red orb that can obliterate all of your enemies. WAHAHAHA
+Destroy! Destroy!"
+icon = SubResource("AtlasTexture_jimdf")
+value = 0

@@ -1,0 +1,115 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci16ieydoksfi"]
+
+[ext_resource type="Script" path="res://scripts/menu_equip.gd" id="1_xvr4w"]
+
+[node name="EquipMenu" type="MarginContainer"]
+clip_contents = true
+offset_left = 70.0
+offset_top = 16.0
+offset_right = 568.0
+offset_bottom = 336.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_xvr4w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Left" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "<"
+
+[node name="NameBox" type="PanelContainer" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/NameBox"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Right" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = ">"
+
+[node name="CharInfo" type="PanelContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DescriptionPanel" type="PanelContainer" parent="HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Description" type="Label" parent="HBoxContainer/MarginContainer/DescriptionPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DESCRIZIONE"
+
+[node name="ButtonPanel" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="esc" type="Button" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "close"
+
+[node name="optimize" type="Button" parent="HBoxContainer/ButtonPanel"]
+layout_mode = 2
+text = "Optimize"
+
+[node name="info" type="Button" parent="HBoxContainer/ButtonPanel"]
+layout_mode = 2
+text = "Info"
+
+[node name="space" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Info" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ButtonPanel/Info"]
+layout_mode = 2
+
+[node name="Gold" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Gold:"
+
+[node name="Gold" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+
+[node name="Time" type="HBoxContainer" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Time"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Time:"
+
+[node name="Time" type="Label" parent="HBoxContainer/ButtonPanel/Info/VBoxContainer/Time"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

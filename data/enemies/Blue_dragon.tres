@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemieData" load_steps=3 format=3 uid="uid://d112gbvm5me87"]
 
 [ext_resource type="Texture2D" uid="uid://chuen4vfqmkqp" path="res://sprites/Enemies/brudragon.png" id="1_b6g1h"]
-[ext_resource type="Script" path="res://scripts/res/enemiedata.gd" id="2_4xa6e"]
+[ext_resource type="Script" path="res://scripts/res/enemie_data.gd" id="2_4xa6e"]
 
 [resource]
 script = ExtResource("2_4xa6e")

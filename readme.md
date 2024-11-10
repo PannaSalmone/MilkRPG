@@ -1,6 +1,7 @@
 # MilkRPG
 
-Top-down JRPG engine, built in godot 4.3
+Top-down JRPG engine, built in godot 4.4
+Old FF and DQ look like game engine 
 
 
 
@@ -9,7 +10,7 @@ Top-down JRPG engine, built in godot 4.3
 - [x] Teleports
 - [x] Teleports between maps
 - [X] Inventory system
-- [X] In game text-boxes
+- [X] In game dialogues
 	- [ ] Multiple choice dialogues  
 - [x] NPC
 - [X] Chests

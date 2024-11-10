@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c7gu1tqphhtv7"]
+
+[ext_resource type="Script" path="res://scripts/res/armor_data.gd" id="1_54tgw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
+load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmfob"]
+atlas = SubResource("CompressedTexture2D_8dj47")
+region = Rect2(0, 192, 32, 32)
+
+[resource]
+script = ExtResource("1_54tgw")
+armor_type = "shield"
+armor_weight = "light"
+defence = 10
+type = "armor"
+name = "Wooden Shield"
+description = "A miserable pile of wood."
+icon = SubResource("AtlasTexture_jmfob")
+value = 10

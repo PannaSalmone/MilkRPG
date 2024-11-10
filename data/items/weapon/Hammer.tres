@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bwdq1gogrh8bh"]
+
+[ext_resource type="Texture2D" uid="uid://dyrds1kh1dhad" path="res://sprites/Battle/weapons/3_weap.png" id="1_5u2q6"]
+[ext_resource type="Script" path="res://scripts/res/weap_data.gd" id="1_o33gh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
+load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffmkn"]
+atlas = SubResource("CompressedTexture2D_8dj47")
+region = Rect2(128, 320, 32, 32)
+
+[resource]
+script = ExtResource("1_o33gh")
+weap_type = "hammer"
+power = 20
+battle_sprite = ExtResource("1_5u2q6")
+type = "weap"
+name = "Hammer"
+description = "Picchia come un fabbro."
+icon = SubResource("AtlasTexture_ffmkn")
+value = 30

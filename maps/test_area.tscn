@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://scenes/map_objects/player.tscn" id="3_yhubv"]
 [ext_resource type="PackedScene" uid="uid://dysn6p6j4papv" path="res://scenes/map_objects/warp_map.tscn" id="4_qoeq1"]
 [ext_resource type="PackedScene" uid="uid://b7apc6xp2b56o" path="res://scenes/map_objects/chest.tscn" id="6_606t0"]
-[ext_resource type="Resource" uid="uid://orbqvgq483sy" path="res://data/items/items/Metal_Armor.tres" id="7_nix63"]
-[ext_resource type="Resource" uid="uid://dqi7qwwp13mu1" path="res://data/items/items/Fang.tres" id="8_htlry"]
+[ext_resource type="Resource" uid="uid://orbqvgq483sy" path="res://data/items/armor/Metal_Armor.tres" id="7_nix63"]
+[ext_resource type="Resource" uid="uid://dqi7qwwp13mu1" path="res://data/items/misc/Fang.tres" id="8_htlry"]
 
 [node name="TestArea" type="TileMap"]
 y_sort_enabled = true

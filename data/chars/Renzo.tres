@@ -8,13 +8,18 @@
 [resource]
 script = ExtResource("1_ko5us")
 name = "Renzo"
+surname = "Tramaglino"
 portrait = ExtResource("1_07tx4")
+title_class = "Paladin"
+initial_level = 5
 HP = 200
 MP = 35
-STR = 50
-SPE = 40
-INT = 50
-weapons = 0
-armors = 0
+STRENGHT = 80
+SPEED = 40
+VIGOR = 65
+INTELLECT = 30
+SPIRIT = 30
+weapons = 1
+armors = 11
 battle_sprite = ExtResource("1_ob0iw")
 ow_sprite = ExtResource("2_isvsd")

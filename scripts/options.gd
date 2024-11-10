@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _on_exit_game_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/menu/mainmenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu/title_menu.tscn")
 	
 func _on_exit_game_focus_entered() -> void:
 	%Description.text = "Return to title menu"

@@ -21,6 +21,7 @@ func set_slot_data(res) -> void:
 	$Name.text = res.name
 	charname = res.name
 	$HP.text = "HP: " + str(res.HP)
+	$LV.text = "LV: " + str(Global.char_levels[res.name])
 
 func _on_focus_entered() -> void:
 	$">".show()

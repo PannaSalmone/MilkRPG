@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://nbdx8nbld3td" path="res://scenes/battle.tscn" id="9_cyut6"]
 [ext_resource type="PackedScene" uid="uid://dhiyftv2s7ee1" path="res://scenes/battler.tscn" id="10_10hha"]
 [ext_resource type="PackedScene" uid="uid://dgfomh84y6hy0" path="res://scenes/menu/menu.tscn" id="10_ox1ws"]
-[ext_resource type="PackedScene" uid="uid://qd7jkifh7hgr" path="res://scenes/menu/mainmenu.tscn" id="12_8d1f3"]
+[ext_resource type="PackedScene" uid="uid://qd7jkifh7hgr" path="res://scenes/menu/title_menu.tscn" id="12_8d1f3"]
 [ext_resource type="PackedScene" uid="uid://dwbitcnu3wdcn" path="res://scenes/menu/text_box.tscn" id="13_c8r74"]
 [ext_resource type="PackedScene" uid="uid://bqmckq05er48v" path="res://scenes/map_objects/sign.tscn" id="13_pckuw"]
 [ext_resource type="PackedScene" uid="uid://d3uvvkirx4inj" path="res://scenes/map.tscn" id="16_vqtll"]

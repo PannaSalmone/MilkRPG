@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi0ffoo2ldw1d"]
+[gd_scene load_steps=2 format=3 uid="uid://bi0ffoo2ldw1d"]
 
-[ext_resource type="Script" path="res://scenes/menu/options.gd" id="1_jxjlj"]
-[ext_resource type="Script" path="res://data/items/itemGrid.gd" id="2_lah24"]
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_jxjlj"]
 
 [node name="Options" type="MarginContainer"]
 clip_contents = true
@@ -22,12 +21,11 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ItemGrid" type="VBoxContainer" parent="HBoxContainer/MainPanel"]
+[node name="OptionList" type="VBoxContainer" parent="HBoxContainer/MainPanel"]
 layout_mode = 2
 size_flags_vertical = 3
-script = ExtResource("2_lah24")
 
-[node name="Exit game" type="Button" parent="HBoxContainer/MainPanel/ItemGrid"]
+[node name="Exit game" type="Button" parent="HBoxContainer/MainPanel/OptionList"]
 layout_mode = 2
 text = "Return to main menu"
 alignment = 0
@@ -89,7 +87,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[connection signal="focus_entered" from="HBoxContainer/MainPanel/ItemGrid/Exit game" to="." method="_on_exit_game_focus_entered"]
-[connection signal="pressed" from="HBoxContainer/MainPanel/ItemGrid/Exit game" to="." method="_on_exit_game_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/MainPanel/OptionList/Exit game" to="." method="_on_exit_game_focus_entered"]
+[connection signal="pressed" from="HBoxContainer/MainPanel/OptionList/Exit game" to="." method="_on_exit_game_pressed"]
 [connection signal="focus_entered" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_focus_entered"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

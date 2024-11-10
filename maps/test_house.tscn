@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ewj5dm6mysed" path="res://scenes/map_objects/npc.tscn" id="4_28wkm"]
 [ext_resource type="Resource" uid="uid://r5l4jgw15wnm" path="res://data/dialogues/pedro.tres" id="4_q3q86"]
 [ext_resource type="PackedScene" uid="uid://b7apc6xp2b56o" path="res://scenes/map_objects/chest.tscn" id="4_tplvi"]
-[ext_resource type="Resource" uid="uid://whyub3unbbk0" path="res://data/items/items/Sword.tres" id="5_k76le"]
-[ext_resource type="Resource" uid="uid://or07c54a7bt8" path="res://data/dialogues/sandro.tres" id="5_s7ofe"]
-[ext_resource type="Resource" uid="uid://dxy8rcw2y4yno" path="res://data/dialogues/paloma.tres" id="6_lfk81"]
+[ext_resource type="Resource" uid="uid://or07c54a7bt8" path="res://data/dialogues/sandro.tres" id="5_cfh4q"]
+[ext_resource type="Resource" uid="uid://whyub3unbbk0" path="res://data/items/weapon/Sword.tres" id="5_k76le"]
+[ext_resource type="Resource" uid="uid://dxy8rcw2y4yno" path="res://data/dialogues/paloma.tres" id="6_28un2"]
 [ext_resource type="PackedScene" uid="uid://dhrpuleuua4t5" path="res://scenes/map_objects/teleport.tscn" id="6_x5b3t"]
 
 [node name="TestArea" type="TileMap"]
@@ -23,24 +23,24 @@ layer_0/tile_data = PackedInt32Array(65538, 65536, 1, 131073, 65536, 1, 131074, 
 
 [node name="NPC" parent="." instance=ExtResource("4_28wkm")]
 position = Vector2(112, 80)
-dialogue = ExtResource("4_q3q86")
+dialogue_res = ExtResource("4_q3q86")
 direction = "right"
 is_turnable = false
 
 [node name="NPC4" parent="." instance=ExtResource("4_28wkm")]
 position = Vector2(144, 80)
-dialogue = ExtResource("4_q3q86")
+dialogue_res = ExtResource("4_q3q86")
 direction = "left"
 is_turnable = false
 
 [node name="NPC2" parent="." instance=ExtResource("4_28wkm")]
 position = Vector2(112, 432)
-dialogue = ExtResource("5_s7ofe")
+dialogue_res = ExtResource("5_cfh4q")
 direction = "up"
 
 [node name="NPC3" parent="." instance=ExtResource("4_28wkm")]
 position = Vector2(432, 368)
-dialogue = ExtResource("6_lfk81")
+dialogue_res = ExtResource("6_28un2")
 direction = "up"
 
 [node name="Chest0" parent="." instance=ExtResource("4_tplvi")]

@@ -2,14 +2,19 @@ extends Resource
 class_name chardata
 
 @export var name: String
+@export var surname: String
 @export var portrait :Texture
+@export var title_class : String
+@export var initial_level : int
 
 @export_group("stats")
 @export var HP: int
 @export var MP: int
-@export var STR: int
-@export var SPE: int
-@export var INT: int
+@export var STRENGHT: int
+@export var SPEED: int
+@export var VIGOR: int
+@export var INTELLECT: int
+@export var SPIRIT: int
 
 @export_group("equip_data")
 @export_flags("Swords", "Bows", "Hammers", "Rods") var weapons = 0

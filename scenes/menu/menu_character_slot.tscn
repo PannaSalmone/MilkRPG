@@ -21,6 +21,10 @@ auto_translate_mode = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="LV" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 2
+
 [node name="HP" type="Label" parent="."]
 auto_translate_mode = 1
 layout_mode = 2

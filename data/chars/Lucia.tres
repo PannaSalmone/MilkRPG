@@ -8,13 +8,18 @@
 [resource]
 script = ExtResource("1_7kn77")
 name = "Lucia"
+surname = "Nonricordo"
 portrait = ExtResource("1_2gr1n")
+title_class = "White Mage"
+initial_level = 4
 HP = 120
 MP = 60
-STR = 45
-SPE = 50
-INT = 65
-weapons = 0
-armors = 0
+STRENGHT = 20
+SPEED = 45
+VIGOR = 35
+INTELLECT = 50
+SPIRIT = 70
+weapons = 10
+armors = 4
 battle_sprite = ExtResource("1_3duop")
 ow_sprite = ExtResource("2_80bss")

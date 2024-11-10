@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ua5802sim248" path="res://scenes/map_objects/player.tscn" id="2_i41yt"]
 [ext_resource type="PackedScene" uid="uid://dysn6p6j4papv" path="res://scenes/map_objects/warp_map.tscn" id="3_tkc04"]
 [ext_resource type="PackedScene" uid="uid://b7apc6xp2b56o" path="res://scenes/map_objects/chest.tscn" id="5_a7jnq"]
-[ext_resource type="Resource" uid="uid://bwdq1gogrh8bh" path="res://data/items/items/Hammer.tres" id="6_6gjrp"]
+[ext_resource type="Resource" uid="uid://bwdq1gogrh8bh" path="res://data/items/weapon/Hammer.tres" id="6_6gjrp"]
 
 [node name="Node" type="Node"]
 
