@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://bwdq1gogrh8bh"]
 
 [ext_resource type="Texture2D" uid="uid://dyrds1kh1dhad" path="res://sprites/Battle/weapons/3_weap.png" id="1_5u2q6"]
-[ext_resource type="Script" path="res://scripts/res/weap_data.gd" id="1_o33gh"]
+[ext_resource type="Script" uid="uid://8hvmcyo34r4o" path="res://scripts/res/weap_data.gd" id="1_o33gh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
 load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"

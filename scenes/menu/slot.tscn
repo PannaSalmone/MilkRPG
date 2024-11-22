@@ -1,16 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3i22258wy6wb"]
 
-[ext_resource type="Script" path="res://scripts/slot.gd" id="1_3vu8a"]
+[ext_resource type="Script" uid="uid://djcu2j4l6430e" path="res://scripts/item_slot.gd" id="1_3vu8a"]
 
 [node name="Slot" type="Button"]
-custom_minimum_size = Vector2(180, 32)
-offset_right = 180.0
-offset_bottom = 32.0
+custom_minimum_size = Vector2(0, 64)
+offset_right = 448.0
+offset_bottom = 64.0
 script = ExtResource("1_3vu8a")
 
 [node name="ItemPanel" type="HBoxContainer" parent="."]
 layout_mode = 2
-offset_right = 188.0
+offset_right = 448.0
 offset_bottom = 32.0
 
 [node name="TextureRect" type="TextureRect" parent="ItemPanel"]
@@ -24,6 +24,17 @@ custom_minimum_size = Vector2(116, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "culo"
+
+[node name="info" type="Label" parent="ItemPanel"]
+custom_minimum_size = Vector2(116, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="info2" type="Label" parent="ItemPanel"]
+custom_minimum_size = Vector2(116, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "info"
 
 [node name="qnt" type="Label" parent="ItemPanel"]
 custom_minimum_size = Vector2(32, 32)

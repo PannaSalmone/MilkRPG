@@ -1,18 +1,21 @@
-[gd_resource type="Resource" script_class="DataItem" load_steps=4 format=3 uid="uid://bqheg6s3cj2fn"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bqheg6s3cj2fn"]
 
-[ext_resource type="Script" path="res://scripts/res/item_data.gd" id="1_s136x"]
+[ext_resource type="Script" uid="uid://dnf08a3xg1n7y" path="res://scripts/res/consumable_data.gd" id="1_qn7at"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
 load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ieldx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_71ht3"]
 atlas = SubResource("CompressedTexture2D_8dj47")
 region = Rect2(32, 448, 32, 32)
 
 [resource]
-script = ExtResource("1_s136x")
+script = ExtResource("1_qn7at")
+category = 0
+function = 0
+power = 20
 type = "item"
 name = "Banana"
-description = "fa schifo."
-icon = SubResource("AtlasTexture_ieldx")
+description = "Fa schifo."
+icon = SubResource("AtlasTexture_71ht3")
 value = 5

@@ -18,4 +18,4 @@ Old FF and DQ look like game engine
 - [ ] Stats and HP/MP
 - [X] Game Menu
 - [X] Save system
-- [ ] Item properties
+- [X] Item properties

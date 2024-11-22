@@ -2,6 +2,7 @@ extends Node2D
 
 const SAVE_PATH = "res://save_json.json"
 var seconds : float
+var multi
 
 func level_sys():
 	pass
@@ -9,8 +10,6 @@ func level_sys():
 #new game settings, spawn points, etc
 func new_game() -> void:
 	Global.is_paused = false
-	#Global.active_party = ["Lucia","Renzo" ]
-#get initial lv from char resource
 	Global.active_party = []
 	add_char("Renzo")
 	add_char("Lucia")
@@ -105,7 +104,6 @@ func load_game():
 	inv_ra.slot_datas = str_to_var(save_dict.items.rare)
 
 
-
 func load_battle():
 	get_tree().change_scene_to_file("res://scenes/battle.tscn")
 	
@@ -134,7 +132,7 @@ func add_item(item, amount) -> void: #item_data is a dictionary
 			inv_data.slot_datas[key] += new_items[key]
 		else:
 			inv_data.slot_datas[key] = new_items[key]
-			
+
 
 #game time function
 func _physics_process(delta):
@@ -143,12 +141,13 @@ func _physics_process(delta):
 		seconds = 0
 		Global.game_time += 1
 
-func add_char(char:String):
-	var res := load("res://data/chars/"+char+".tres")
+func add_char(chara:String):
+	var res := load("res://data/chars/"+chara+".tres")
 	var char_name = res.name
 	Global.active_party.append(char_name)
 	if char_name in Global.char_levels:
 		print("c'è già")
 	else:
 		Global.char_levels[char_name] = res.initial_level
+
 	

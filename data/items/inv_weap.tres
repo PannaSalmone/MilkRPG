@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InventoryData" load_steps=3 format=3 uid="uid://dr647gjbpkiri"]
 
-[ext_resource type="Script" path="res://scripts/inventory_data.gd" id="1_ohnt5"]
+[ext_resource type="Script" uid="uid://djsf880catskl" path="res://scripts/inventory_data.gd" id="1_ohnt5"]
 [ext_resource type="Resource" uid="uid://c7gu1tqphhtv7" path="res://data/items/armor/Wooden_Shield.tres" id="2_s28uv"]
 
 [resource]

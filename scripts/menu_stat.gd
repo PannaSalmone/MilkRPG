@@ -23,22 +23,16 @@ func _on_esc_pressed() -> void:
 	
 func _process(delta: float) -> void:
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)
-	
+	if Input.is_action_just_pressed("R"):
+		next_char()
+	elif Input.is_action_just_pressed("L"):
+		prev_char()
+		
 func _on_left_pressed() -> void:
-	if cur_char == 0:
-		cur_char = char_list.size() - 1
-		update_char_info()
-	else:
-		cur_char -= 1
-		update_char_info()
-	
+	prev_char()
+
 func _on_right_pressed() -> void:
-	if cur_char == char_list.size() - 1:
-		cur_char = 0
-		update_char_info()
-	else:
-		cur_char += 1
-		update_char_info()
+	next_char()
 
 func update_char_info() -> void:
 	var char_res = load("res://data/chars/"+ char_list[cur_char] +".tres")
@@ -54,3 +48,18 @@ func update_char_info() -> void:
 	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/SPE.text = "SPE: " + str(char_res.SPEED)
 	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/INT.text = "INT: " + str(char_res.INTELLECT)
 	
+func next_char() -> void:
+	if cur_char == char_list.size() - 1:
+		cur_char = 0
+		update_char_info()
+	else:
+		cur_char += 1
+		update_char_info()
+
+func prev_char() -> void:
+	if cur_char == 0:
+		cur_char = char_list.size() - 1
+		update_char_info()
+	else:
+		cur_char -= 1
+		update_char_info()

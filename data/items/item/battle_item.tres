@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://co7s7farpkf52"]
+
+[ext_resource type="Script" uid="uid://dhbvyn1veq2iy" path="res://scripts/res/item_data.gd" id="1_5s0q8"]
+[ext_resource type="Script" uid="uid://dnf08a3xg1n7y" path="res://scripts/res/consumable_data.gd" id="2_6ld4s"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
+load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf4tq"]
+atlas = SubResource("CompressedTexture2D_8dj47")
+region = Rect2(0, 352, 32, 32)
+
+[resource]
+script = ExtResource("2_6ld4s")
+category = 1
+function = 3
+power = 50
+type = "item"
+name = "Fire Stone"
+description = "A magic stone that cast a powerful magic when used in battle."
+icon = SubResource("AtlasTexture_jf4tq")
+value = 50
+metadata/_custom_type_script = ExtResource("1_5s0q8")

@@ -60,5 +60,5 @@ func swap(selected) -> void:
 			swapbank = ""
 			populate_chara_data()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)

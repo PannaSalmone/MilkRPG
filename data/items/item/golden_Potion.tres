@@ -1,18 +1,21 @@
-[gd_resource type="Resource" script_class="DataItem" load_steps=4 format=3 uid="uid://bfgrh3wbnhvwx"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bfgrh3wbnhvwx"]
 
-[ext_resource type="Script" path="res://scripts/res/item_data.gd" id="1_c84up"]
+[ext_resource type="Script" uid="uid://dnf08a3xg1n7y" path="res://scripts/res/consumable_data.gd" id="1_eh144"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
 load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a2k3k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0npj"]
 atlas = SubResource("CompressedTexture2D_8dj47")
 region = Rect2(352, 288, 32, 32)
 
 [resource]
-script = ExtResource("1_c84up")
+script = ExtResource("1_eh144")
+category = 0
+function = 4
+power = 10
 type = "item"
 name = "Golden_Potion"
-description = "busta di piscio"
-icon = SubResource("AtlasTexture_a2k3k")
-value = 0
+description = "busta di piscio, aumenta HP massimi."
+icon = SubResource("AtlasTexture_d0npj")
+value = 100

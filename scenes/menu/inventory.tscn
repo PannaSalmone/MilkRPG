@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bse76khxf6ied"]
+[gd_scene load_steps=2 format=3 uid="uid://bse76khxf6ied"]
 
-[ext_resource type="Script" path="res://scripts/inventory.gd" id="1_8cfir"]
-[ext_resource type="Script" path="res://scripts/itemGrid.gd" id="2_jca7j"]
+[ext_resource type="Script" uid="uid://bvobs4ly4ojoe" path="res://scripts/inventory.gd" id="1_8cfir"]
 
 [node name="Inventory" type="MarginContainer"]
 clip_contents = true
@@ -25,31 +24,94 @@ size_flags_horizontal = 3
 [node name="PanelContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Items" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+[node name="Left" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
-text = "Items"
+text = "◀ L"
 
-[node name="Weap" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
-layout_mode = 2
-text = "Weapons"
-
-[node name="Armor" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
-layout_mode = 2
-text = "Misc"
-
-[node name="Key" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
-layout_mode = 2
-text = "Key"
-
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MarginContainer/PanelContainer"]
+[node name="Items" type="Panel" parent="HBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ItemGrid" type="GridContainer" parent="HBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/Items"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Items"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weap" type="Panel" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/Weap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.705882, 0.705882, 0.705882, 1)
+text = "Weapons"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Misc" type="Panel" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/Misc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.705882, 0.705882, 0.705882, 1)
+text = "Misc"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key" type="Panel" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/Key"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.705882, 0.705882, 0.705882, 1)
+text = "Key"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "R ▶"
+
+[node name="ItemList" type="ScrollContainer" parent="HBoxContainer/MarginContainer"]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-columns = 2
-script = ExtResource("2_jca7j")
+mouse_filter = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="ItemContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/ItemList"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CharaContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/ItemList"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="DescriptionPanel" type="PanelContainer" parent="HBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -66,16 +128,16 @@ layout_mode = 2
 
 [node name="use" type="Button" parent="HBoxContainer/ButtonPanel"]
 layout_mode = 2
-text = "use"
+text = "Use"
 
 [node name="sort" type="Button" parent="HBoxContainer/ButtonPanel"]
 layout_mode = 2
-text = "sort"
+text = "Sort"
 
 [node name="esc" type="Button" parent="HBoxContainer/ButtonPanel"]
 auto_translate_mode = 1
 layout_mode = 2
-text = "close"
+text = "Close"
 
 [node name="space" type="PanelContainer" parent="HBoxContainer/ButtonPanel"]
 auto_translate_mode = 1
@@ -116,10 +178,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Items" to="." method="_on_items_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Weap" to="." method="_on_weap_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Armor" to="." method="_on_armor_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Key" to="." method="_on_key_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/use" to="." method="_on_use_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/sort" to="." method="_on_sort_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://dqi7qwwp13mu1"]
 
-[ext_resource type="Script" path="res://scripts/res/misc_data.gd" id="1_v566j"]
+[ext_resource type="Script" uid="uid://bnvyu72egax1o" path="res://scripts/res/misc_data.gd" id="1_v566j"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
 load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"

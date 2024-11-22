@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://or07c54a7bt8"]
 
 [ext_resource type="Texture2D" uid="uid://ft4fg0b256kq" path="res://sprites/portraits/whitemage.png" id="1_ionlx"]
-[ext_resource type="Script" path="res://scripts/res/dial.gd" id="2_geiy0"]
+[ext_resource type="Script" uid="uid://q87yxvf5f5qx" path="res://scripts/res/dial.gd" id="2_geiy0"]
 
 [resource]
 script = ExtResource("2_geiy0")

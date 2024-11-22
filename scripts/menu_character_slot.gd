@@ -1,6 +1,7 @@
-extends HBoxContainer
+extends Button
 
 signal swap(charname)
+signal selected_char(charname)
 var is_active = false
 var charname = ""
 
@@ -11,22 +12,27 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if is_active == true:
-		if Input.is_action_just_pressed("A"):
-			emit_signal("swap", charname)
-			
+	pass
 
 func set_slot_data(res) -> void:
-	$Portrait.texture = res.portrait
-	$Name.text = res.name
+	$HBoxContainer/Portrait.texture = res.portrait
+	$HBoxContainer/Name.text = res.name
 	charname = res.name
-	$HP.text = "HP: " + str(res.HP)
-	$LV.text = "LV: " + str(Global.char_levels[res.name])
+	$HBoxContainer/HP.text = "HP: " + str(res.HP)
+	$HBoxContainer/LV.text = "LV: " + str(Global.char_levels[res.name])
 
 func _on_focus_entered() -> void:
-	$">".show()
+	$HBoxContainer/space.show()
 	is_active = true
 	
 func _on_focus_exited() -> void:
-	$">".hide()
+	$HBoxContainer/space.hide()
 	is_active = false
+
+func _on_pressed() -> void:
+	var parent_check = get_parent()
+	print(parent_check)
+	if parent_check.is_class("VBoxContainer"):
+		emit_signal("selected_char", charname)
+	else:
+		emit_signal("swap", charname)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yxmykshy1e25"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_buxas"]
+[ext_resource type="Script" uid="uid://bp5covui7m3bt" path="res://scripts/enemy.gd" id="1_buxas"]
 [ext_resource type="Texture2D" uid="uid://cs70a7pyd64ny" path="res://sprites/Enemies/gurindragon.png" id="1_loqka"]
 
 [node name="Enemy" type="Node2D"]

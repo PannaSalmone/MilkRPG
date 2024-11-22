@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://whyub3unbbk0"]
 
-[ext_resource type="Script" path="res://scripts/res/weap_data.gd" id="1_agevh"]
+[ext_resource type="Script" uid="uid://8hvmcyo34r4o" path="res://scripts/res/weap_data.gd" id="1_agevh"]
 [ext_resource type="Texture2D" uid="uid://bumue0dr7vbra" path="res://sprites/Battle/weapons/2_weap.png" id="1_y6uac"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]

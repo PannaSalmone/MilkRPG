@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci16ieydoksfi"]
 
-[ext_resource type="Script" path="res://scripts/menu_equip.gd" id="1_xvr4w"]
+[ext_resource type="Script" uid="uid://jdp30wkkqbqg" path="res://scripts/menu_equip.gd" id="1_xvr4w"]
 
 [node name="EquipMenu" type="MarginContainer"]
 clip_contents = true
