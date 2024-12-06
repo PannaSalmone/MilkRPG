@@ -3,12 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://dx5kaa70n7xvy" path="res://sprites/Battle/1_player.png" id="1_1dmkb"]
 [ext_resource type="Texture2D" uid="uid://dvawyqdxy35vk" path="res://sprites/OW/OW_Renzo.png" id="2_ms0k4"]
 [ext_resource type="Texture2D" uid="uid://kdtmsgxgeyca" path="res://sprites/portraits/blackmage.png" id="3_mevdm"]
-[ext_resource type="Script" path="res://scripts/res/chardata.gd" id="4_vxkkw"]
+[ext_resource type="Script" uid="uid://cts21r7yhra5e" path="res://scripts/res/chardata.gd" id="4_vxkkw"]
 
 [resource]
 script = ExtResource("4_vxkkw")
 name = "Fermo"
+surname = ""
 portrait = ExtResource("3_mevdm")
+title_class = ""
+initial_level = 0
+level = 0
+status = 0
 HP = 200
 MP = 35
 STRENGHT = 80

@@ -149,7 +149,7 @@ func open_chars_list() -> void:
 	#populate char panel
 	free_char_slots()
 	var slot = load("res://scenes/menu/menu_character_slot.tscn")
-	for chara in Global.active_party:
+	for chara in Char.active_party:
 		var char_slot = slot.instantiate()
 		if chara:
 			chars_list.add_child(char_slot)
@@ -159,9 +159,9 @@ func open_chars_list() -> void:
 	%Description.text = "select character you want to use item on"
 	$HBoxContainer/ButtonPanel/esc.text = "Back"
 	
-func on_char_selected(char) -> void:
+func on_char_selected(character) -> void:
 	#use item
-	print("potion used on " + str(char))
+	print("potion used on " + str(character))
 	return_to_item_page()
 	pass
 

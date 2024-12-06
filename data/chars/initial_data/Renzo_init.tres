@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="InitCharData" load_steps=4 format=3 uid="uid://bhxv1v78b0a5p"]
+
+[ext_resource type="Script" uid="uid://bewlx2u1c6m3f" path="res://scripts/res/init_char_data.gd" id="1_ghcfq"]
+[ext_resource type="Resource" uid="uid://dukfkg2o43tft" path="res://data/items/armor/Iron_Elmet.tres" id="2_vfypk"]
+[ext_resource type="Resource" uid="uid://whyub3unbbk0" path="res://data/items/weapon/Sword.tres" id="3_i6g1c"]
+
+[resource]
+script = ExtResource("1_ghcfq")
+init_name = ""
+init_level = 4
+HP = 0
+MP = 0
+STRENGHT = 0
+SPEED = 0
+VIGOR = 0
+INTELLECT = 0
+SPIRIT = 0
+head = ExtResource("2_vfypk")
+hand_dx = ExtResource("3_i6g1c")
+metadata/_custom_type_script = ExtResource("1_ghcfq")

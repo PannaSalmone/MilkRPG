@@ -57,9 +57,8 @@ func ray_dir():
 		return "up"
 
 func reload_sprite() -> void:
-	var res = load("res://data/chars/"+Global.active_party[0]+".tres")
-	print("func reload_sprite active")
-	$Sprite2D.texture = res.ow_sprite
+	var first_char = Char.active_party[0]
+	$Sprite2D.texture = first_char.ow_sprite
 	pass
 
 func _physics_process(_delta):

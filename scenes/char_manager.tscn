@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtjor4218m011"]
+
+[ext_resource type="Script" uid="uid://e8bqr3lujtdg" path="res://scripts/char_manager.gd" id="1_mja72"]
+
+[node name="CharManager" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_mja72")

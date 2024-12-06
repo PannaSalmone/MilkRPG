@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="chardata" load_steps=5 format=3 uid="uid://cq33anf4yc5tj"]
+[gd_resource type="Resource" script_class="chardata" load_steps=7 format=3 uid="uid://cq33anf4yc5tj"]
 
 [ext_resource type="Texture2D" uid="uid://bos8oa7ei14bd" path="res://sprites/Menu/Portrait_Player.png" id="1_07tx4"]
-[ext_resource type="Script" path="res://scripts/res/chardata.gd" id="1_ko5us"]
+[ext_resource type="Script" uid="uid://cts21r7yhra5e" path="res://scripts/res/chardata.gd" id="1_ko5us"]
 [ext_resource type="Texture2D" uid="uid://dx5kaa70n7xvy" path="res://sprites/Battle/1_player.png" id="1_ob0iw"]
 [ext_resource type="Texture2D" uid="uid://dvawyqdxy35vk" path="res://sprites/OW/OW_Renzo.png" id="2_isvsd"]
+[ext_resource type="Resource" uid="uid://whyub3unbbk0" path="res://data/items/weapon/Sword.tres" id="2_ld843"]
+[ext_resource type="Resource" uid="uid://dukfkg2o43tft" path="res://data/items/armor/Iron_Elmet.tres" id="3_tf48c"]
 
 [resource]
 script = ExtResource("1_ko5us")
@@ -12,6 +14,8 @@ surname = "Tramaglino"
 portrait = ExtResource("1_07tx4")
 title_class = "Paladin"
 initial_level = 5
+level = 0
+status = 0
 HP = 200
 MP = 35
 STRENGHT = 80
@@ -21,5 +25,7 @@ INTELLECT = 30
 SPIRIT = 30
 weapons = 1
 armors = 11
+head = ExtResource("3_tf48c")
+hand_Dx = ExtResource("2_ld843")
 battle_sprite = ExtResource("1_ob0iw")
 ow_sprite = ExtResource("2_isvsd")

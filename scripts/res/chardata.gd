@@ -6,6 +6,10 @@ class_name chardata
 @export var portrait :Texture
 @export var title_class : String
 @export var initial_level : int
+@export var level : int
+
+@export_group("status")
+@export_flags("Poison", "Stone", "Sleep", "Frog") var status = 0
 
 @export_group("stats")
 @export var HP: int
@@ -19,6 +23,8 @@ class_name chardata
 @export_group("equip_data")
 @export_flags("Swords", "Bows", "Hammers", "Rods") var weapons = 0
 @export_flags("Heavy", "Lights", "Robes", "Shields") var armors = 0
+
+var equipment = [DataItem,DataItem,DataItem,DataItem,DataItem,DataItem,DataItem,DataItem,]
 
 @export_group("Sprites")
 @export var battle_sprite :Texture

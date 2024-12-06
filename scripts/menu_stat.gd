@@ -1,17 +1,17 @@
 extends MarginContainer
 
 var cur_char : int
-var char_list : Array
+#var char_list : Array
 @onready var name_panel := $HBoxContainer/MarginContainer/PanelContainer/NameBox/Label
 
 
 func _ready():
 	#create list of active character
-	for chara in Global.active_party:
-		char_list.append(chara)
+	#for chara in Char.active_party:
+		#char_list.append(chara)
 	cur_char = 0
 	$HBoxContainer/ButtonPanel/esc.grab_focus()
-	$HBoxContainer/MarginContainer/PanelContainer/NameBox/Label.text = char_list[cur_char]
+	$HBoxContainer/MarginContainer/PanelContainer/NameBox/Label.text = Char.active_party[cur_char].name
 	#set gold label 
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold/Gold.text = str(Global.gold)
 	update_char_info()
@@ -35,7 +35,7 @@ func _on_right_pressed() -> void:
 	next_char()
 
 func update_char_info() -> void:
-	var char_res = load("res://data/chars/"+ char_list[cur_char] +".tres")
+	var char_res = Char.active_party[cur_char] 
 	name_panel.text = char_res.name
 	%Portrait.texture = char_res.portrait
 	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/Name.text = char_res.name + " " + char_res.surname
@@ -49,7 +49,7 @@ func update_char_info() -> void:
 	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/INT.text = "INT: " + str(char_res.INTELLECT)
 	
 func next_char() -> void:
-	if cur_char == char_list.size() - 1:
+	if cur_char == Char.active_party.size() - 1:
 		cur_char = 0
 		update_char_info()
 	else:
@@ -58,7 +58,7 @@ func next_char() -> void:
 
 func prev_char() -> void:
 	if cur_char == 0:
-		cur_char = char_list.size() - 1
+		cur_char = Char.active_party.size() - 1
 		update_char_info()
 	else:
 		cur_char -= 1
