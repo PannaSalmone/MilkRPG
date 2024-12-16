@@ -1,4 +1,4 @@
 extends Resource
 class_name InventoryData
 
-@export var slot_datas : Dictionary
+@export var slots : Array = []

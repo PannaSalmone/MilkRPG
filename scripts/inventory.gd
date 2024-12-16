@@ -1,9 +1,10 @@
 extends MarginContainer
 
+signal close_menu
 const Slot = preload("res://scenes/menu/slot.tscn")
-var inv_data = load("res://data/items/inv_items.tres") #Current inventory 
+var inv_data = load("res://data/items/inv_items.tres").slots #Current inventory 
 var cur_page := 0 #0 items, 1 weap, 2 misc, 3 rare 
-var selected_item 
+var selected_item : Resource
 var char_panel = false
 
 @onready var item_panel: Label = $HBoxContainer/MarginContainer/PanelContainer/Items/Label
@@ -22,6 +23,8 @@ func _ready():
 
 func _process(_delta: float) -> void:
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)
+	if Input.is_action_just_pressed("B"):
+		back()
 	if Input.is_action_just_pressed("R"):
 		next_cat()
 	elif Input.is_action_just_pressed("L"):
@@ -32,16 +35,15 @@ func populate_item_grid() -> void:
 	var children = item_list.get_children()
 	for c in children:
 		c.free()
-	var i = 0
-	for item in inv_data.slot_datas:
-		var slot = Slot.instantiate()
-		if item:
-			item_list.add_child(slot)
-			slot.set_slot_data(item, inv_data.slot_datas.values()[i])
+	for s in inv_data:
+		var itemslot = Slot.instantiate()
+		if s:
+			item_list.add_child(itemslot)
+			itemslot.set_slot_data(s)
 			#connect signal from generated childs
-			slot.connect("item_focused", Callable(self, "on_item_focused"))
-			slot.connect("item_selected",Callable(self, "on_item_selected"))
-			i += 1
+			itemslot.connect("item_focused", Callable(self, "on_item_focused"))
+			itemslot.connect("item_selected",Callable(self, "on_item_selected"))
+			
 
 func _on_sort_pressed() -> void: #It just works
 	var array := [] #for sort items name, Dictionary cannot be sorted
@@ -75,14 +77,6 @@ func _on_use_pressed() -> void:
 				pass
 	$HBoxContainer/ButtonPanel/use.disabled = true
 
-
-func _on_esc_pressed() -> void:
-	if char_panel == false:
-		get_parent().get_parent().close_menu()
-	else:
-		return_to_item_page()
-		
-
 func _on_left_pressed() -> void:
 	prev_cat()
 
@@ -102,16 +96,22 @@ func load_inv() -> void:
 	rare_panel.add_theme_color_override("font_color", Color(0.6, 0.6, 0.6, 1))
 	match cur_page:
 		0: 
-			inv_data = load("res://data/items/inv_items.tres")
+			var inventory = load("res://data/items/inv_items.tres")
+			inv_data = inventory.slots
 			item_panel.add_theme_color_override("font_color", Color(1, 1, 1, 1))
-		1: 
-			inv_data = load("res://data/items/inv_weap.tres")
+		1: #load the weapons inventory plus the items equipped to characters
+			var inventory = load("res://data/items/inv_weap.tres")
+			var inventory_equipment = load("res://data/items/inv_equipped.tres").slots
+			inv_data = inventory.slots.duplicate()
+			inv_data.append_array(inventory_equipment)
 			weap_panel.add_theme_color_override("font_color", Color(1, 1, 1, 1))
 		2: 
-			inv_data = load("res://data/items/inv_misc.tres")
+			var inventory = load("res://data/items/inv_misc.tres")
+			inv_data = inventory.slots
 			misc_panel.add_theme_color_override("font_color", Color(1, 1, 1, 1))
 		3: 
-			inv_data = load("res://data/items/inv_rare.tres")
+			var inventory = load("res://data/items/inv_rare.tres")
+			inv_data = inventory.slots
 			rare_panel.add_theme_color_override("font_color", Color(1, 1, 1, 1))
 	populate_item_grid()
 	focus()
@@ -129,17 +129,6 @@ func next_cat() -> void: #move to next item category
 	else:
 		cur_page += 1
 	load_inv()
-
-#Signals from Item slots
-func on_item_focused(desc):
-	%Description.text = desc
- 
-func on_item_selected(item_res) -> void:
-	selected_item = item_res
-	if cur_page == 0:
-		print(selected_item)
-		$HBoxContainer/ButtonPanel/use.disabled = false
-		$HBoxContainer/ButtonPanel/use.grab_focus()
 
 func open_chars_list() -> void:
 	char_panel = true
@@ -179,8 +168,29 @@ func return_to_item_page() -> void:
 	focus()
 
 func item_used() -> void:
-	inv_data.slot_datas[selected_item] -= 1
+	for i in range(inv_data.size()):
+		#[selected_item] -= 1
+		pass
 	# If the quantity reaches zero, remove the item from the inventory
 	if inv_data.slot_datas[selected_item] <= 0:
 		inv_data.slot_datas.erase(selected_item)
-	
+
+func _on_esc_pressed() -> void:
+	back()
+ 
+func back() -> void:
+	if char_panel == false:
+		emit_signal("close_menu")
+	else:
+		return_to_item_page()
+
+#Signals from Item slots
+func on_item_focused(desc):
+	%Description.text = desc
+ 
+func on_item_selected(item_res) -> void:
+	selected_item = item_res
+	if cur_page == 0:
+		print(selected_item)
+		$HBoxContainer/ButtonPanel/use.disabled = false
+		$HBoxContainer/ButtonPanel/use.grab_focus()

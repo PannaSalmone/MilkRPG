@@ -19,3 +19,4 @@ name = "Wooden Shield"
 description = "A miserable pile of wood."
 icon = SubResource("AtlasTexture_jmfob")
 value = 10
+locked = false

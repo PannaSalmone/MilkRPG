@@ -24,7 +24,8 @@ class_name chardata
 @export_flags("Swords", "Bows", "Hammers", "Rods") var weapons = 0
 @export_flags("Heavy", "Lights", "Robes", "Shields") var armors = 0
 
-var equipment = [DataItem,DataItem,DataItem,DataItem,DataItem,DataItem,DataItem,DataItem,]
+var equipment = [DataItem,DataItem,DataItem,DataItem,DataItem,DataItem,DataItem,DataItem]
+
 
 @export_group("Sprites")
 @export var battle_sprite :Texture

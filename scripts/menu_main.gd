@@ -8,7 +8,6 @@ func _ready() -> void:
 	populate_chara_data()
 	$HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Gold/Gold.text = str(Global.gold)
 
-
 ######################################  Button funcs
 func _on_save_pressed() -> void:
 	Utils.save_game()
@@ -29,7 +28,6 @@ func _on_status_pressed() -> void:
 func _on_equip_pressed() -> void:
 	get_parent().get_parent().equip_panel()
 
-
 #load character data and info in the main panel
 func populate_chara_data() -> void:
 	for child in $HBoxContainer/VBoxContainer/PlayerData.get_children():
@@ -42,7 +40,6 @@ func populate_chara_data() -> void:
 			char_slot.swap.connect(swap)
 			char_slot.set_slot_data(chara)
 	$HBoxContainer/ButtonPanel/esc.grab_focus()
-	
 
 #Function that swap party member
 func swap(id) -> void:
@@ -59,7 +56,6 @@ func swap(id) -> void:
 
 func _process(_delta: float) -> void:
 	$HBoxContainer/ButtonPanel/Gold/VBoxContainer2/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)
-
 
 func _on_esc_focus_entered() -> void:
 	desc_panel.text = "Close the menu."

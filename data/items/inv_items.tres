@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_saw4x")
-slot_datas = {}
+slots = []

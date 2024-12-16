@@ -1,5 +1,6 @@
 extends MarginContainer
 
+signal close_menu
 var cur_char : int
 #var char_list : Array
 @onready var name_panel := $HBoxContainer/MarginContainer/PanelContainer/NameBox/Label
@@ -15,24 +16,15 @@ func _ready():
 	#set gold label 
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold/Gold.text = str(Global.gold)
 	update_char_info()
-	
 
-
-func _on_esc_pressed() -> void:
-	get_parent().get_parent().close_menu()
-	
 func _process(delta: float) -> void:
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)
+	if Input.is_action_just_pressed("B"):
+		emit_signal("close_menu")
 	if Input.is_action_just_pressed("R"):
 		next_char()
 	elif Input.is_action_just_pressed("L"):
 		prev_char()
-		
-func _on_left_pressed() -> void:
-	prev_char()
-
-func _on_right_pressed() -> void:
-	next_char()
 
 func update_char_info() -> void:
 	var char_res = Char.active_party[cur_char] 
@@ -63,3 +55,14 @@ func prev_char() -> void:
 	else:
 		cur_char -= 1
 		update_char_info()
+
+#########Buttons functions
+func _on_esc_pressed() -> void:
+	emit_signal("close_menu")
+
+func _on_left_pressed() -> void:
+	prev_char()
+
+func _on_right_pressed() -> void:
+	next_char()
+	

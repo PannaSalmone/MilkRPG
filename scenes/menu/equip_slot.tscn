@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgck1og08vtsn"]
+
+[ext_resource type="Script" uid="uid://bc1cgrkxydvnp" path="res://scripts/equip_slot.gd" id="1_103u0"]
+
+[node name="equip_slot" type="Button"]
+custom_minimum_size = Vector2(300, 45)
+offset_right = 8.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_103u0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="name" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="qnt" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+horizontal_alignment = 2
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

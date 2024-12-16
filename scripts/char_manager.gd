@@ -13,7 +13,7 @@ func add_char_to_party(charname) -> void:
 			active_party.append(lucia)
 
 func init_level(charname) -> void:
-	var res_init_eq = load ("res://data/chars/initial_data/"+ charname +"_init.tres")
+	var res_init_eq = load ("res://data/initial_data/"+ charname +"_init.tres")
 	match charname:
 		"Renzo":
 			renzo.level = res_init_eq.init_level
@@ -28,15 +28,17 @@ func swap_members(char1, char2) -> void:
 func init_equipment(charname) -> void:
 	for c in active_party:
 		if c.name == charname:
-			var res_init_eq = load ("res://data/chars/initial_data/"+ charname +"_init.tres")
-			c.equipment[0] = res_init_eq.head
-			c.equipment[4] = res_init_eq.hand_dx
-			c.equipment[1] = res_init_eq.body
-			c.equipment[5] = res_init_eq.hand_sx
-			c.equipment[2] = res_init_eq.legs
-			c.equipment[6] = res_init_eq.acc1
-			c.equipment[3] = res_init_eq.arms
-			c.equipment[7] = res_init_eq.acc2
+			var res_init_eq = load ("res://data/initial_data/"+ charname +"_init.tres")
+			var temp_array := [res_init_eq.head,res_init_eq.hand_dx,res_init_eq.body,res_init_eq.hand_sx,
+			res_init_eq.legs,res_init_eq.acc1,res_init_eq.arms,res_init_eq.acc2]
+			var i := 0
+			for items in temp_array:
+				if items != null:
+					Utils.add_equipped_item(items, 1)
+					c.equipment[i] = temp_array[i]
+				else:
+					c.equipment[i] = null
+				i += 1
 
 func init_char(charname) -> void:
 	init_equipment(charname)

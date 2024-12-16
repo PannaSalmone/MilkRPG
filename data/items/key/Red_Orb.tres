@@ -17,3 +17,4 @@ description = "A magic red orb that can obliterate all of your enemies. WAHAHAHA
 Destroy! Destroy!"
 icon = SubResource("AtlasTexture_jimdf")
 value = 0
+locked = false

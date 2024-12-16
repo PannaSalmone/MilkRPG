@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://dnywwgr0wlayd"]
+
+[ext_resource type="Script" uid="uid://dlhq3hqwl41gf" path="res://scripts/res/init_inventory.gd" id="1_jlh3b"]
+[ext_resource type="Resource" uid="uid://c2g0sjelubrpv" path="res://data/items/item/Apple.tres" id="2_pg6up"]
+[ext_resource type="Resource" uid="uid://bqheg6s3cj2fn" path="res://data/items/item/Banana.tres" id="3_s3gdt"]
+[ext_resource type="Resource" uid="uid://orbqvgq483sy" path="res://data/items/armor/Metal_Armor.tres" id="4_sc2yo"]
+[ext_resource type="Resource" uid="uid://c8lq10kd0tg6w" path="res://data/items/armor/robe.tres" id="5_pg6up"]
+
+[resource]
+script = ExtResource("1_jlh3b")
+slot_datas = {
+ExtResource("2_pg6up"): 2,
+ExtResource("3_s3gdt"): 1,
+ExtResource("4_sc2yo"): 1,
+ExtResource("5_pg6up"): 1
+}

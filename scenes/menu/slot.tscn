@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3i22258wy6wb"]
 
-[ext_resource type="Script" uid="uid://djcu2j4l6430e" path="res://scripts/item_slot.gd" id="1_3vu8a"]
+[ext_resource type="Script" uid="uid://djcu2j4l6430e" path="res://scripts/item_button.gd" id="1_3vu8a"]
 
 [node name="Slot" type="Button"]
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(0, 65)
 offset_right = 448.0
 offset_bottom = 64.0
 script = ExtResource("1_3vu8a")
@@ -23,7 +23,7 @@ stretch_mode = 3
 custom_minimum_size = Vector2(116, 32)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "culo"
+text = "name"
 
 [node name="info" type="Label" parent="ItemPanel"]
 custom_minimum_size = Vector2(116, 32)

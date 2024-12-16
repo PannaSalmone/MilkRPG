@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_4uuta")
-slot_datas = {}
+slots = []

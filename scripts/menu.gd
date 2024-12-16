@@ -9,9 +9,8 @@ func _ready():
 	show()
 
 func _physics_process(_delta):
-	if $GameMenu.visible == true:
-		if Input.is_action_just_pressed("B"):
-			close_menu()
+	if Input.is_action_just_pressed("B"):
+		close_menu()
 
 func game_menu():
 	get_tree().paused = true
@@ -24,6 +23,7 @@ func item_panel():
 	var inv = load("res://scenes/menu/inventory.tscn")
 	var inv_wind = inv.instantiate()
 	$GameMenu.add_child(inv_wind)
+	inv_wind.connect("close_menu",Callable(self, "on_close_menu"))
 
 func option_panel() -> void:
 	cur_panel = 2
@@ -31,6 +31,7 @@ func option_panel() -> void:
 	var opz = load("res://scenes/menu/options.tscn")
 	var opz_wind = opz.instantiate()
 	$GameMenu.add_child(opz_wind)
+	opz_wind.connect("close_menu",Callable(self, "on_close_menu"))
 
 func status_panel() -> void:
 	cur_panel = 3
@@ -38,13 +39,15 @@ func status_panel() -> void:
 	var stat = load("res://scenes/menu/stat_menu.tscn")
 	var stat_wind = stat.instantiate()
 	$GameMenu.add_child(stat_wind)
-
+	stat_wind.connect("close_menu",Callable(self, "on_close_menu"))
+	
 func equip_panel() -> void:
 	cur_panel = 4
 	clean_main_window()
 	var equip = load("res://scenes/menu/equip_menu.tscn")
 	var equip_wind = equip.instantiate()
 	$GameMenu.add_child(equip_wind)
+	equip_wind.connect("close_menu",Callable(self, "on_close_menu"))
 
 func clean_main_window() -> void:
 	var main_wind = $GameMenu
@@ -66,4 +69,6 @@ func close_menu() -> void:
 	else:
 		clean_main_window()
 		load_stat_wind()
-	
+
+func on_close_menu():
+	close_menu()

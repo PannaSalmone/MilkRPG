@@ -10,12 +10,14 @@ Old FF and DQ look like game engine
 - [x] Teleports
 - [x] Teleports between maps
 - [X] Inventory system
+	- [ ] Equipment system
 - [X] In game dialogues
 	- [ ] Multiple choice dialogues  
 - [x] NPC
+	- [ ] Vendor NPC
 - [X] Chests
 - [ ] Battle scene
-- [ ] Stats and HP/MP
+- [X] Stats and HP/MP
 - [X] Game Menu
 - [X] Save system
 - [X] Item properties
