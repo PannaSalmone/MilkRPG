@@ -151,7 +151,7 @@ func add_item(item, amount) -> void:
 		slot.qnt = amount
 		inv_data.slots.insert(0, slot)
 		
-
+#remove item from inventory
 func remove_item(item, amount) -> void:
 	# Check type of item
 	var inv_data : Resource
@@ -182,6 +182,7 @@ func remove_item(item, amount) -> void:
 	if not item_found:
 		print("WTF, u have removed an item that u don't have?")
 
+#add item to equip list/inventory
 func add_equipped_item(item, amount) -> void:
 	var inv_data = preload("res://data/items/inv_equipped.tres")
 	var slot = ItemSlot.new()
@@ -190,7 +191,8 @@ func add_equipped_item(item, amount) -> void:
 	slot.is_locked = true
 	inv_data.slots.append(slot)
 
-func remove_item_equipped(item) -> void:
+#remove item from equip list/inventory
+func remove_item_equipped(item) -> void: 
 	var inv_data = preload("res://data/items/inv_equipped.tres")
 	var array = inv_data.slots
 	var item_to_remove = null
@@ -201,6 +203,7 @@ func remove_item_equipped(item) -> void:
 	array.erase(item_to_remove)
 	inv_data.slots = array
 	add_item(item, 1)
+
 #game time function
 func _physics_process(delta):
 	seconds = seconds + delta

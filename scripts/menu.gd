@@ -9,8 +9,9 @@ func _ready():
 	show()
 
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("B"):
-		close_menu()
+	#if Input.is_action_just_pressed("B"):
+	#	close_menu()
+	pass
 
 func game_menu():
 	get_tree().paused = true

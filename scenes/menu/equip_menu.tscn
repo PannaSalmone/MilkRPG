@@ -49,7 +49,8 @@ size_flags_vertical = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer"]
+[node name="CharacterInfo" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer"]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/margin_left = 10
@@ -57,15 +58,32 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/CharacterInfo"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/CharacterInfo/VBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("2_jpdmx")
 expand_mode = 1
 
-[node name="Column1" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer"]
+[node name="ATK" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/CharacterInfo/VBoxContainer"]
+layout_mode = 2
+text = "Atk:"
+
+[node name="DEF" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/CharacterInfo/VBoxContainer"]
+layout_mode = 2
+text = "Def:"
+
+[node name="SelectedItem" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/CharacterInfo/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+vertical_alignment = 1
+
+[node name="Equipment" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 10
@@ -73,20 +91,19 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="EquipPanel" type="GridContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1"]
+[node name="EquipPanel" type="GridContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="Head" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel"]
-custom_minimum_size = Vector2(100, 45)
+[node name="Head" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Head"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Head"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,27 +111,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Head/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Head/MarginContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Head/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Head/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 2
 
-[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Head/MarginContainer/HBoxContainer"]
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Head/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="DX" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel"]
-custom_minimum_size = Vector2(100, 45)
+[node name="DX" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/DX"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/DX"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,27 +138,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/DX/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/DX/MarginContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/DX/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/DX/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 2
 
-[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/DX/MarginContainer/HBoxContainer"]
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/DX/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Body" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel"]
-custom_minimum_size = Vector2(100, 45)
+[node name="Body" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Body"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Body"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,27 +165,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Body/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Body/MarginContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Body/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Body/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 2
 
-[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Body/MarginContainer/HBoxContainer"]
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Body/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="SX" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel"]
-custom_minimum_size = Vector2(100, 45)
+[node name="SX" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/SX"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/SX"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -178,27 +192,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/SX/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/SX/MarginContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/SX/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/SX/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 2
 
-[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/SX/MarginContainer/HBoxContainer"]
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/SX/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Legs" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel"]
-custom_minimum_size = Vector2(100, 45)
+[node name="Legs" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Legs"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Legs"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -206,27 +219,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Legs/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Legs/MarginContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Legs/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Legs/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 2
 
-[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Legs/MarginContainer/HBoxContainer"]
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Legs/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Acc1" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel"]
-custom_minimum_size = Vector2(100, 45)
+[node name="Acc1" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Acc1"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,27 +246,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Acc1/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc1/MarginContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Acc1/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc1/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 2
 
-[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Acc1/MarginContainer/HBoxContainer"]
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc1/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Arms" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel"]
-custom_minimum_size = Vector2(100, 45)
+[node name="Arms" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Arms"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Arms"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -262,27 +273,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Arms/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Arms/MarginContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Arms/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Arms/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 2
 
-[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Arms/MarginContainer/HBoxContainer"]
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Arms/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Acc2" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel"]
-custom_minimum_size = Vector2(100, 45)
+[node name="Acc2" type="Button" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Acc2"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -290,84 +300,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Acc2/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc2/MarginContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Acc2/MarginContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stretch_mode = 2
 
-[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Acc2/MarginContainer/HBoxContainer"]
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc2/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="SelectPanel" type="PanelContainer" parent="HBoxContainer/MarginContainer"]
+[node name="ItemPanel" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipPanel" type="HBoxContainer" parent="HBoxContainer/MarginContainer/SelectPanel"]
+[node name="EquipPanel" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/ItemPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Separator" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/ItemPanel/EquipPanel"]
+custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="SelItem" type="Button" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/MarginContainer"]
-custom_minimum_size = Vector2(100, 45)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 6
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/MarginContainer/SelItem"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/MarginContainer/SelItem/MarginContainer"]
-layout_mode = 2
-
-[node name="SelIcon" type="TextureRect" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/MarginContainer/SelItem/MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-stretch_mode = 2
-
-[node name="SelName" type="Label" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/MarginContainer/SelItem/MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Separator" type="MarginContainer" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/Separator"]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/ItemPanel/EquipPanel/Separator"]
 layout_mode = 2
 text = "▶"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/ItemPanel/EquipPanel"]
 layout_mode = 2
+size_flags_horizontal = 3
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="EquipListContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/ScrollContainer"]
+[node name="EquipListContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/ItemPanel/EquipPanel/ScrollContainer"]
 custom_minimum_size = Vector2(170, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 5
@@ -375,7 +349,7 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="EquipList" type="VBoxContainer" parent="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/ScrollContainer/EquipListContainer"]
+[node name="EquipList" type="VBoxContainer" parent="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/ItemPanel/EquipPanel/ScrollContainer/EquipListContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
@@ -443,9 +417,8 @@ horizontal_alignment = 2
 
 [connection signal="pressed" from="HBoxContainer/MarginContainer/CharSelectPanel/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/CharSelectPanel/Right" to="." method="_on_right_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Head" to="." method="_on_head_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/DX" to="." method="_on_dx_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/Body" to="." method="_on_body_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Column1/EquipPanel/SX" to="." method="_on_sx_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/SelectPanel/EquipPanel/MarginContainer/SelItem" to="." method="_on_head_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Head" to="." method="_on_head_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/DX" to="." method="_on_dx_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Body" to="." method="_on_body_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/SX" to="." method="_on_sx_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]
