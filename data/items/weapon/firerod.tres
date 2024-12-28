@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://lc7jgrf711yo"]
+
+[ext_resource type="Script" uid="uid://8hvmcyo34r4o" path="res://scripts/res/weap_data.gd" id="2_bgj7f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8dj47"]
+load_path = "res://.godot/imported/icons.png-bc346bcc3cfe4d9117070f8d93300097.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuvia"]
+atlas = SubResource("CompressedTexture2D_8dj47")
+region = Rect2(288, 192, 32, 32)
+
+[resource]
+script = ExtResource("2_bgj7f")
+weap_type = "rod"
+power = 10
+element = "fire"
+type = "weap"
+name = "Fire Rod"
+description = "A fire staff made of fire that cast fire"
+icon = SubResource("AtlasTexture_cuvia")
+value = 35

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di1hkpw4v0vq6"
-path="res://.godot/imported/tileset.png-eaea6d2a197ba36af44d4127683788c1.ctex"
+uid="uid://68l6dafwcm2c"
+path="res://.godot/imported/Town.png-5d53a0908c0e7ca78a8aedec5f368118.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-eaea6d2a197ba36af44d4127683788c1.ctex"]
+source_file="res://tilesets/Town.png"
+dest_files=["res://.godot/imported/Town.png-5d53a0908c0e7ca78a8aedec5f368118.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

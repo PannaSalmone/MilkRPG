@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ti423kwt01oi"]
+
+[ext_resource type="Script" uid="uid://q87yxvf5f5qx" path="res://scripts/res/dial.gd" id="1_jguke"]
+
+[resource]
+script = ExtResource("1_jguke")
+obj_name = "Spinner"
+dialogue = Array[String]([">>I'm picking apples", ">>here's an apple for you!", "s/res://sounds/SFX/test_sfx.mp3", ">>1 Apple added in the inventory.", "g/res://data/items/item/Apple.tres"])

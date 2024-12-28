@@ -1,4 +1,4 @@
-extends TileMap
+extends Node2D
 
 
 @export var MAP_GROUP_ID: int = 0

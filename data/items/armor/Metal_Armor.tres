@@ -14,6 +14,7 @@ script = ExtResource("1_ge1ha")
 armor_type = "body"
 armor_weight = "heavy"
 defence = 10
+element = "none"
 type = "armor"
 name = "Metal Armor"
 description = "Corazza di ferro"

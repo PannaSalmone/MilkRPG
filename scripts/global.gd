@@ -29,3 +29,5 @@ var lucia_status : int #0 normal 1 poisoned 2 paralized
 #Chest flags
 var chest_flags = [0, 0, 0, 0, 0] #[ID, ID] #0= closed,  1 = opened
 #chest_flags ID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var game_flags = [0, 0]
+#game and story flag

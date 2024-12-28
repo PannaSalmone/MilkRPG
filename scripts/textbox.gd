@@ -10,7 +10,6 @@ var simple_text : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	pass
 
 func _physics_process(_delta)-> void:
@@ -47,6 +46,42 @@ func parse_dialog():
 					$DialogueBox/MarginContainer/HBoxContainer/VBoxContainer2/port.texture = new_port
 				cur_line += 1
 				parse_dialog()
+			"j/":#jump to a specific line
+				var line_num = int(dial_res.dialogue[cur_line].lstrip("j/"))
+				cur_line = line_num
+				print("jumped to ", line_num)
+				parse_dialog()
+			"f/":#change in game flag
+				var temp = dial_res.dialogue[cur_line].lstrip("f/")
+				var line_arguments = temp.split(",")
+				var flag_num = int(line_arguments[0])
+				var modifier = int(line_arguments[1])
+				Global.game_flags[flag_num] = modifier
+				cur_line += 1
+				parse_dialog()
+			"c/":#check global flag, if true read jump next line, else it skips the next line
+				var temp = dial_res.dialogue[cur_line].lstrip("c/")
+				var line_arguments = temp.split(",")
+				var flag_num = int(line_arguments[0])
+				var flag_value = int(line_arguments[1])
+				if Global.game_flags[flag_num] == flag_value:
+					cur_line += 1
+				else:
+					cur_line += 2
+				parse_dialog()
+			"g/":#give u an item
+				var item = load(dial_res.dialogue[cur_line].lstrip("g/"))
+				print(item)
+				Utils.add_item(item,1)
+				cur_line += 1
+				parse_dialog()
+			"s/":
+				var stream = load(dial_res.dialogue[cur_line].lstrip("s/"))
+				Utils.play_sfx(stream)
+				cur_line += 1
+				parse_dialog()
+			"e/":#ends the dialog
+				exit_menu()
 			_:
 				print("sintax error in the dialogue file")
 				exit_menu()

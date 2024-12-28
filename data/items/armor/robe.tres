@@ -14,6 +14,7 @@ script = ExtResource("1_bel68")
 armor_type = "body"
 armor_weight = "cloth"
 defence = 5
+element = "none"
 type = "armor"
 name = "Robe"
 description = "naccappatoio"

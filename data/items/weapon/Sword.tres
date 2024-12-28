@@ -14,6 +14,7 @@ region = Rect2(0, 160, 32, 32)
 script = ExtResource("1_agevh")
 weap_type = "sword"
 power = 10
+element = ""
 battle_sprite = ExtResource("1_y6uac")
 type = "weap"
 name = "Wooden Sword"

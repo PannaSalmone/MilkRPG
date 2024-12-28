@@ -5,3 +5,5 @@
 [node name="Utils" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_baxop")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]

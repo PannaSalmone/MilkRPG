@@ -13,7 +13,7 @@ func new_game() -> void:
 	Global.game_time = 0
 	Global.gold = 500
 	Global.movcounter = 0.0
-	Global.player_xy = Vector2(64 , 64)
+	Global.player_xy = Vector2(128 , 128)
 	Global.raycast_direction = Vector2(0 , 32)
 	Global.player_map_location = "test_area"
 	Global.chest_flags.fill(0)
@@ -203,6 +203,10 @@ func remove_item_equipped(item) -> void:
 	array.erase(item_to_remove)
 	inv_data.slots = array
 	add_item(item, 1)
+
+func play_sfx(stream) -> void:
+	$SFX.stream = stream
+	$SFX.play()
 
 #game time function
 func _physics_process(delta):

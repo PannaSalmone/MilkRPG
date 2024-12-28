@@ -142,3 +142,8 @@ offset_left = 8.0
 offset_top = -56.0
 offset_right = 48.0
 offset_bottom = -16.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
