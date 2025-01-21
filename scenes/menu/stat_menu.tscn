@@ -50,86 +50,134 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="LeftContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="Portrait" type="TextureRect" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/LeftContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/LeftContainer"]
+layout_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/LeftContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_ua3ba")
 stretch_mode = 2
 
+[node name="Name" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/LeftContainer/VBoxContainer"]
+layout_mode = 2
+text = "Name"
+
+[node name="Class" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/LeftContainer/VBoxContainer"]
+layout_mode = 2
+text = "Classs"
+
 [node name="CenterContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="space" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
-layout_mode = 2
-
-[node name="Name" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-text = "Name"
-
 [node name="HP" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "HP: 200"
 vertical_alignment = 1
 
-[node name="STR" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
-custom_minimum_size = Vector2(0, 32)
+[node name="MP" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "MP: 75"
+vertical_alignment = 1
+
+[node name="STR" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "STR: 0"
 vertical_alignment = 1
 
 [node name="VIG" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "VIG: 0"
 vertical_alignment = 1
 
 [node name="SPI" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "SPI: 0"
+vertical_alignment = 1
+
+[node name="AGI" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "AGI: 0"
+vertical_alignment = 1
+
+[node name="INT" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "INT: 0"
 vertical_alignment = 1
 
 [node name="RightContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="space" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
+[node name="ATK" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "ATK: 0"
+vertical_alignment = 1
 
-[node name="Class" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
-custom_minimum_size = Vector2(0, 32)
+[node name="ACC" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-text = "Class"
+theme_override_font_sizes/font_size = 14
+text = "ACC: 0"
+vertical_alignment = 1
 
-[node name="MP" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
-custom_minimum_size = Vector2(0, 32)
+[node name="DEF" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-text = "MP: 75"
+theme_override_font_sizes/font_size = 14
+text = "DEF: 0"
+vertical_alignment = 1
+
+[node name="EVA" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "EVA: 0"
+vertical_alignment = 1
+
+[node name="MDF" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "MDF: 0"
+vertical_alignment = 1
+
+[node name="MPW" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "MPW: 0"
 vertical_alignment = 1
 
 [node name="SPE" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "SPE: 0"
-vertical_alignment = 1
-
-[node name="INT" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-text = "INT: 0"
-vertical_alignment = 1
-
-[node name="space2" type="Label" parent="HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer"]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
 vertical_alignment = 1
 
 [node name="DescriptionPanel" type="PanelContainer" parent="HBoxContainer/MarginContainer"]

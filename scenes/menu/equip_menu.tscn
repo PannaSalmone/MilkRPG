@@ -415,10 +415,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
+[node name="test" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
 [connection signal="pressed" from="HBoxContainer/MarginContainer/CharSelectPanel/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/CharSelectPanel/Right" to="." method="_on_right_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Head" to="." method="_on_head_focus_entered"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Head" to="." method="_on_head_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/DX" to="." method="_on_dx_focus_entered"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/DX" to="." method="_on_dx_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Body" to="." method="_on_body_focus_entered"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Body" to="." method="_on_body_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/SX" to="." method="_on_sx_focus_entered"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/SX" to="." method="_on_sx_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Legs" to="." method="_on_legs_focus_entered"]
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc1" to="." method="_on_acc_1_focus_entered"]
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Arms" to="." method="_on_arms_focus_entered"]
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/MainPanel/HBoxContainer/Equipment/EquipPanel/Acc2" to="." method="_on_acc_2_focus_entered"]
+[connection signal="focus_entered" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_focus_entered"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

@@ -21,18 +21,18 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
+[node name="CategoryContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Left" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+[node name="Left" type="Button" parent="HBoxContainer/MarginContainer/CategoryContainer"]
 layout_mode = 2
 text = "◀ L"
 
-[node name="Items" type="Panel" parent="HBoxContainer/MarginContainer/PanelContainer"]
+[node name="Items" type="Panel" parent="HBoxContainer/MarginContainer/CategoryContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/Items"]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/CategoryContainer/Items"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,11 +43,11 @@ text = "Items"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weap" type="Panel" parent="HBoxContainer/MarginContainer/PanelContainer"]
+[node name="Weap" type="Panel" parent="HBoxContainer/MarginContainer/CategoryContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/Weap"]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/CategoryContainer/Weap"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,11 +59,11 @@ text = "Weapons"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Misc" type="Panel" parent="HBoxContainer/MarginContainer/PanelContainer"]
+[node name="Misc" type="Panel" parent="HBoxContainer/MarginContainer/CategoryContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/Misc"]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/CategoryContainer/Misc"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,11 +75,11 @@ text = "Misc"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Key" type="Panel" parent="HBoxContainer/MarginContainer/PanelContainer"]
+[node name="Key" type="Panel" parent="HBoxContainer/MarginContainer/CategoryContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/PanelContainer/Key"]
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/CategoryContainer/Key"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,9 +91,31 @@ text = "Key"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Right" type="Button" parent="HBoxContainer/MarginContainer/PanelContainer"]
+[node name="Right" type="Button" parent="HBoxContainer/MarginContainer/CategoryContainer"]
 layout_mode = 2
 text = "R ▶"
+
+[node name="ItemNameContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Items" type="PanelContainer" parent="HBoxContainer/MarginContainer/ItemNameContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="HBoxContainer/MarginContainer/ItemNameContainer/Items"]
+layout_mode = 2
+text = "Item"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Items2" type="PanelContainer" parent="HBoxContainer/MarginContainer/ItemNameContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/ItemNameContainer/Items2"]
+layout_mode = 2
+text = "▼"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ItemList" type="ScrollContainer" parent="HBoxContainer/MarginContainer"]
 clip_contents = false
@@ -178,8 +200,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 horizontal_alignment = 2
 
-[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/PanelContainer/Right" to="." method="_on_right_pressed"]
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/CategoryContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/CategoryContainer/Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/use" to="." method="_on_use_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/sort" to="." method="_on_sort_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPanel/esc" to="." method="_on_esc_pressed"]

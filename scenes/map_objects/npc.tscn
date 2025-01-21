@@ -126,6 +126,7 @@ animations = [{
 height = 22.0
 
 [node name="NPC" type="StaticBody2D" groups=["MapObject"]]
+collision_layer = 9
 script = ExtResource("1_qt2lc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

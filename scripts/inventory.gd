@@ -7,10 +7,10 @@ var cur_page := 0 #0 items, 1 weap, 2 misc, 3 rare
 var selected_item : Resource
 var char_panel = false
 
-@onready var item_panel: Label = $HBoxContainer/MarginContainer/PanelContainer/Items/Label
-@onready var weap_panel: Label = $HBoxContainer/MarginContainer/PanelContainer/Weap/Label
-@onready var misc_panel: Label = $HBoxContainer/MarginContainer/PanelContainer/Misc/Label
-@onready var rare_panel: Label = $HBoxContainer/MarginContainer/PanelContainer/Key/Label
+@onready var item_panel: Label = $HBoxContainer/MarginContainer/CategoryContainer/Items/Label
+@onready var weap_panel: Label = $HBoxContainer/MarginContainer/CategoryContainer/Weap/Label
+@onready var misc_panel: Label = $HBoxContainer/MarginContainer/CategoryContainer/Misc/Label
+@onready var rare_panel: Label = $HBoxContainer/MarginContainer/CategoryContainer/Key/Label
 @onready var item_list: VBoxContainer = $HBoxContainer/MarginContainer/ItemList/ItemContainer
 @onready var chars_list :VBoxContainer = $HBoxContainer/MarginContainer/ItemList/CharaContainer
 
@@ -20,6 +20,7 @@ func _ready():
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Gold/Gold.text = str(Global.gold)
 	focus()
 	$HBoxContainer/ButtonPanel/use.disabled = true
+	$HBoxContainer/MarginContainer/ItemNameContainer.hide()
 
 func _process(_delta: float) -> void:
 	$HBoxContainer/ButtonPanel/Info/VBoxContainer/Time/Time.text = str(Global.game_time / 60).pad_zeros(2)+ " : " + str(Global.game_time % 60).pad_zeros(2)
@@ -29,6 +30,7 @@ func _process(_delta: float) -> void:
 		next_cat()
 	elif Input.is_action_just_pressed("L"):
 		prev_cat()
+	$Label.text = str(selected_item) 
 
 #Load inventory and add item_slot into the item grid/list
 func populate_item_grid() -> void:
@@ -63,13 +65,14 @@ func _on_sort_pressed() -> void: #It just works
 
 #use item func
 func _on_use_pressed() -> void:
+	var item = selected_item.item
 	if selected_item:
 		item_used() # Decrease the quantity of the selected item
-	if selected_item.category == 0:
-		var item_func = selected_item.function
+	if item.category == 0:
+		var item_func = item.function
 		match item_func:
 			0: #Recover HP
-				print("recover " +str(selected_item.power) +" HP mlmlm")
+				print(item.name +" selected")
 				open_chars_list()
 			1:# Recover MP
 				pass
@@ -131,6 +134,9 @@ func next_cat() -> void: #move to next item category
 	load_inv()
 
 func open_chars_list() -> void:
+	$HBoxContainer/MarginContainer/ItemNameContainer.show()
+	$HBoxContainer/MarginContainer/CategoryContainer.hide()
+	$HBoxContainer/MarginContainer/ItemNameContainer/Items/ItemName.text = selected_item.item.name
 	char_panel = true
 	item_list.hide()
 	chars_list.show()
@@ -142,7 +148,7 @@ func open_chars_list() -> void:
 		var char_slot = slot.instantiate()
 		if chara:
 			chars_list.add_child(char_slot)
-			char_slot.set_slot_data(load("res://data/chars/"+ chara+".tres"))
+			char_slot.set_slot_data(load("res://data/chars/"+ chara.name +".tres"))
 			char_slot.connect("selected_char", Callable(self, "on_char_selected"))
 	chars_list.get_child(0).grab_focus()
 	%Description.text = "select character you want to use item on"
@@ -152,7 +158,7 @@ func on_char_selected(character) -> void:
 	#use item
 	print("potion used on " + str(character))
 	return_to_item_page()
-	pass
+	
 
 func free_char_slots() -> void:
 	for child in chars_list.get_children():
@@ -164,16 +170,20 @@ func return_to_item_page() -> void:
 	item_list.show()
 	$HBoxContainer/ButtonPanel/esc.text = "Close"
 	$HBoxContainer/ButtonPanel/sort.disabled = false
+	$HBoxContainer/MarginContainer/ItemNameContainer.hide()
+	$HBoxContainer/MarginContainer/CategoryContainer.show()
+	char_panel = false
 	populate_item_grid()
 	focus()
 
 func item_used() -> void:
 	for i in range(inv_data.size()):
-		#[selected_item] -= 1
-		pass
-	# If the quantity reaches zero, remove the item from the inventory
-	if inv_data.slot_datas[selected_item] <= 0:
-		inv_data.slot_datas.erase(selected_item)
+		if inv_data[i] == selected_item:
+			inv_data[i].qnt -= 1
+		# Se la quantità raggiunge zero, rimuovi l'oggetto dall'inventario
+		if inv_data[i].qnt <= 0:
+			inv_data.remove_at(i)
+			break
 
 func _on_esc_pressed() -> void:
 	back()

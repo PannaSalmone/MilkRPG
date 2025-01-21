@@ -2,14 +2,29 @@ extends MarginContainer
 
 signal close_menu
 var cur_char : int
-#var char_list : Array
 @onready var name_panel := $HBoxContainer/MarginContainer/PanelContainer/NameBox/Label
+
+@onready var name_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/LeftContainer/VBoxContainer/Name
+@onready var class_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/LeftContainer/VBoxContainer/Class
+@onready var hp_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/HP
+@onready var mp_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/MP
+@onready var str_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/STR
+@onready var vig_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/VIG
+@onready var spi_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/SPI
+@onready var agi_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/AGI
+@onready var int_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/INT
+@onready var atk_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/ATK
+@onready var acc_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/ACC
+@onready var def_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/DEF
+@onready var eva_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/EVA
+@onready var mdf_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/MDF
+@onready var mpw_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/MPW
+@onready var spe_label := $HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/SPE
 
 
 func _ready():
 	#create list of active character
 	#for chara in Char.active_party:
-		#char_list.append(chara)
 	cur_char = 0
 	$HBoxContainer/ButtonPanel/esc.grab_focus()
 	$HBoxContainer/MarginContainer/PanelContainer/NameBox/Label.text = Char.active_party[cur_char].name
@@ -30,15 +45,22 @@ func update_char_info() -> void:
 	var char_res = Char.active_party[cur_char] 
 	name_panel.text = char_res.name
 	%Portrait.texture = char_res.portrait
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/Name.text = char_res.name + " " + char_res.surname
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/Class.text = char_res.title_class
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/HP.text = "HP: " + str(char_res.HP)
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/STR.text = "STR: " + str(char_res.STRENGHT)
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/VIG.text = "VIG: " + str(char_res.VIGOR)
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/CenterContainer/SPI.text = "SPI: " + str(char_res.SPIRIT)
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/MP.text = "MP: " + str(char_res.MP)
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/SPE.text = "SPE: " + str(char_res.SPEED)
-	$HBoxContainer/MarginContainer/CharInfo/HBoxContainer/RightContainer/INT.text = "INT: " + str(char_res.INTELLECT)
+	hp_label.text = "HP: "+ str(char_res.HP)
+	mp_label.text = "MP: "+ str(char_res.MP)
+	str_label.text = "STR: "+ str(char_res.STRENGHT)
+	vig_label.text = "VIG: "+ str(char_res.VIGOR)
+	spi_label.text = "SPI: "+ str(char_res.SPIRIT)
+	agi_label.text = "AGI: "+ str(char_res.AGILITY)
+	int_label.text = "INT: "+ str(char_res.INTELLECT)
+	atk_label.text = "ATK: "+ str(char_res.ATK)
+	acc_label.text = "ACC: "+ str(char_res.ACC)
+	def_label.text = "DEF: "+ str(char_res.DEF)
+	eva_label.text = "EVA: "+ str(char_res.EVA)
+	mdf_label.text = "MDF: "+ str(char_res.MDF)
+	mpw_label.text = "MPW: "+ str(char_res.MPW)
+	spe_label.text = "SPE: "+ str(char_res.SPE)
+	name_label.text = char_res.name
+	class_label.text = char_res.title_class
 	
 func next_char() -> void:
 	if cur_char == Char.active_party.size() - 1:

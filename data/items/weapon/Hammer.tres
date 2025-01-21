@@ -13,9 +13,16 @@ region = Rect2(128, 320, 32, 32)
 [resource]
 script = ExtResource("1_o33gh")
 weap_type = "hammer"
-power = 20
 element = "none"
 battle_sprite = ExtResource("1_5u2q6")
+atk = 15
+acc = 0
+def = 0
+eva = 0
+mdef = 0
+meva = 0
+mpow = 0
+spe = -2
 type = "weap"
 name = "Hammer"
 description = "Picchia come un fabbro."

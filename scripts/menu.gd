@@ -9,10 +9,9 @@ func _ready():
 	show()
 
 func _physics_process(_delta):
-	#if Input.is_action_just_pressed("B"):
-	#	close_menu()
-	pass
-
+	if Input.is_action_just_pressed("B") and cur_panel == 0:
+		close_menu()
+	
 func game_menu():
 	get_tree().paused = true
 	$GameMenu.visible = true

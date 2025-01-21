@@ -5,7 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnelo"]
 size = Vector2(32, 32)
 
-[node name="Signboard" type="StaticBody2D" groups=["MapObject"]]
+[node name="Signboard" type="Area2D" groups=["MapObject"]]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_0p02p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

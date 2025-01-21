@@ -1,5 +1,5 @@
 #@tool
-extends StaticBody2D
+extends MapObject
 
 @export var ID: int = 0 ##ID must be unique
 @export_enum("Default", "Blue") var chest_sprite: String #the name of the chest sprite (check the names in the sprite OW folder

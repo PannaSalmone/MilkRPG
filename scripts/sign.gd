@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends MapObject
 
 var text_box = load("res://scenes/menu/text_box.tscn")
 @export var texto:String = ""

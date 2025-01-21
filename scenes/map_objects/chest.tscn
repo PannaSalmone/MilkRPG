@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7apc6xp2b56o"]
 
-[ext_resource type="Script" path="res://scripts/chest.gd" id="1_vid7e"]
+[ext_resource type="Script" uid="uid://bdux6me8ogkcp" path="res://scripts/chest.gd" id="1_vid7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucg1d"]
 size = Vector2(30, 30)
 
 [node name="Chest" type="StaticBody2D" groups=["MapObject"]]
+collision_layer = 9
 script = ExtResource("1_vid7e")
 metadata/_edit_group_ = true
 

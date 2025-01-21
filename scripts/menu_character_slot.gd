@@ -1,6 +1,7 @@
 extends Button
 
 signal swap(charname)
+signal selected_char(char_name : String)
 #signal selected_char(charname)
 var is_active = false
 var charname = ""
@@ -18,7 +19,7 @@ func set_slot_data(res) -> void:
 	$HBoxContainer/Portrait.texture = res.portrait
 	$HBoxContainer/Name.text = res.name
 	charname = res.name
-	$HBoxContainer/HP.text = "HP: " + "???/"+ str(res.HP)
+	$HBoxContainer/HP.text = "HP: " + str(res.cur_HP)+" / "+ str(res.HP)
 	$HBoxContainer/LV.text = "LV: " + str(res.level)
 
 func _on_focus_entered() -> void:
@@ -30,7 +31,9 @@ func _on_focus_exited() -> void:
 	is_active = false
 
 func _on_pressed() -> void:
+	print("culos")
 	var parent_check = get_parent()
 	if parent_check.is_class("VBoxContainer"):
 		var id = get_index()		
 		emit_signal("swap", id)
+		emit_signal("selected_char",charname)

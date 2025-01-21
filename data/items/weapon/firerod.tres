@@ -12,8 +12,15 @@ region = Rect2(288, 192, 32, 32)
 [resource]
 script = ExtResource("2_bgj7f")
 weap_type = "rod"
-power = 10
 element = "fire"
+atk = 5
+acc = 0
+def = 0
+eva = 0
+mdef = 0
+meva = 0
+mpow = 10
+spe = 0
 type = "weap"
 name = "Fire Rod"
 description = "A fire staff made of fire that cast fire"

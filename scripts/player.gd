@@ -34,7 +34,7 @@ func get_input():
 			speed = 200
 		if Input.is_action_just_pressed("A"):
 			if $RayCast2D.is_colliding():
-				if collider is StaticBody2D: #Chest or Npc: this doesn't work
+				if collider is MapObject: #Chest or Npc: this doesn't work
 					collider.main_func() #launch main func in collider
 					print(collider)
 	else:

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends MapObject
 
 @onready var animation = get_node("AnimatedSprite2D")
 @export var dialogue_res: Resource

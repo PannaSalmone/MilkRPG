@@ -7,11 +7,10 @@ signal item_selected(item_res : Resource)
 @onready var obj_name := $HBoxContainer/name
 @onready var qnt := $HBoxContainer/qnt
 
-
 var no_equip := false
 var item_slot : Resource
 var desc := ""
-var locked := false
+#var locked := false
 
 func _ready() -> void:
 	pass
