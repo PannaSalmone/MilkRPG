@@ -21,6 +21,3 @@ Old FF and DQ look like game engine
 - [X] Game Menu
 - [X] Save system
 - [X] Item properties
-
-Credits:
-Apple Dog for tileset
